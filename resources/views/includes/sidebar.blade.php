@@ -24,10 +24,10 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            <li class="header">MENU PRINCIPAL</li>
+            <li class="header"INTERCONEXIONES</li>
             <li>
                 <a href="/home">
-                    <i class="fa fa-users"></i>
+                    <i class="fa fa-home"></i>
                     <span>Inicio</span>
                 </a>
             </li>
@@ -37,29 +37,9 @@
                     <span>Admin. Usuarios</span>
                 </a>
             </li>
-            <li>
-                <a href="/clientes">
-                <i class="fa fa-male "></i> <span>Admin. Clientes</span> 
-                </a>
-            </li>
-            <li>
-                <a href="/proyectos">
-                <i class="fa fa-building"></i> <span>Admin. Proyectos</span> 
-                </a>
-            </li>
-            <li>
-                <a href="/comentarios">
-                <i class="fa fa-comments-o"></i> <span>Admin. Comentarios</span> 
-                </a>
-            </li>
-            <li>
-                <a href="/bitacoras">
-                <i class="fa fa-history"></i> <span>Admin. Bitácoras</span> 
-                </a>
-            </li>
             <li class="treeview">
                 <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Catálogos Internos</span> 
+                <i class="fa fa-cogs"></i> <span>TecniScan</span> 
                 <!--<i class="fa fa-angle-left pull-right">-->
                 </i>
                 </a>
@@ -68,6 +48,83 @@
                     <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
                 </ul>
             </li>            
+            <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cogs"></i> <span>Meykos</span> 
+                <!--<i class="fa fa-angle-left pull-right">-->
+                </i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
+                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
+                </ul>
+            </li>            
+            <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cogs"></i> <span>Seguros GyT</span> 
+                <!--<i class="fa fa-angle-left pull-right">-->
+                </i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
+                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
+                </ul>
+            </li>            
+            <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cogs"></i> <span>Gface</span> 
+                <!--<i class="fa fa-angle-left pull-right">-->
+                </i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
+                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
+                </ul>
+            </li>    
+            <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cogs"></i> <span>Filas</span> 
+                <!--<i class="fa fa-angle-left pull-right">-->
+                </i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
+                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
+                </ul>
+            </li>    
+            <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cogs"></i> <span>Credomatic</span> 
+                <!--<i class="fa fa-angle-left pull-right">-->
+                </i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
+                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
+                </ul>
+            </li>   
+            <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cogs"></i> <span>Signos Vitales</span> 
+                <!--<i class="fa fa-angle-left pull-right">-->
+                </i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
+                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
+                </ul>
+            </li>   
+             <li class="treeview">
+                <a href="#">
+                <i class="fa fa-cogs"></i> <span>Catàlogos</span> 
+                <!--<i class="fa fa-angle-left pull-right">-->
+                </i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
+                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
+                </ul>
+            </li>   
             <li>
                 <a href="/auth/logout">
                 <i class="fa fa-sign-out"></i> <span>Cerrar Sesión</span> 

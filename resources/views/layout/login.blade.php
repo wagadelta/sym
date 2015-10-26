@@ -39,11 +39,12 @@
             
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
+                
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
                     AREA PRIVADA
-                    <small>Control de proyectos</small>
+                    <small>Gestiòn de API REST</small>
                     </h1>
                     
                 </section>

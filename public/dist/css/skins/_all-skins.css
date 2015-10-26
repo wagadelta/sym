@@ -59,7 +59,7 @@
 .skin-blue .wrapper,
 .skin-blue .main-sidebar,
 .skin-blue .left-side {
-  background-color: #222d32;
+  background-color: #0067b1;
 }
 .skin-blue .user-panel > .info,
 .skin-blue .user-panel > .info > a {
@@ -366,7 +366,7 @@
 }
 
 .skin-black .main-header > .logo-login {
-  /* background-color: #ffffff;*/
+  /* background-color: #ffffff; */
   color: #333333;
   border-bottom: 0 solid transparent;
   border-right: 1px solid #eee;
@@ -381,6 +381,7 @@
     color: #ffffff;
     border-bottom: 0 solid transparent;
     border-right: none;
+    width:40%;
   }
   .skin-black .main-header > .logo:hover {
     background-color: #1f1f1f;
