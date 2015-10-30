@@ -37,83 +37,7 @@
                     <span>Admin. Usuarios</span>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="#">
-                <i class="fa fa-cogs"></i> <span>TecniScan</span> 
-                <!--<i class="fa fa-angle-left pull-right">-->
-                </i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
-                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
-                </ul>
-            </li>            
-            <li class="treeview">
-                <a href="#">
-                <i class="fa fa-cogs"></i> <span>Meykos</span> 
-                <!--<i class="fa fa-angle-left pull-right">-->
-                </i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
-                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
-                </ul>
-            </li>            
-            <li class="treeview">
-                <a href="#">
-                <i class="fa fa-cogs"></i> <span>Seguros GyT</span> 
-                <!--<i class="fa fa-angle-left pull-right">-->
-                </i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
-                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
-                </ul>
-            </li>            
-            <li class="treeview">
-                <a href="#">
-                <i class="fa fa-cogs"></i> <span>Gface</span> 
-                <!--<i class="fa fa-angle-left pull-right">-->
-                </i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
-                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
-                </ul>
-            </li>    
-            <li class="treeview">
-                <a href="#">
-                <i class="fa fa-cogs"></i> <span>Filas</span> 
-                <!--<i class="fa fa-angle-left pull-right">-->
-                </i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
-                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
-                </ul>
-            </li>    
-            <li class="treeview">
-                <a href="#">
-                <i class="fa fa-cogs"></i> <span>Credomatic</span> 
-                <!--<i class="fa fa-angle-left pull-right">-->
-                </i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
-                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
-                </ul>
-            </li>   
-            <li class="treeview">
-                <a href="#">
-                <i class="fa fa-cogs"></i> <span>Signos Vitales</span> 
-                <!--<i class="fa fa-angle-left pull-right">-->
-                </i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
-                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
-                </ul>
-            </li>   
+             
              <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cogs"></i> <span>Catàlogos</span> 
@@ -122,7 +46,6 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
-                    <li><a href="/estados"><i class="fa fa-certificate"></i>Admin. Estados</a></li>
                 </ul>
             </li>   
             <li>
