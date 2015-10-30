@@ -33,7 +33,7 @@
     <![endif]--> 
 
 </head>
-<body class="skin-blue">
+<body class="skin-green">
         <div class="wrapper">
             @include('includes.header-login')
             
