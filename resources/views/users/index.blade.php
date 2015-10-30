@@ -22,7 +22,6 @@
 			<th>Contacto Apellidos</th>
 			<th>Email</th>
 			<th>Id Rol</th>
-			<th>Id Cliente</th>
                     <th width="50px">Action</th>
                     </thead>
                     <tbody>
@@ -34,7 +33,6 @@
 					<td>{!! $users->contact_lname !!}</td>
 					<td>{!! $users->email !!}</td>
 					<td>{!! $users->rol->descripcion !!}</td>
-					<td>{!! $users->cliente->nombre !!}</td>
                             <td>
                                 <a href="{!! route('users.edit', [$users->id]) !!}"><i class="fa fa-pencil-square-o"></i></a>
                                 <a href="{!! route('users.delete', [$users->id]) !!}" onclick="return confirm('Está seguro de eliminar éste registro - Users?')"><i class="fa fa-trash"></i></a>

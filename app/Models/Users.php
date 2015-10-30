@@ -16,7 +16,6 @@ class Users extends Model
 		"contact_fname",
 		"contact_lname",
 		"email",
-		"id_cliente",
 		"id_rol",
 		"password"
 	];
@@ -26,7 +25,6 @@ class Users extends Model
 		"contact_fname" => "required",
 		"contact_lname" => "required",
 		"email" => "required | email ",
-		"id_cliente" => "required",
 		"id_rol" => "required",
 		"password" => "required|min:6|confirmed",
 		"password_confirmation" => "required|min:6"

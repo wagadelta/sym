@@ -29,20 +29,13 @@
     {!! Form::text('email', null, ['class' => 'form-control']) !!}
 </div>
 
-<!--- Id Cliente Field --->
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('Cliente', 'Cliente:') !!}
-    <!--{!! Form::text('id_cliente', null, ['class' => 'form-control']) !!}-->
-    {!! Form::select('id_cliente', $cliente_options, Input::old('id_cliente'), ['class' => 'form-control']) !!}
-</div>
-
-<!--- Password  Cliente Field --->
+<!--- Password  Clave Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('Clave', 'Clave:') !!} Mínimo 6 caracteres.
     {!! Form::password('password', ['class' => 'form-control']) !!}
 </div>
 
-<!--- Password  Confirmation Cliente Field --->
+<!--- Password  Confirmation ConfirmarClave Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('Confirmar Clave', 'Confirmar Clave:') !!}
     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
