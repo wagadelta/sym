@@ -125,3 +125,13 @@ Route::get('dispositivos/{id}/delete', [
     'as' => 'dispositivos.delete',
     'uses' => 'DispositivosController@destroy',
 ]);
+
+
+Route::resource('api/traslados', 'API\TrasladosAPIController');
+
+Route::resource('traslados', 'TrasladosController');
+
+Route::get('traslados/{id}/delete', [
+    'as' => 'traslados.delete',
+    'uses' => 'TrasladosController@destroy',
+]);
