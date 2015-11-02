@@ -40,7 +40,7 @@
         "validations":""
     },
     {
-        "field":"estado:string(25)",
+        "field":"estado:string",
         "validations":""
     }
 ]
