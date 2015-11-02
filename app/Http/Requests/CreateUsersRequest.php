@@ -25,22 +25,22 @@ class CreateUsersRequest extends Request {
 		return Users::$rules;
 	}
 	
-	public function messages()
-    {
-        return [
-            'name.required' => 'El nombre es requerido.',
-            'contact_fname.required' => 'Su primer nombre es requerido.',
-            'contact_lname.required' => 'Su segundo nombre es requerido.',
-            'email.required' => 'Su Email es requerido.',
-            'email.email' => 'El formato de su Email es erróneo.',
-            'id_rol.required' => 'Debe elegir un Rol.',
-            'password.required' => 'La clave es requerida.',
-            'password.min' => 'La clave debe tener almenos 6 caracteres.',
-            'password.confirmed' => 'Debe confirmar la clave.',
-            'password_confirmation.required' => 'Debe confirmar la clave',
-            'password_confirmation.min' => 'La confirmación de su Clave debe tener almenos 6 caracteres.',
-            'password_confirmation.confirmed' => 'La confirmación de su Clave no es igual.',
-        ];
-    }
+// 	public function messages()
+//     {
+//         return [
+//             'identificacion.required' => 'La identificación es requerida.',
+//             'contact_fname.required' => 'Su primer nombre es requerido.',
+//             'contact_lname.required' => 'Su segundo nombre es requerido.',
+//             'email.required' => 'Su Email es requerido.',
+//             'email.email' => 'El formato de su Email es erróneo.',
+//             'id_rol.required' => 'Debe elegir un Rol.',
+//             'password.required' => 'La clave es requerida.',
+//             'password.min' => 'La clave debe tener almenos 6 caracteres.',
+//             'password.confirmed' => 'Debe confirmar la clave.',
+//             'password_confirmation.required' => 'Debe confirmar la clave',
+//             'password_confirmation.min' => 'La confirmación de su Clave debe tener almenos 6 caracteres.',
+//             'password_confirmation.confirmed' => 'La confirmación de su Clave no es igual.',
+//         ];
+//     }
 
 }

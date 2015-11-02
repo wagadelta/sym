@@ -86,4 +86,10 @@ class UsersRepository
 
 		return $Users;
 	}
+	
+	public function supervisorList()
+	{
+		return \DB::table('users')->where('id_supervisor',null)->lists('usuario','id');
+	}
+	
 }

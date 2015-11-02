@@ -39,7 +39,7 @@ class UsersController extends AppBaseController
 		$users = $result[0];
 		
 		$attributes = $result[1];
-
+		//dd($users);
 		return view('users.index')
 		    ->with('users', $users)
 		    ->with('attributes', $attributes);
@@ -55,9 +55,11 @@ class UsersController extends AppBaseController
 				
 		/*Add selectS options*/
 		$roles_options 		= $this->rolesRepository->optionList();
+		$supervisor_options = $this->usersRepository->supervisorList();
 
 		return view('users.create')
-		->with('rol_options', $roles_options);
+		->with('rol_options', $roles_options)
+		->with('supervisor_options', $supervisor_options);
 	}
 
 	/**

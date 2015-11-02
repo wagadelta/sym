@@ -12,20 +12,29 @@ class Users extends Model
 	public $timestamps = true;
 
 	public $fillable = [
-	    "name",
-		"contact_fname",
-		"contact_lname",
+		"id_supervisor",
+	    "identificacion",
+		"otra_identificacion",
 		"email",
-		"id_rol",
-		"password"
+		"nombres",
+		"apellidos",
+		"telefonos",
+		"foto",
+		"correlativo_recibo_cobro",
+		"correlativo_recibo_entrega",
+		"usuario",
+		"password",
+		"id_rol"
 	];
 
 	public static $rules = [
-	    "name" => "required",
-		"contact_fname" => "required",
-		"contact_lname" => "required",
+	    "identificacion" => "required",
 		"email" => "required | email ",
+		"nombres" => "required",
+		"apellidos" => "required",
+		"telefonos" => "required",
 		"id_rol" => "required",
+		"usuario" => "required",
 		"password" => "required|min:6|confirmed",
 		"password_confirmation" => "required|min:6"
 	];
@@ -43,5 +52,16 @@ class Users extends Model
 		//dd($this->belongsTo('App\Models\Roles'));
 		return $this->belongsTo('App\Models\Clientes', 'id_cliente');
 	}	
+	
+	public function supervisorName($idSupervisor)
+	{
+		//dd($idSupervisor);
+		if (is_null($idSupervisor)){
+			return 'EsSupervisor';
+		}else{
+			return \DB::table('users')->where('id',$this->id_supervisor)->pluck('usuario');
+			
+		}
+	}
 
 }
