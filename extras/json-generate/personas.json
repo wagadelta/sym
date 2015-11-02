@@ -4,6 +4,10 @@
         "validations": "required"
     },
     {
+        "field":"estado:string",
+        "validations":""
+    },
+    {
         "field":"identificacion:string",
         "validations": "required"
     },
@@ -37,10 +41,6 @@
     },
     {
         "field":"conyugue_lugar_trabajo:string",
-        "validations":""
-    },
-    {
-        "field":"estado:string",
         "validations":""
     }
 ]
