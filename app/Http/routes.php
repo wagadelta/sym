@@ -85,3 +85,13 @@ Route::group(['middleware' => 'auth'], function() {
         'uses' => 'BitacoraController@destroy',
     ]);
 }); //middleware auth    
+
+
+Route::resource('api/personas', 'API\PersonasAPIController');
+
+Route::resource('personas', 'PersonasController');
+
+Route::get('personas/{id}/delete', [
+    'as' => 'personas.delete',
+    'uses' => 'PersonasController@destroy',
+]);
