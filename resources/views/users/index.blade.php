@@ -17,25 +17,35 @@
             @else
                 <table class="table">
                     <thead>
-                    <th>Nombre</th>
-			<th>Contacto Nombres</th>
-			<th>Contacto Apellidos</th>
-			<th>Email</th>
-			<th>Id Rol</th>
-                    <th width="50px">Action</th>
+                        <th>Usuario</th>
+                        <th>Identificacion /<br> (otra id)</th>
+            			<th>Nombres</th>
+            			<th>Apellidos</th>
+            			<th>Email</th>
+            			<th>Telefonos</th>
+            			<th>Foto</th>
+            			<th>Rol</th>
+            			<th>Correlativos<br> Cobro/Entrega</th>
+            			<th>Supervisado por:</th>
+                        <th>Action</th>
                     </thead>
                     <tbody>
                      
-                    @foreach($users as $users)
-                        <tr>
-                            <td>{!! $users->name !!}</td>
-					<td>{!! $users->contact_fname !!}</td>
-					<td>{!! $users->contact_lname !!}</td>
-					<td>{!! $users->email !!}</td>
-					<td>{!! $users->rol->descripcion !!}</td>
-                            <td>
-                                <a href="{!! route('users.edit', [$users->id]) !!}"><i class="fa fa-pencil-square-o"></i></a>
-                                <a href="{!! route('users.delete', [$users->id]) !!}" onclick="return confirm('Está seguro de eliminar éste registro - Users?')"><i class="fa fa-trash"></i></a>
+                    @foreach($users as $user)
+                    <tr>
+                    <td>{!! $user->usuario !!}</td>
+					<td>{!! $user->identificacion !!}<br>/{!! $user->otra_identificacion !!}</td>
+					<td>{!! $user->nombres !!}</td>
+					<td>{!! $user->apellidos !!}</td>
+					<td>{!! $user->email !!}</td>
+					<td>{!! $user->telefonos !!}</td>
+					<td>{!! $user->foto !!}</td>
+					<td>{!! $user->Rol->descripcion !!}</td>
+					<td>{!! $user->correlativo_recibo_cobro !!} / {!! $user->correlativo_recibo_entrega !!}</td>
+					<td>{!! $user->supervisorName($user->id_supervisor) !!}</td>
+					        <td>
+                                <a href="{!! route('users.edit', [$user->id]) !!}"><i class="fa fa-pencil-square-o"></i></a>
+                                <a href="{!! route('users.delete', [$user->id]) !!}" onclick="return confirm('Está seguro de eliminar éste registro - Users?')"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach
