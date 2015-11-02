@@ -81,7 +81,7 @@
         "validations":""
     },
     {
-        "field":"estado:varchar(25)",
+        "field":"estado:string",
         "validations":""
     }
 ]
