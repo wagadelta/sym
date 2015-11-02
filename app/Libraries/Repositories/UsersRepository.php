@@ -89,7 +89,13 @@ class UsersRepository
 	
 	public function supervisorList()
 	{
-		return \DB::table('users')->where('id_supervisor',null)->lists('usuario','id');
+		$arrDb = \DB::table('users')->where('id_rol',2)->lists('usuario', 'id');
+		//dd($arrDb);
+		$naItem = array(0 => 'NA');
+		//dd($naItem);
+		$list = array_merge($naItem, $arrDb);
+		//dd(array('???',$list));
+		return $list; 
 	}
 	
 }

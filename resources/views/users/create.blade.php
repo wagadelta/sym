@@ -16,14 +16,15 @@
 @section('script')
 <script>
      jQuery(document).ready(function($) {
-        $('select[name="id_rol"]').val(2);
+        $('select[name="id_rol"]').val(3);
         
         $('select[name="id_rol"]').on('change', function(e){
             if($('select[name="id_rol"]').val()==3) // si es rol Cobrador
             {
-                $("#idsupervisor").hide();
+                $("#idsupervisor").removeAttr('disabled');
             }else{
-                $("#idsupervisor").show();
+                $("#idsupervisor").attr('disabled', 'disabled');
+                $("#idsupervisor").val(0);
             }
             
         });

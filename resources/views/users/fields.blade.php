@@ -1,55 +1,55 @@
 <!--- identificacion Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('identificacion', 'Identificación:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+    {!! Form::text('identificacion', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- otraIdentificacion Nombres Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('Otra-identificacion', 'Otra Identificación:') !!}
-    {!! Form::text('contact_fname', null, ['class' => 'form-control']) !!}
+    {!! Form::text('otra_identificacion', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- Contacto email Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('email', 'Email:') !!}
-    {!! Form::text('contact_lname', null, ['class' => 'form-control']) !!}
+    {!! Form::text('email', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- nombres Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('nombres', 'Nombres:') !!}
-    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+    {!! Form::text('nombres', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- apellidos Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('apellidos', 'Apellidos:') !!}
-    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+    {!! Form::text('apellidos', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- telefonos Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('telefonos', 'Teléfonos:') !!}
-    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+    {!! Form::text('telefonos', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- foto Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('foto', 'Fotografía:') !!}
-    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+    {!! Form::text('foto', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- correlativo_recibo_cobro Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('correlativo_recibo_cobro', 'Correlativo (Cobros):') !!}
-    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+    {!! Form::text('correlativo_recibo_cobro', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- correlativo_recibo_entrega Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('correlativo_recibo_entrega', 'Correlativo (Entregas):') !!}
-    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+    {!! Form::text('correlativo_recibo_entrega', null, ['class' => 'form-control']) !!}
 </div>
 
 
@@ -88,12 +88,3 @@
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
 </div>
-
-
-
-
-
-
-
-
-

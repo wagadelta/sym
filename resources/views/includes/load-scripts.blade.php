@@ -1,4 +1,4 @@
-@secction('load-scripts')
+@section('load-scripts')
         <!-- jQuery 2.1.3 -->
         <script src="{{ asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
         <!-- jQuery UI 1.11.2 -->

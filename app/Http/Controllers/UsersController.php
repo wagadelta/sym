@@ -111,8 +111,8 @@ class UsersController extends AppBaseController
 		$Users = $this->usersRepository->findUsersById($id);
 		/*Add selectS options*/
 		$roles_options 		= $this->rolesRepository->optionList();
-		//dd([$Users,$roles_options,$clientes_options, $Users->id]);exit();
-
+		$supervisor_options = $this->usersRepository->supervisorList();
+		//dd($supervisor_options);
 		if(empty($Users))
 		{
 			Flash::error('Users not found');
@@ -121,7 +121,8 @@ class UsersController extends AppBaseController
 
 		return view('users.edit')
 		->with('userdata', $Users)
-		->with('rol_options', $roles_options);
+		->with('rol_options', $roles_options)
+		->with('supervisor_options', $supervisor_options);
 	}
 
 	/**
@@ -142,7 +143,9 @@ class UsersController extends AppBaseController
 			Flash::error('Users not found');
 			return redirect(route('users.index'));
 		}
-
+		
+		//dd($request->all());
+		//dd($request);
 		$Users = $this->usersRepository->update($Users, $request->all());
 
 		Flash::message('Users updated successfully.');

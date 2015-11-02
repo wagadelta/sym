@@ -12,3 +12,31 @@
     {!! Form::close() !!}
 </div>
 @endsection
+
+@section('script')
+<script>
+     jQuery(document).ready(function($) {
+        if($('select[name="id_rol"]').val()==3) // si es rol Cobrador
+            {
+                $('select[name="id_supervisor"]').removeAttr('disabled');
+            }else{
+                $('select[name="id_supervisor"]').attr('disabled', 'disabled');
+                $('select[name="id_supervisor"]').val(0);
+            }
+        
+        $('select[name="id_rol"]').on('change', function(e){
+            if($('select[name="id_rol"]').val()==3) // si es rol Cobrador
+            {
+                $('select[name="id_supervisor"]').removeAttr('disabled');
+                $('select[name="id_supervisor"]').val(1);
+            }else{
+                $('select[name="id_supervisor"]').attr('disabled', 'disabled');
+                $('select[name="id_supervisor"]').val(0);
+            }
+            
+        });
+        
+
+     });
+</script>
+@endsection

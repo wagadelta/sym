@@ -56,8 +56,8 @@ class Users extends Model
 	public function supervisorName($idSupervisor)
 	{
 		//dd($idSupervisor);
-		if (is_null($idSupervisor)){
-			return 'EsSupervisor';
+		if ($idSupervisor == 0 ){
+			return 'NA';
 		}else{
 			return \DB::table('users')->where('id',$this->id_supervisor)->pluck('usuario');
 			
