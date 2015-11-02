@@ -1,0 +1,18 @@
+[
+    {
+        "field":"user_id_anterior:integer",
+        "validations": ""
+    },
+    {
+        "field":"user_id_actual:integer",
+        "validations": ""
+    },
+    {
+	   "field":"observaciones:text",
+	   "validations": "required"
+    },
+    {
+        "field":"estado:string",
+        "validations":""
+    }
+]
