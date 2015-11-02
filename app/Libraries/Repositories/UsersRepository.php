@@ -93,7 +93,7 @@ class UsersRepository
 		//dd($arrDb);
 		$naItem = array(0 => 'NA');
 		//dd($naItem);
-		$list = array_merge($naItem, $arrDb);
+		$list = ($naItem+$arrDb);
 		//dd(array('???',$list));
 		return $list; 
 	}
