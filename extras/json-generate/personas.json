@@ -1,0 +1,46 @@
+[
+    {
+        "field":"nombre:string",
+        "validations": "required"
+    },
+    {
+        "field":"identificacion:string",
+        "validations": "required"
+    },
+    {
+	   "field":"otra_identificacion:string",
+	   "validations": "required"
+    },
+    {
+	   "field":"fecha_nacimiento:string",
+	   "validations":"required"
+    },
+    {
+    	"field":"domicilio:string",
+    	"validations":""
+    },
+    {
+        "field":"telefonos:string",
+        "validations":""
+    },
+    {
+        "field":"foto:string",
+        "validations":""
+    },
+    {
+        "field":"foto_dpi:string",
+        "validations":""
+    },
+    {
+        "field":"conyugue_nombre:string",
+        "validations":""
+    },
+    {
+        "field":"conyugue_lugar_trabajo:string",
+        "validations":""
+    },
+    {
+        "field":"estado:string(25)",
+        "validations":""
+    }
+]
