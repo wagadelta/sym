@@ -33,11 +33,40 @@
             </li>
             <li>
                 <a href="/users">
-                    <i class="fa fa-users"></i>
+                    <i class="fa fa-user-secret"></i>
                     <span>Admin. Usuarios</span>
                 </a>
             </li>
-             
+            <li>
+                <a href="/personas">
+                    <i class="fa fa-users"></i>
+                    <span>Admin. Personas</span>
+                </a>
+            </li>
+             <li>
+                <a href="/contratos">
+                    <i class="fa fa-files-o"></i>
+                    <span>Admin. Contratos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cobros">
+                    <i class="fa fa-money"></i>
+                    <span>Admin. Cobros</span>
+                </a>
+            </li>
+            <li>
+                <a href="/dispositivos">
+                    <i class="fa fa-mobile"></i>
+                    <span>Admin. Dispositivos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/traslados">
+                    <i class="fa fa-arrows-h"></i>
+                    <span>Admin. Traslados</span>
+                </a>
+            </li>
              <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cogs"></i> <span>Catàlogos</span> 
