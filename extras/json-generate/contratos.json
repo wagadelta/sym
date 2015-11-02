@@ -16,10 +16,6 @@
 	   "validations":"required"
     },
     {
-    	"field":"estado:string",
-    	"validations":""
-    },
-    {
         "field":"solicitado_por:integer",
         "validations":""
     },
