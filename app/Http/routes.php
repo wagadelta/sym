@@ -105,3 +105,13 @@ Route::get('contratos/{id}/delete', [
     'as' => 'contratos.delete',
     'uses' => 'ContratosController@destroy',
 ]);
+
+
+Route::resource('api/cobros', 'API\CobrosAPIController');
+
+Route::resource('cobros', 'CobrosController');
+
+Route::get('cobros/{id}/delete', [
+    'as' => 'cobros.delete',
+    'uses' => 'CobrosController@destroy',
+]);
