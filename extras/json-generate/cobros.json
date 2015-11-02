@@ -1,79 +1,22 @@
 [
     {
-        "field":"monto:float",
+        "field":"id_contrato:integer",
         "validations": "required"
     },
     {
-        "field":"no_cuotas:integer",
+        "field":"id_usuario:integer",
         "validations": "required"
     },
     {
-	   "field":"valor_cuota:float",
+	   "field":"monto_a_pagar:float",
 	   "validations": "required"
     },
     {
-	   "field":"perido_cobro:string",
-	   "validations":"required"
+	   "field":"monto_pagado:float",
+	   "validations":""
     },
     {
-        "field":"solicitado_por:integer",
-        "validations":""
-    },
-    {
-        "field":"solicitado_en:dateTime",
-        "validations":""
-    },
-    {
-        "field":"aprobado_por:integer",
-        "validations":""
-    },
-    {
-        "field":"aprobado_en:dateTime",
-        "validations":""
-    },
-    {
-        "field":"entrado_por:integer",
-        "validations":""
-    },
-    {
-        "field":"entregado_en:dateTime",
-        "validations":""
-    },
-    {
-        "field":"entregado_gps:string",
-        "validations":""
-    },
-    {
-        "field":"pagado:string",
-        "validations":""
-    },
-    {
-        "field":"juridico_por:integer",
-        "validations":""
-    },
-    {
-        "field":"juridico_en:dateTime",
-        "validations":""
-    },
-    {
-        "field":"incobrable_por:integer",
-        "validations":""
-    },
-    {
-        "field":"incobrable_en:dateTime",
-        "validations":""
-    },
-    {
-        "field":"rechazado_por:integer",
-        "validations":""
-    },
-    {
-        "field":"rechazado_en:dateTime",
-        "validations":""
-    },
-
-    {
-        "field":"conyugue_lugar_trabajo:string",
+        "field":"no_recibo:integer",
         "validations":""
     },
     {
