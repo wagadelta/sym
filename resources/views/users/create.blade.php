@@ -16,20 +16,25 @@
 @section('script')
 <script>
      jQuery(document).ready(function($) {
-        $('select[name="id_rol"]').val(3);
+        if($('select[name="id_rol"]').val()!=3) // si es NO ES Cobrador
+            {
+                $('select[name="id_supervisor"]').val(0); // NA
+            };
         
         $('select[name="id_rol"]').on('change', function(e){
-            if($('select[name="id_rol"]').val()==3) // si es rol Cobrador
+            if($('select[name="id_rol"]').val()!=3) // si no es rol Cobrador
             {
-                $("#idsupervisor").removeAttr('disabled');
-            }else{
-                $("#idsupervisor").attr('disabled', 'disabled');
-                $("#idsupervisor").val(0);
-            }
+                $('select[name="id_supervisor"]').val(0); //NA
+            };
+        });// onchange
             
-        });
-        
-
-     });
+         $('select[name="id_supervisor"]').on('change', function(e){
+            if($('select[name="id_rol"]').val()!=3) // si No es rol Cobrador
+            {
+                $('select[name="id_supervisor"]').val(0); //NA
+            };
+         });// onchange
+            
+    });// jQuery
 </script>
 @endsection

@@ -16,27 +16,25 @@
 @section('script')
 <script>
      jQuery(document).ready(function($) {
-        if($('select[name="id_rol"]').val()==3) // si es rol Cobrador
+        if($('select[name="id_rol"]').val()!=3) // si es NO ES Cobrador
             {
-                $('select[name="id_supervisor"]').removeAttr('disabled');
-            }else{
-                $('select[name="id_supervisor"]').attr('disabled', 'disabled');
-                $('select[name="id_supervisor"]').val(0);
-            }
+                $('select[name="id_supervisor"]').val(0); // NA
+            };
         
         $('select[name="id_rol"]').on('change', function(e){
-            if($('select[name="id_rol"]').val()==3) // si es rol Cobrador
+            if($('select[name="id_rol"]').val()!=3) // si no es rol Cobrador
             {
-                $('select[name="id_supervisor"]').removeAttr('disabled');
-                $('select[name="id_supervisor"]').val(1);
-            }else{
-                $('select[name="id_supervisor"]').attr('disabled', 'disabled');
-                $('select[name="id_supervisor"]').val(0);
-            }
+                $('select[name="id_supervisor"]').val(0); //NA
+            };
+        });// onchange
             
-        });
-        
-
-     });
+         $('select[name="id_supervisor"]').on('change', function(e){
+            if($('select[name="id_rol"]').val()!=3) // si No es rol Cobrador
+            {
+                $('select[name="id_supervisor"]').val(0); //NA
+            };
+         });// onchange
+            
+    });// jQuery
 </script>
 @endsection

@@ -32,6 +32,21 @@
                     <tbody>
                      
                     @foreach($users as $user)
+                    <?php
+                    switch($user->id_rol){
+                        case 3: // cobrador
+                            $icon = '<i class="fa fa-money"></i>';
+                        break; // supervisor
+                        case 2:
+                            $icon = '<i class="fa fa-search-plus"></i>';
+                        break;
+                        case 1: //administrator
+                            $icon = '<i class="fa fa-key"></i>';
+                        break;
+                        default:
+                            $icon = '<i class="fa fa-check-circle"></i>';
+                    }
+                    ?>
                     <tr>
                     <td>{!! $user->usuario !!}</td>
 					<td>{!! $user->identificacion !!}<br>/{!! $user->otra_identificacion !!}</td>
@@ -40,7 +55,7 @@
 					<td>{!! $user->email !!}</td>
 					<td>{!! $user->telefonos !!}</td>
 					<td>{!! $user->foto !!}</td>
-					<td>{!! $user->Rol->descripcion !!}</td>
+					<td>{!!$icon!!}-{!! $user->Rol->descripcion !!}</td>
 					<td>{!! $user->correlativo_recibo_cobro !!} / {!! $user->correlativo_recibo_entrega !!}</td>
 					<td>{!! $user->supervisorName($user->id_supervisor) !!}</td>
 					        <td>
