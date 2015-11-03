@@ -11,15 +11,15 @@ public function run()
  {
     $faker = Faker::create('es_ES');
 
-    foreach(range(1,30) as $index)
+    foreach(range(1,1000) as $index)
     {
-        \Personas::create([
+        DB::table('personas')->insert([
           'nombre' => $faker->name ,
-          'identificacion' => $faker->randomNumber(11) ,
-          'otra_identificacion' =>  $faker->randomNumber(6) ,
+          'identificacion' => $faker->isbn13 ,
+          'otra_identificacion' =>  $faker->isbn10 ,
           'fecha_nacimiento' =>  $faker->dateTimeBetween($startDate = '-50 years', $endDate = 'now') ,
           'domicilio' =>  $faker->address,
-          'telefonos' =>  $faker->randomNumber(8),
+          'telefonos' =>  $faker->phoneNumber,
           'foto' =>  'path',
           'foto_dpi' =>  'path',
           'conyugue_nombre' =>  $faker->name,

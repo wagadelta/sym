@@ -19,7 +19,7 @@ class CreateContratosTable extends Migration
 			$table->float('monto');
 			$table->integer('no_cuotas');
 			$table->float('valor_cuota');
-			$table->string('perido_cobro');
+			$table->string('periodo_cobro');
 			$table->integer('solicitado_por');
 			$table->dateTime('solicitado_en');
 			$table->integer('aprobado_por');
