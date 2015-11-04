@@ -1,7 +1,13 @@
-<!--- Nombre Field --->
+<!--- Nombres Field --->
 <div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('nombre', 'Nombre:') !!}
-    {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+    {!! Form::label('nombres', 'Nombres:') !!}
+    {!! Form::text('nombres', null, ['class' => 'form-control']) !!}
+</div>
+
+<!--- Apellidos Field --->
+<div class="form-group col-sm-6 col-lg-4">
+    {!! Form::label('apellidos', 'Apellidos:') !!}
+    {!! Form::text('apellidos', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- Identificacion Field --->
@@ -56,6 +62,12 @@
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('conyugue_lugar_trabajo', 'Conyugue Lugar Trabajo:') !!}
     {!! Form::text('conyugue_lugar_trabajo', null, ['class' => 'form-control']) !!}
+</div>
+
+<!--- Conyugue Telefono Field --->
+<div class="form-group col-sm-6 col-lg-4">
+    {!! Form::label('conyugue_telefono', 'Conyugue Telefono:') !!}
+    {!! Form::text('conyugue_telefono', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- Estado Field --->

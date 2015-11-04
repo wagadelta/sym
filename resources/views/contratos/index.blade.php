@@ -17,57 +17,79 @@
             @else
                 <table class="table">
                     <thead>
-                    <th>Monto</th>
-			<th>No Cuotas</th>
-			<th>Valor Cuota</th>
-			<th>Perido Cobro</th>
-			<th>Solicitado Por</th>
-			<th>Solicitado En</th>
-			<th>Aprobado Por</th>
-			<th>Aprobado En</th>
-			<th>Entrado Por</th>
-			<th>Entregado En</th>
-			<th>Entregado Gps</th>
-			<th>Pagado</th>
-			<th>Juridico Por</th>
-			<th>Juridico En</th>
-			<th>Incobrable Por</th>
-			<th>Incobrable En</th>
-			<th>Rechazado Por</th>
-			<th>Rechazado En</th>
-			<th>Conyugue Lugar Trabajo</th>
-			<th>Estado</th>
-                    <th width="50px">Action</th>
+						<th>Monto</th>
+						<th>No Cuotas</th>
+						<th>Valor Cuota</th>
+						<th>Perido Cobro</th>
+						<th>Solicitado Por</th>
+						<th>Solicitado En</th>
+						<th>Aprobado Por</th>
+						<th>Aprobado En</th>
+						<th>Entrado Por</th>
+						<th>Entregado En</th>
+						<th>Entregado Gps</th>
+						<th>Pagado En</th>
+						<th>Juridico Por</th>
+						<th>Juridico En</th>
+						<th>Incobrable Por</th>
+						<th>Incobrable En</th>
+						<th>Rechazado Por</th>
+						<th>Rechazado En</th>
+						<th>Nombres</th>
+						<th>Apellidos</th>
+						<th>Identificacion</th>
+						<th>Otra Identificacion</th>
+						<th>Fecha Nacimiento</th>
+						<th>Domicilio</th>
+						<th>Telefonos</th>
+						<th>Foto</th>
+						<th>Foto Dpi</th>
+						<th>Conyugue Nombre</th>
+						<th>Conyugue Lugar Trabajo</th>
+						<th>Conyugue Telefono</th>
+						<th>Estado</th>
+						<th width="50px">Action</th>
                     </thead>
                     <tbody>
                      
-                    @foreach($contratos as $contratos)
-                        <tr>
-                            <td>{!! $contratos->monto !!}</td>
-					<td>{!! $contratos->no_cuotas !!}</td>
-					<td>{!! $contratos->valor_cuota !!}</td>
-					<td>{!! $contratos->perido_cobro !!}</td>
-					<td>{!! $contratos->solicitado_por !!}</td>
-					<td>{!! $contratos->solicitado_en !!}</td>
-					<td>{!! $contratos->aprobado_por !!}</td>
-					<td>{!! $contratos->aprobado_en !!}</td>
-					<td>{!! $contratos->entrado_por !!}</td>
-					<td>{!! $contratos->entregado_en !!}</td>
-					<td>{!! $contratos->entregado_gps !!}</td>
-					<td>{!! $contratos->pagado !!}</td>
-					<td>{!! $contratos->juridico_por !!}</td>
-					<td>{!! $contratos->juridico_en !!}</td>
-					<td>{!! $contratos->incobrable_por !!}</td>
-					<td>{!! $contratos->incobrable_en !!}</td>
-					<td>{!! $contratos->rechazado_por !!}</td>
-					<td>{!! $contratos->rechazado_en !!}</td>
-					<td>{!! $contratos->conyugue_lugar_trabajo !!}</td>
-					<td>{!! $contratos->estado !!}</td>
-                            <td>
-                                <a href="{!! route('contratos.edit', [$contratos->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
-                                <a href="{!! route('contratos.delete', [$contratos->id]) !!}" onclick="return confirm('Are you sure wants to delete this Contratos?')"><i class="glyphicon glyphicon-remove"></i></a>
-                            </td>
-                        </tr>
+                    @foreach($contratos as $contrato)
+                    <tr>
+						<td>{!! $contrato->monto !!}</td>
+						<td>{!! $contrato->no_cuotas !!}</td>
+						<td>{!! $contrato->valor_cuota !!}</td>
+						<td>{!! $contrato->perido_cobro !!}</td>
+						<td>{!! $contrato->solicitado_por !!}</td>
+						<td>{!! $contrato->solicitado_en !!}</td>
+						<td>{!! $contrato->aprobado_por !!}</td>
+						<td>{!! $contrato->aprobado_en !!}</td>
+						<td>{!! $contrato->entrado_por !!}</td>
+						<td>{!! $contrato->entregado_en !!}</td>
+						<td>{!! $contrato->entregado_gps !!}</td>
+						<td>{!! $contrato->pagado_en !!}</td>
+						<td>{!! $contrato->juridico_por !!}</td>
+						<td>{!! $contrato->juridico_en !!}</td>
+						<td>{!! $contrato->incobrable_por !!}</td>
+						<td>{!! $contrato->incobrable_en !!}</td>
+						<td>{!! $contrato->rechazado_por !!}</td>
+						<td>{!! $contrato->rechazado_en !!}</td>
+						<td>{!! $contrato->nombres !!}</td>
+						<td>{!! $contrato->apellidos !!}</td>
+						<td>{!! $contrato->identificacion !!}</td>
+						<td>{!! $contrato->otra_identificacion !!}</td>
+						<td>{!! $contrato->fecha_nacimiento !!}</td>
+						<td>{!! $contrato->domicilio !!}</td>
+						<td>{!! $contrato->telefonos !!}</td>
+						<td>{!! $contrato->foto !!}</td>
+						<td>{!! $contrato->foto_dpi !!}</td>
+						<td>{!! $contrato->conyugue_nombre !!}</td>
+						<td>{!! $contrato->conyugue_lugar_trabajo !!}</td>
+						<td>{!! $contrato->conyugue_telefono !!}</td>
+						<td>{!! $contrato->estado !!}</td>
+                        <td>
+                            <a href="{!! route('contratos.edit', [$contrato->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="{!! route('contratos.delete', [$contrato->id]) !!}" onclick="return confirm('Are you sure wants to delete this Contratos?')"><i class="glyphicon glyphicon-remove"></i></a>
+                        </td>
+                    </tr>
                     @endforeach
                     </tbody>
                 </table>

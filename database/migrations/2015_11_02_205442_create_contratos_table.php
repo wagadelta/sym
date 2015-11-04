@@ -27,7 +27,7 @@ class CreateContratosTable extends Migration
 			$table->integer('entrado_por');
 			$table->dateTime('entregado_en');
 			$table->string('entregado_gps');
-			$table->string('pagado');
+			$table->dateTime('pagado_en');
 			$table->integer('juridico_por');
 			$table->dateTime('juridico_en');
 			$table->integer('incobrable_por');
@@ -39,7 +39,7 @@ class CreateContratosTable extends Migration
 			$table->string('apellidos');
 			$table->string('identificacion');
 			$table->string('otra_identificacion');
-			$table->string('fecha_nacimiento');
+			$table->dateTime('fecha_nacimiento');
 			$table->string('domicilio');
 			$table->string('telefonos');
 			$table->string('foto');

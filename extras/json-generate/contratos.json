@@ -12,7 +12,7 @@
 	   "validations": "required"
     },
     {
-	   "field":"perido_cobro:string",
+	   "field":"periodo_cobro:string",
 	   "validations":"required"
     },
     {
@@ -74,6 +74,55 @@
 
     {
         "field":"conyugue_lugar_trabajo:string",
+        "validations":""
+    },
+    
+    {
+        "field":"nombres:string",
+        "validations":""
+    },
+    {
+        "field":"apellidos:string",
+        "validations":""
+    },
+    {
+        "field":"identificacion:string",
+        "validations":""
+    },
+    {
+        "field":"otra_identificacion:string",
+        "validations":""
+    },
+    {
+        "field":"fecha_nacimiento:dateTime",
+        "validations":""
+    },
+    {
+        "field":"domicilio:string",
+        "validations":""
+    },
+    {
+        "field":"telefonos:string",
+        "validations":""
+    },
+    {
+        "field":"foto:string",
+        "validations":""
+    },
+    {
+        "field":"foto_dpi:string",
+        "validations":""
+    },
+    {
+        "field":"conyugue_nombre:string",
+        "validations":""
+    },
+    {
+        "field":"conyugue_lugar_trabajo:string",
+        "validations":""
+    },
+    {
+        "field":"conyugue_telefono:string",
         "validations":""
     },
     {

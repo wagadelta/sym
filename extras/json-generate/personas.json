@@ -1,11 +1,11 @@
 [
     {
-        "field":"nombre:string",
+        "field":"nombres:string",
         "validations": "required"
     },
     {
-        "field":"estado:string",
-        "validations":""
+        "field":"apellidos:string",
+        "validations": "required"
     },
     {
         "field":"identificacion:string",
@@ -42,5 +42,13 @@
     {
         "field":"conyugue_lugar_trabajo:string",
         "validations":""
-    }
+    },
+    {
+        "field":"conyugue_telefono:string",
+        "validations":""
+    },
+    {
+        "field":"estado:string",
+        "validations":""
+    },
 ]

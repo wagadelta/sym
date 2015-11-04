@@ -12,7 +12,8 @@ class Personas extends Model
 	public $timestamps = true;
 
 	public $fillable = [
-	    "nombre",
+	    "nombres",
+		"apellidos",
 		"identificacion",
 		"otra_identificacion",
 		"fecha_nacimiento",
@@ -22,11 +23,13 @@ class Personas extends Model
 		"foto_dpi",
 		"conyugue_nombre",
 		"conyugue_lugar_trabajo",
+		"conyugue_telefono",
 		"estado"
 	];
 
 	public static $rules = [
-	    "nombre" => "required",
+	    "nombres" => "required",
+	    "apellidos" => "required",
 		"identificacion" => "required",
 		"otra_identificacion" => "required",
 		"fecha_nacimiento" => "required"
