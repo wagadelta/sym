@@ -6,6 +6,7 @@ use Mitul\Generator\Utils\ResponseManager;
 use App\Models\Cobros;
 use Illuminate\Http\Request;
 use App\Libraries\Repositories\CobrosRepository;
+use App\Libraries\Repositories\ContratosRepository;
 use Response;
 use Schema;
 
@@ -30,14 +31,13 @@ class CobrosAPIController extends AppBaseController
 	public function index(Request $request)
 	{
 	  $input = $request->all();
-		//return dd($input);
 
 		//$result = $this->cobrosRepository->search($input);
-		$result = $this->cobrosRepository->all();
+		$cobros = $this->cobrosRepository->cobrosToday();
 
-	  ///$cobros = $result[0];
+	  	//$cobros = $result[0];
 
-		return Response::json(ResponseManager::makeResult($result->toArray(), "Cobros retrieved successfully."));
+		return Response::json(ResponseManager::makeResult($cobros, "Cobros retrieved successfully."));
 	}
 
 	public function search($input)

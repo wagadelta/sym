@@ -36,6 +36,20 @@ public function run()
           'rechazado_por' =>  $faker->numberBetween($min = 2, $max = 5)  ,
           'rechazado_en' =>   $faker->dateTimeThisYear($max='now'),
           'conyugue_lugar_trabajo' =>   $faker->address ,
+          // DATOS DE PERSONA ASOCIADA A ESTE CONTRATO
+          'nombres' => $faker->firstNameMale ,
+          'apellidos' => $faker->lastName ,
+          'identificacion' => $faker->isbn13 ,
+          'otra_identificacion' =>  $faker->isbn10 ,
+          'fecha_nacimiento' =>  $faker->dateTimeBetween($startDate = '-50 years', $endDate = 'now') ,
+          'domicilio' =>  $faker->address,
+          'telefonos' =>  $faker->phoneNumber,
+          'foto' =>  'path',
+          'foto_dpi' =>  'path',
+          'conyugue_nombre' =>  $faker->firstNameFemale.' '. $faker->lastName,
+          'conyugue_lugar_trabajo' => $faker->address ,
+          'conyugue_telefono' => $faker->phoneNumber ,
+          // DATOS DE PERSONA
           'estado' => $faker->randomElement($array = array (
             'solicitado',
             'entregado',

@@ -14,7 +14,8 @@ public function run()
     foreach(range(1,1000) as $index)
     {
         DB::table('personas')->insert([
-          'nombre' => $faker->name ,
+          'nombres' => $faker->firstNameMale ,
+          'apellidos' => $faker->lastName ,
           'identificacion' => $faker->isbn13 ,
           'otra_identificacion' =>  $faker->isbn10 ,
           'fecha_nacimiento' =>  $faker->dateTimeBetween($startDate = '-50 years', $endDate = 'now') ,
@@ -22,8 +23,9 @@ public function run()
           'telefonos' =>  $faker->phoneNumber,
           'foto' =>  'path',
           'foto_dpi' =>  'path',
-          'conyugue_nombre' =>  $faker->name,
+          'conyugue_nombre' =>  $faker->firstNameFemale.' '. $faker->lastName,
           'conyugue_lugar_trabajo' => $faker->address ,
+          'conyugue_telefono' => $faker->phoneNumber ,
           'estado' => $faker->randomElement($array = array ('activo','cancelado','suspendido'))
         ]);
     } //foreach

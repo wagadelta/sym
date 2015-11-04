@@ -2,8 +2,8 @@
 
 namespace App\Libraries\Repositories;
 
-
 use App\Models\Cobros;
+use App\Models\Contratos;
 use Illuminate\Support\Facades\Schema;
 
 class CobrosRepository
@@ -16,6 +16,7 @@ class CobrosRepository
 	 */
 	public function all()
 	{
+		//dd(Cobros::all());
 		return Cobros::all();
 	}
 
@@ -79,4 +80,24 @@ class CobrosRepository
 
 		return $cobros;
 	}
+
+	public function cobrosToday(){
+		// $cobrosToday = \DB::table('contratos')
+		// ->where('periodo_cobro', '=', 'diario')
+		// ->select('id', 'monto','no_cuotas', 'valor_cuota', 'periodo_cobro', 'solicitado_por')
+		// ->get();
+
+		$cobrosToday = Contratos::where('periodo_cobro', '=', 'diario')
+		->select('id', 'monto','no_cuotas', 'valor_cuota', 'periodo_cobro', 
+		'nombres', 'apellidos', 'telefonos', 'conyugue_nombre', 'conyugue_lugar_trabajo')
+		->get();
+		//dd($cobrosToday);
+
+		return $cobrosToday;
+		
+		
+	}
+
+
+	
 }

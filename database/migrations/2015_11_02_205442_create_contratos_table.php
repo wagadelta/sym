@@ -34,7 +34,20 @@ class CreateContratosTable extends Migration
 			$table->dateTime('incobrable_en');
 			$table->integer('rechazado_por');
 			$table->dateTime('rechazado_en');
+			// DATOS DE PERSONA ASOCIADA A ESTE CONTRATO
+			$table->string('nombres');
+			$table->string('apellidos');
+			$table->string('identificacion');
+			$table->string('otra_identificacion');
+			$table->string('fecha_nacimiento');
+			$table->string('domicilio');
+			$table->string('telefonos');
+			$table->string('foto');
+			$table->string('foto_dpi');
+			$table->string('conyugue_nombre');
 			$table->string('conyugue_lugar_trabajo');
+			$table->string('conyugue_telefono');
+			// DATOS DE PERSONA
 			$table->string('estado');
 			$table->timestamps();
 		});
