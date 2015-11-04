@@ -12,7 +12,7 @@
 	   "validations": "required"
     },
     {
-	   "field":"periodo_cobro:string",
+	   "field":"perido_cobro:string",
 	   "validations":"required"
     },
     {
@@ -44,7 +44,7 @@
         "validations":""
     },
     {
-        "field":"pagado:string",
+        "field":"pagado_en:dateTime",
         "validations":""
     },
     {
@@ -72,11 +72,6 @@
         "validations":""
     },
 
-    {
-        "field":"conyugue_lugar_trabajo:string",
-        "validations":""
-    },
-    
     {
         "field":"nombres:string",
         "validations":""
