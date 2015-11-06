@@ -48,8 +48,15 @@ class Contratos extends Model
 	public static $rules = [
 	    "monto" => "required",
 		"no_cuotas" => "required",
-		"valor_cuota" => "required",
-		"perido_cobro" => "required"
+		"periodo_cobro" => "required",
+		"solicitado_por" =>"required",
+		"solicitado_en" =>"required",
+		"nombres" =>"required",
+		"apellidos" =>"required",
+		"identificacion" =>"required",
+		"fecha_nacimiento" =>"required",
+		"domicilio" =>"required",
+		"telefonos" =>"required"
 	];
 
 }
