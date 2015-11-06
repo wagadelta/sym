@@ -26,7 +26,7 @@ class Cobros extends Model
 	    "id_contrato" => "required",
 		"id_usuario" => "required",
 		"fecha_pago" => "required",
-		"cuotas_a_pagar" => "required"
+		"cuotas_pagadas" => "required"
 	];
 
 }
