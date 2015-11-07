@@ -30,15 +30,19 @@ class PersonasController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$result = $this->personasRepository->search($input);
+		//$result = $this->personasRepository->search($input)->Paginate(10);
+		$personas = \DB::table('personas')->paginate(15);
+		$personas=setPath('http://dev-wagadelta.c9.io/personas');
+		
+		//dd($personas);
 
-		$personas = $result[0];
+		//$personas = $result[0];
 
-		$attributes = $result[1];
+		//$attributes = $result[1];
 
 		return view('personas.index')
-		    ->with('personas', $personas)
-		    ->with('attributes', $attributes);;
+		    ->with('personas', $personas);
+		    //->with('attributes', $attributes);;
 	}
 
 	/**

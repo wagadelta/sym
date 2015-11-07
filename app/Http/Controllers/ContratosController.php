@@ -30,15 +30,17 @@ class ContratosController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$result = $this->contratosRepository->search($input);
+		//$result = $this->contratosRepository->search($input);
+		$contratos= \DB::table('contratos')->paginate(25);
+		$contratos->setPath('http://dev-wagadelta.c9.io/contratos');
 
-		$contratos = $result[0];
+		//$contratos = $result[0];
 
-		$attributes = $result[1];
+		//$attributes = $result[1];
 
 		return view('contratos.index')
-		    ->with('contratos', $contratos)
-		    ->with('attributes', $attributes);;
+		    ->with('contratos', $contratos);
+		    //->with('attributes', $attributes);;
 	}
 
 	/**

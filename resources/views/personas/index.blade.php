@@ -15,7 +15,8 @@
             @if($personas->isEmpty())
                 <div class="well text-center">No Personas found.</div>
             @else
-                <table class="table">
+            <?php echo $personas->render(); ?>
+                <table class="table" style='overflow: auto;'>
                     <thead>
                     <thead>
                     <th>Nombres</th>
@@ -35,29 +36,30 @@
                     </thead>
                     <tbody>
                      
-                    @foreach($personas as $personas)
+                    @foreach($personas as $persona)
                         <tr>
-                            <td>{!! $personas->nombres !!}</td>
-                            <td>{!! $personas->apellidos !!}</td>
-                            <td>{!! $personas->identificacion !!}</td>
-                            <td>{!! $personas->otra_identificacion !!}</td>
-                            <td>{!! $personas->fecha_nacimiento !!}</td>
-                            <td>{!! $personas->domicilio !!}</td>
-                            <td>{!! $personas->telefonos !!}</td>
-                            <td>{!! $personas->foto !!}</td>
-                            <td>{!! $personas->foto_dpi !!}</td>
-                            <td>{!! $personas->conyugue_nombre !!}</td>
-                            <td>{!! $personas->conyugue_lugar_trabajo !!}</td>
-                            <td>{!! $personas->conyugue_telefono !!}</td>
-                            <td>{!! $personas->estado !!}</td>
+                            <td>{!! $persona->nombres !!}</td>
+                            <td>{!! $persona->apellidos !!}</td>
+                            <td>{!! $persona->identificacion !!}</td>
+                            <td>{!! $persona->otra_identificacion !!}</td>
+                            <td>{!! $persona->fecha_nacimiento !!}</td>
+                            <td>{!! $persona->domicilio !!}</td>
+                            <td>{!! $persona->telefonos !!}</td>
+                            <td>{!! $persona->foto !!}</td>
+                            <td>{!! $persona->foto_dpi !!}</td>
+                            <td>{!! $persona->conyugue_nombre !!}</td>
+                            <td>{!! $persona->conyugue_lugar_trabajo !!}</td>
+                            <td>{!! $persona->conyugue_telefono !!}</td>
+                            <td>{!! $persona->estado !!}</td>
                             <td>
-                                <a href="{!! route('personas.edit', [$personas->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
-                                <a href="{!! route('personas.delete', [$personas->id]) !!}" onclick="return confirm('Are you sure wants to delete this Personas?')"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a href="{!! route('personas.edit', [$persona->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
+                                <a href="{!! route('personas.delete', [$persona->id]) !!}" onclick="return confirm('Are you sure wants to delete this Personas?')"><i class="glyphicon glyphicon-remove"></i></a>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
+                <?php echo $personas->render(); ?>
             @endif
         </div>
     </div>
