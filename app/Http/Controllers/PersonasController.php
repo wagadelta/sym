@@ -30,15 +30,15 @@ class PersonasController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$result = $this->personasRepository->search($input);
-
-		$personas = $result[0];
-
-		$attributes = $result[1];
+	    //dd($request->path());
+		// $result = $this->personasRepository->search($input)->paginate(10);
+		// $personas = $result[0];
+		// $attributes = $result[1];
+		$personas =  \DB::table('personas')->paginate(10);
+		//$personas->setPath($request->url());
 
 		return view('personas.index')
-		    ->with('personas', $personas)
-		    ->with('attributes', $attributes);;
+		    ->with('personas', $personas);
 	}
 
 	/**
