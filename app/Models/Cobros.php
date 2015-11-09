@@ -26,7 +26,9 @@ class Cobros extends Model
 	    "id_contrato" => "required",
 		"id_usuario" => "required",
 		"fecha_pago" => "required",
-		"cuotas_pagadas" => "required"
+		"cuotas_pagadas" => "required",
+		"no_recibo"=> "required_without_all:no_aviso",
+		"no_aviso"=> "required_without_all:no_recibo"
 	];
 
 }
