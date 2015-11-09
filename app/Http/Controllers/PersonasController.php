@@ -34,7 +34,8 @@ class PersonasController extends AppBaseController
 		// $personas = $result[0];
 		// $attributes = $result[1];
 		$personas =  \DB::table('personas')->paginate(10);
-		//$personas->setPath($request->url());
+		//dd($request->url());
+		$personas->setPath($request->url());
 
 		return view('personas.index')
 		    ->with('personas', $personas);

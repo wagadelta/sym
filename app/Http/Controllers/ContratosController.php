@@ -32,7 +32,7 @@ class ContratosController extends AppBaseController
 
 		//$result = $this->contratosRepository->search($input);
 		$contratos= \DB::table('contratos')->paginate(25);
-		$contratos->setPath('http://dev-wagadelta.c9.io/contratos');
+		$contratos->setPath($request->url());
 
 		//$contratos = $result[0];
 
