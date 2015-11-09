@@ -15,6 +15,7 @@
             @if($contratos->isEmpty())
                 <div class="well text-center">No Contratos found.</div>
             @else
+            <?php echo $contratos->render(); ?>
                 <table class="table">
                     <thead>
 						<th>Monto</th>
@@ -57,7 +58,7 @@
 						<td>{!! $contrato->monto !!}</td>
 						<td>{!! $contrato->no_cuotas !!}</td>
 						<td>{!! $contrato->valor_cuota !!}</td>
-						<td>{!! $contrato->perido_cobro !!}</td>
+						<td>{!! $contrato->periodo_cobro !!}</td>
 						<td>{!! $contrato->solicitado_por !!}</td>
 						<td>{!! $contrato->solicitado_en !!}</td>
 						<td>{!! $contrato->aprobado_por !!}</td>
@@ -93,6 +94,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                <?php echo $contratos->render(); ?>
             @endif
         </div>
     </div>

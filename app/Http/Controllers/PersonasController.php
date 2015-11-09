@@ -29,7 +29,6 @@ class PersonasController extends AppBaseController
 	public function index(Request $request)
 	{
 	    $input = $request->all();
-
 	    //dd($request->path());
 		// $result = $this->personasRepository->search($input)->paginate(10);
 		// $personas = $result[0];
