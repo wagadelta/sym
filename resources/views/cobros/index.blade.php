@@ -15,6 +15,7 @@
             @if($cobros->isEmpty())
                 <div class="well text-center">No Cobros found.</div>
             @else
+                {!! $cobros->render() !!}
                 <table class="table">
                     <thead>
                     <th>Id Contrato</th>
@@ -29,24 +30,25 @@
                     </thead>
                     <tbody>
                      
-                    @foreach($cobros as $cobros)
+                    @foreach($cobros as $cobro)
                         <tr>
-                            <td>{!! $cobros->id_contrato !!}</td>
-					<td>{!! $cobros->id_usuario !!}</td>
-					<td>{!! $cobros->fecha_pago !!}</td>
-					<td>{!! $cobros->cuotas_a_pagar !!}</td>
-					<td>{!! $cobros->cuotas_pagadas !!}</td>
-					<td>{!! $cobros->no_recibo !!}</td>
-					<td>{!! $cobros->no_aviso !!}</td>
-					<td>{!! $cobros->estado !!}</td>
+                    <td>{!! $cobro->id_contrato !!}</td>
+					<td>{!! $cobro->id_usuario !!}</td>
+					<td>{!! $cobro->fecha_pago !!}</td>
+					<td>{!! $cobro->cuotas_a_pagar !!}</td>
+					<td>{!! $cobro->cuotas_pagadas !!}</td>
+					<td>{!! $cobro->no_recibo !!}</td>
+					<td>{!! $cobro->no_aviso !!}</td>
+					<td>{!! $cobro->estado !!}</td>
                             <td>
-                                <a href="{!! route('cobros.edit', [$cobros->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
-                                <a href="{!! route('cobros.delete', [$cobros->id]) !!}" onclick="return confirm('Are you sure wants to delete this Cobros?')"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a href="{!! route('cobros.edit', [$cobro->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
+                                <a href="{!! route('cobros.delete', [$cobro->id]) !!}" onclick="return confirm('Are you sure wants to delete this Cobros?')"><i class="glyphicon glyphicon-remove"></i></a>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
+             {!! $cobros->render() !!}
             @endif
         </div>
     </div>

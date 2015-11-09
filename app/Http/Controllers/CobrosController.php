@@ -28,17 +28,19 @@ class CobrosController extends AppBaseController
 	 */
 	public function index(Request $request)
 	{
-	    $input = $request->all();
+	   //$input = $request->all();
 
-		$result = $this->cobrosRepository->search($input);
+		//$result = $this->cobrosRepository->search($input);
 
-		$cobros = $result[0];
+		//$cobros = $result[0];
+		$cobros = \DB::table('cobros')->paginate(25);
 
-		$attributes = $result[1];
+		//$attributes = $result[1];
+		$cobros->setPath($request->url());
 
 		return view('cobros.index')
-		    ->with('cobros', $cobros)
-		    ->with('attributes', $attributes);;
+		    ->with('cobros', $cobros);
+		    //->with('attributes', $attributes);;
 	}
 
 	/**
