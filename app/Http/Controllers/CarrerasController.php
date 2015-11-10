@@ -30,15 +30,13 @@ class CarrerasController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$result = $this->carrerasRepository->search($input);
+		//$result = $this->carrerasRepository->search($input)->paginate(20);
 
-		$carreras = $result[0];
-
-		$attributes = $result[1];
+		$carreras = \DB::table('carreras')->paginate(20);
+		$carreras->setPath($request->url());
 
 		return view('carreras.index')
-		    ->with('carreras', $carreras)
-		    ->with('attributes', $attributes);;
+		    ->with('carreras', $carreras);
 	}
 
 	/**
