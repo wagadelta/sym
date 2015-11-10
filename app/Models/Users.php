@@ -64,4 +64,7 @@ class Users extends Model
 		}
 	}
 
+	public function contratos(){
+		return $this->hasMany('App\Models\Contratos');
+	}
 }

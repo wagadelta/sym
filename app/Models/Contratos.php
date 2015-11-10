@@ -58,5 +58,9 @@ class Contratos extends Model
 		"domicilio" =>"required",
 		"telefonos" =>"required"
 	];
+	
+	public function user(){
+		return $this->belongsTo('App\Models\Users', 'solicitado_por');
+	}
 
 }
