@@ -11,7 +11,7 @@ public function run()
  {
     $faker = Faker::create('es_ES');
 
-    foreach(range(1,25) as $index)
+    foreach(range(1,200) as $index)
      {
         $name = 'Ubicacion '.$faker->sentence($nbWords = 1);
         $slug = Str::slug($name);

@@ -30,15 +30,11 @@ class ImagenesController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$result = $this->imagenesRepository->search($input);
-
-		$imagenes = $result[0];
-
-		$attributes = $result[1];
+		$imagenes = \DB::table('imagenes')->paginate(25);
+		$imagenes->setPath($request->url());
 
 		return view('imagenes.index')
-		    ->with('imagenes', $imagenes)
-		    ->with('attributes', $attributes);;
+		    ->with('imagenes', $imagenes);
 	}
 
 	/**

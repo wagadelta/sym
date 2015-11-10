@@ -21,7 +21,7 @@ class CreateImagenesTable extends Migration
 			$table->string('path');
 			$table->string('archivo');
 			$table->string('slug');
-			$table->integer('tipo_imagen');
+			$table->enum('tipo_imagen', array('full','normal', 'thumb'));
 			$table->text('etiquetas');
 			$table->datetime('fecha_etiqueta');
 			$table->integer('id_ubicacion');

@@ -31,7 +31,7 @@ public function run()
     		'foto' => '',
     		'usuario' => 'superjervin',
     		'password' => Hash::make('jervinpass'),
-    		'id_rol' => 2,  //supervisor
+    		'id_rol' => 2,  //etiquetador
 	    ],
 	    [
       'id_supervisor' => 2,
@@ -44,7 +44,7 @@ public function run()
     		'foto' => '',
     		'usuario' => 'fabio',
     		'password' => Hash::make('fabiopass'),
-    		'id_rol' => 3,  //cobrador
+    		'id_rol' => 3,  //fotografo
 	    ],
 	    	    [
       'id_supervisor' => 0,
@@ -57,7 +57,7 @@ public function run()
     		'foto' => '',
     		'usuario' => 'superwaga',
     		'password' => Hash::make('waga15'),
-    		'id_rol' => 2,  //supervisor
+    		'id_rol' => 2,  //etiquetador
 	    ],
 	    [
       'id_supervisor' => 4,
@@ -70,7 +70,20 @@ public function run()
     		'foto' => '',
     		'usuario' => 'diego',
     		'password' => Hash::make('diegopass'),
-    		'id_rol' => 3,  //supervisor
+    		'id_rol' => 3,  //fotografo
+	    ],
+	    [
+      'id_supervisor' => 4,
+      'identificacion' => '4654656',
+    		'otra_identificacion' => '',
+    		'email' => 'diego2@gmail.com',
+    		'nombres' => 'diego2',
+    		'apellidos' => 'gonzalez fuentes',
+    		'telefonos' => '32155985',
+    		'foto' => '',
+    		'usuario' => 'diego2',
+    		'password' => Hash::make('diegopass'),
+    		'id_rol' => 3,  //fotografo
 	    ]
 	    
 	 ];

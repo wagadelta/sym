@@ -29,6 +29,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UbicacionesTableSeeder');
 		$this->command->info('Ubicaciones table seeded!');
 
+		$this->call('ImagenesTableSeeder');
+		$this->command->info('Imagenes table seeded!');
+
 	}
 
 }
