@@ -20,7 +20,6 @@ class CreateCorredoresTable extends Migration
 			$table->datetime('apellidos');
 			$table->string('slug');
 			$table->text('identificacion');
-			$table->string('perfil');
 			$table->integer('id_carrera');
 			$table->string('estado');
 			$table->timestamps();

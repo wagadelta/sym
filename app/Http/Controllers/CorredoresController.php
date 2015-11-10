@@ -30,15 +30,11 @@ class CorredoresController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$result = $this->corredoresRepository->search($input);
-
-		$corredores = $result[0];
-
-		$attributes = $result[1];
+		$corredores = \DB::table('corredores')->paginate(20);
+		$corredores->setPath($request->url());
 
 		return view('corredores.index')
-		    ->with('corredores', $corredores)
-		    ->with('attributes', $attributes);;
+		    ->with('corredores', $corredores);
 	}
 
 	/**

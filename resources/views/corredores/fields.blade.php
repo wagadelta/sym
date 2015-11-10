@@ -22,12 +22,6 @@
     {!! Form::text('identificacion', null, ['class' => 'form-control']) !!}
 </div>
 
-<!--- Perfil Field --->
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('perfil', 'Perfil:') !!}
-    {!! Form::text('perfil', null, ['class' => 'form-control']) !!}
-</div>
-
 <!--- Id Carrera Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('id_carrera', 'Id Carrera:') !!}

@@ -16,7 +16,6 @@ class Corredores extends Model
 		"apellidos",
 		"slug",
 		"identificacion",
-		"perfil",
 		"id_carrera",
 		"estado"
 	];

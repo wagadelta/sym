@@ -15,10 +15,7 @@
        "field":"identificacion:text",
        "validations": ""
     },
-    {
-	   "field":"perfil:string",
-	   "validations": ""
-    },
+
     {
 	   "field":"id_carrera:integer",
 	   "validations": "required"
