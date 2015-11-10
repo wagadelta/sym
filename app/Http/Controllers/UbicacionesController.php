@@ -30,15 +30,11 @@ class UbicacionesController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$result = $this->ubicacionesRepository->search($input);
-
-		$ubicaciones = $result[0];
-
-		$attributes = $result[1];
+		$ubicaciones = \DB::table('ubicaciones')->paginate(15);
+		$ubicaciones->setPath($request->url());
 
 		return view('ubicaciones.index')
-		    ->with('ubicaciones', $ubicaciones)
-		    ->with('attributes', $attributes);;
+		    ->with('ubicaciones', $ubicaciones);
 	}
 
 	/**

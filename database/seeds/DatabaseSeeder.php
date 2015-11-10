@@ -22,6 +22,12 @@ class DatabaseSeeder extends Seeder {
 		
 		$this->call('CarrerasTableSeeder');
 		$this->command->info('Carreras table seeded!');
+		
+		$this->call('CorredoresTableSeeder');
+		$this->command->info('Corredores table seeded!');
+		
+		$this->call('UbicacionesTableSeeder');
+		$this->command->info('Ubicaciones table seeded!');
 
 	}
 
