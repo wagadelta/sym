@@ -37,6 +37,30 @@
                     <span>Admin. Usuarios</span>
                 </a>
             </li>
+            <li>
+                <a href="/carreras">
+                    <i class="fa fa-clock-o"></i>
+                    <span>Admin. Carreras</span>
+                </a>
+            </li>
+            <li>
+                <a href="/corredores">
+                    <i class="fa fa-child"></i>
+                    <span>Admin. Corredores</span>
+                </a>
+            </li>            
+            <li>
+                <a href="/ubicaciones">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Admin. Ubicaciones</span>
+                </a>
+            </li>            
+            <li>
+                <a href="/imagenes">
+                    <i class="fa fa-picture-o"></i>
+                    <span>Admin. Imagenes</span>
+                </a>
+            </li>            
 
              <li class="treeview">
                 <a href="#">
