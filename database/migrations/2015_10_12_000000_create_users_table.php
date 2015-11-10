@@ -23,8 +23,6 @@ class CreateUsersTable extends Migration {
 			$table->string('apellidos');
 			$table->string('telefonos')->nullable();
 			$table->string('foto')->nullable();
-			$table->string('correlativo_recibo_cobro')->nullable();
-			$table->string('correlativo_recibo_entrega')->nullable();
 			$table->string('usuario');
 			$table->string('password', 60);
 			$table->integer('id_rol')->unsigned();

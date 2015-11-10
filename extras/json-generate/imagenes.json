@@ -1,0 +1,42 @@
+[
+    {
+        "field":"id_fotografo:integer",
+        "validations": "required"
+    },
+    {
+        "field":"id_etiquetador:string",
+        "validations": "required"
+    },
+    {
+        "field":"path:string",
+        "validations": "required"
+    },
+    {
+	   "field":"archivo:string",
+	   "validations": "required"
+    },
+    {
+	   "field":"slug:string",
+	   "validations": "required"
+    },
+    {
+	   "field":"tipo_imagen:integer",
+	   "validations": "required"
+    },
+    {
+       "field":"etiquetas:text",
+       "validations": ""
+    },
+    {
+	   "field":"fecha_etiqueta:datetime",
+	   "validations": ""
+    },
+    {
+	   "field":"id_ubicacion:integer",
+	   "validations": ""
+    },
+    {
+        "field":"estado:string",
+        "validations":""
+    }
+]

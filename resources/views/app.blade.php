@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-    <title>CrediChapín</title>
+    <title>Sports&Marketing</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="{{ asset('/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />    
@@ -33,7 +33,7 @@
     <![endif]--> 
 
 </head>
-<body class="skin-green">
+<body class="skin-blue-light">
         <div class="wrapper">
             @include('includes.header')
             @include('includes.sidebar')
@@ -59,7 +59,7 @@
                 <div class="pull-right hidden-xs">
                     <b>Version</b> 2.0
                 </div>
-                <strong>Copyright &copy; 2014-2015 <a href="#">CrediChapin.</a>.</strong> All rights reserved.
+                <strong>Copyright &copy; 2014-2015 <a href="http://www.sportsandmarketing.com/" target="_blank">Sports&Marketing</a>.</strong> All rights reserved.
             </footer>
         </div><!-- ./wrapper -->
  

@@ -1,0 +1,26 @@
+[
+    {
+        "field":"id_carrera:integer",
+        "validations": "required"
+    },
+    {
+        "field":"nombre:string",
+        "validations": "required"
+    },
+    {
+        "field":"slug:string",
+        "validations": "required"
+    },
+    {
+       "field":"direccion:text",
+       "validations": "required"
+    },
+    {
+	   "field":"geolocalizacion:string",
+	   "validations": ""
+    },
+    {
+        "field":"estado:string",
+        "validations":""
+    }
+]

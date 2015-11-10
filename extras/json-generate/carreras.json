@@ -1,0 +1,26 @@
+[
+    {
+        "field":"nombre:string",
+        "validations": "required"
+    },
+    {
+        "field":"slug:string",
+        "validations": "required"
+    },
+    {
+        "field":"fecha:datetime",
+        "validations": "required"
+    },
+    {
+       "field":"descripcion:text",
+       "validations": "required"
+    },
+    {
+	   "field":"imagen:string",
+	   "validations": ""
+    },
+    {
+        "field":"estado:string",
+        "validations":""
+    }
+]

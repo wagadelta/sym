@@ -1,0 +1,30 @@
+[
+    {
+        "field":"nombres:string",
+        "validations": "required"
+    },
+    {
+        "field":"apellidos:datetime",
+        "validations": "required"
+    },
+    {
+        "field":"slug:string",
+        "validations": "required"
+    },
+    {
+       "field":"identificacion:text",
+       "validations": ""
+    },
+    {
+	   "field":"perfil:string",
+	   "validations": ""
+    },
+    {
+	   "field":"id_carrera:integer",
+	   "validations": "required"
+    },
+    {
+        "field":"estado:string",
+        "validations":""
+    }
+]

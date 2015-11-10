@@ -16,8 +16,6 @@ public function run()
     		'apellidos' => 'arreaga',
     		'telefonos' => '',
     		'foto' => '',
-    		'correlativo_recibo_cobro' => '',
-    		'correlativo_recibo_entrega' => '',
     		'usuario' => 'admin-WAGA',
     		'password' => Hash::make('super15'),
     		'id_rol' => 1,  //administrador
@@ -31,8 +29,6 @@ public function run()
     		'apellidos' => 'arreaga',
     		'telefonos' => '32155985',
     		'foto' => '',
-    		'correlativo_recibo_cobro' => '4',
-    		'correlativo_recibo_entrega' => '4',
     		'usuario' => 'superjervin',
     		'password' => Hash::make('jervinpass'),
     		'id_rol' => 2,  //supervisor
@@ -46,8 +42,6 @@ public function run()
     		'apellidos' => 'gonzalez fuentes',
     		'telefonos' => '32155985',
     		'foto' => '',
-    		'correlativo_recibo_cobro' => '6',
-    		'correlativo_recibo_entrega' => '6',
     		'usuario' => 'fabio',
     		'password' => Hash::make('fabiopass'),
     		'id_rol' => 3,  //cobrador
@@ -61,8 +55,6 @@ public function run()
     		'apellidos' => 'gonzalez arreaga',
     		'telefonos' => '30368985',
     		'foto' => '',
-    		'correlativo_recibo_cobro' => '1',
-    		'correlativo_recibo_entrega' => '1',
     		'usuario' => 'superwaga',
     		'password' => Hash::make('waga15'),
     		'id_rol' => 2,  //supervisor
@@ -76,8 +68,6 @@ public function run()
     		'apellidos' => 'gonzalez fuentes',
     		'telefonos' => '32155985',
     		'foto' => '',
-    		'correlativo_recibo_cobro' => '7',
-    		'correlativo_recibo_entrega' => '7',
     		'usuario' => 'diego',
     		'password' => Hash::make('diegopass'),
     		'id_rol' => 3,  //supervisor

@@ -33,7 +33,7 @@
     <![endif]--> 
 
 </head>
-<body class="skin-green">
+<body class="skin-blue-light">
         <div class="wrapper">
             @include('includes.header-login')
             
@@ -44,7 +44,7 @@
                 <section class="content-header">
                     <h1>
                     AREA PRIVADA
-                    <small>Gestiòn de API REST</small>
+                    <small>Area de Administración</small>
                     </h1>
                     
                 </section>
