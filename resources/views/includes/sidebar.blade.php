@@ -24,7 +24,7 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            <li class="header"INTERCONEXIONES</li>
+            <li class="header"</li>
             <li>
                 <a href="/home">
                     <i class="fa fa-home"></i>
@@ -37,36 +37,7 @@
                     <span>Admin. Usuarios</span>
                 </a>
             </li>
-            <li>
-                <a href="/personas">
-                    <i class="fa fa-users"></i>
-                    <span>Admin. Personas</span>
-                </a>
-            </li>
-             <li>
-                <a href="/contratos">
-                    <i class="fa fa-files-o"></i>
-                    <span>Admin. Contratos</span>
-                </a>
-            </li>
-            <li>
-                <a href="/cobros">
-                    <i class="fa fa-money"></i>
-                    <span>Admin. Cobros</span>
-                </a>
-            </li>
-            <li>
-                <a href="/dispositivos">
-                    <i class="fa fa-mobile"></i>
-                    <span>Admin. Dispositivos</span>
-                </a>
-            </li>
-            <li>
-                <a href="/traslados">
-                    <i class="fa fa-arrows-h"></i>
-                    <span>Admin. Traslados</span>
-                </a>
-            </li>
+
              <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cogs"></i> <span>Catàlogos</span> 
