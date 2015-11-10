@@ -28,17 +28,17 @@
                     </thead>
                     <tbody>
                      
-                    @foreach($corredores as $corredore)
+                    @foreach($corredores as $corredor)
                         <tr>
-                            <td>{!! $corredore->nombres !!}</td>
-        					<td>{!! $corredore->apellidos !!}</td>
-        					<td>{!! $corredore->slug !!}</td>
-        					<td>{!! $corredore->identificacion !!}</td>
-        					<td>{!! $corredore->id_carrera !!}</td>
-        					<td>{!! $corredore->estado !!}</td>
+                            <td>{!! $corredor->nombres !!}</td>
+        					<td>{!! $corredor->apellidos !!}</td>
+        					<td>{!! $corredor->slug !!}</td>
+        					<td>{!! $corredor->identificacion !!}</td>
+        					<td>{!! $corredor->id_carrera !!}</td>
+        					<td>{!! $corredor->estado !!}</td>
                             <td>
-                                <a href="{!! route('corredores.edit', [$corredore->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
-                                <a href="{!! route('corredores.delete', [$corredore->id]) !!}" onclick="return confirm('Are you sure wants to delete this Corredores?')"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a href="{!! route('corredores.edit', [$corredor->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
+                                <a href="{!! route('corredores.delete', [$corredor->id]) !!}" onclick="return confirm('Are you sure wants to delete this Corredores?')"><i class="glyphicon glyphicon-remove"></i></a>
                             </td>
                         </tr>
                     @endforeach
