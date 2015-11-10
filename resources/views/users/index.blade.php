@@ -7,7 +7,7 @@
         @include('flash::message')
 
         <div class="row">
-            <h1 class="pull-left">Usuarios</h1>
+            <h1 class="pull-left"> <i class="fa fa-user-secret"></i> Usuarios</h1>
             <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('users.create') !!}">Agregar Nuevo</a>
         </div>
 

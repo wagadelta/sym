@@ -7,7 +7,7 @@
         @include('flash::message')
 
         <div class="row">
-            <h1 class="pull-left">Corredores</h1>
+            <h1 class="pull-left"> <i class="fa fa-child"></i> Corredores</h1>
             <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('corredores.create') !!}">Add New</a>
         </div>
 
