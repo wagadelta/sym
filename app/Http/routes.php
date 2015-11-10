@@ -48,3 +48,43 @@ Route::group(['middleware' => 'auth'], function() {
     ]);
 }); //middleware auth    
 
+
+
+Route::resource('api/carreras', 'API\CarrerasAPIController');
+
+Route::resource('carreras', 'CarrerasController');
+
+Route::get('carreras/{id}/delete', [
+    'as' => 'carreras.delete',
+    'uses' => 'CarrerasController@destroy',
+]);
+
+
+Route::resource('api/corredores', 'API\CorredoresAPIController');
+
+Route::resource('corredores', 'CorredoresController');
+
+Route::get('corredores/{id}/delete', [
+    'as' => 'corredores.delete',
+    'uses' => 'CorredoresController@destroy',
+]);
+
+
+Route::resource('api/ubicaciones', 'API\UbicacionesAPIController');
+
+Route::resource('ubicaciones', 'UbicacionesController');
+
+Route::get('ubicaciones/{id}/delete', [
+    'as' => 'ubicaciones.delete',
+    'uses' => 'UbicacionesController@destroy',
+]);
+
+
+Route::resource('api/imagenes', 'API\ImagenesAPIController');
+
+Route::resource('imagenes', 'ImagenesController');
+
+Route::get('imagenes/{id}/delete', [
+    'as' => 'imagenes.delete',
+    'uses' => 'ImagenesController@destroy',
+]);
