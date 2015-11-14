@@ -30,9 +30,9 @@ class ImagenesController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$imagenes = \DB::table('imagenes')->paginate(25);
+		$imagenes = \DB::table('imagenes')->paginate(50);
 		$imagenes->setPath($request->url());
-
+dd($imagenes->render());
 		return view('imagenes.index')
 		    ->with('imagenes', $imagenes);
 	}
