@@ -1,0 +1,449 @@
+/* uni. header row */    
+body{
+    font-family: helvetica;
+    font-size: 12px;
+}
+
+body, .navbar-default, .navbar-vertical-left ul.navbar-nav, 
+.navbar-vertical-left, ul#menu-principal > li > a{
+    background: #0067b1;
+    color: #fff;
+}
+
+.logo{
+    
+    margin: 7px 0 0 0;
+    
+}
+
+.logo-gyt{
+    display:block;
+}
+
+ul#menu-principal, ul#munu-card, ul#menu-acciones, menu#menu-izquierda, 
+#mensaje div.panel-body>ul, #dashboard div.panel-body>ul, 
+.antecedentes, #horario, #data-fila, ul#llamada, #card, ul#atencion, #mensajeMotivo ul > li.well, #mensajeHistorial ul > li.well, ul#favoritos > li, .labTab, #medicina, #contentInsumos > div.panel-body > ul > li.well, #contentProcedimientos > div.panel-body > ul > li.well{
+    list-style-type: none;  
+}
+
+ul#menu-principal, ul#menu-acciones, ul#llamada{
+   float: right; 
+}
+
+ul#menu-principal li, ul#menu-principal li a, ul#menu-card li, ul#menu-acciones li, ul#llamada li {
+    display: inline-block;    
+}
+
+ul#menu-card li, ul#llamada li{
+    padding-right: 10px
+}
+
+ul#menu-card li#nombre,ul#menu-card, #menu-acciones{
+    margin-top: 10px;
+    margin-bottom: 25px    
+}
+
+.img-redondeo{
+    border-radius: 40px;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    
+    margin-top: -15px;
+}
+
+.img-redondeo-ficha{
+    border-radius: 40px;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;    
+    margin-top: -15px;
+    width: 50px;
+    height: auto;
+}
+
+
+
+ul#menu-principal > li, ul#menu-acciones > li, ul#llamada{
+    padding-right:20px ;
+}
+
+ul#menu-principal > li > a, ul#menu-acciones > li > a, div#botonera-fila a{
+    color: #fff;
+}
+
+ul#menu-principal li, ul#menu-card li,  ul#menu-card li, ul#menu-acciones li, .navbar-vertical-left {
+    float:left;
+}
+
+ul#menu-principal li a, ul#menu-principal li form {
+   
+    line-height: 50px;
+}
+
+.navbar-default .navbar-nav > li > a, .nav-tabs > li > a{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover{
+    background: #fff;
+    color: #0067b1;
+}
+
+/* end - header row */
+
+
+.row h2{
+    font-size: 20px;
+}
+
+.favoritos, .insumos{
+    border-right: 1px solid #fff;
+}
+
+.tab-content div{
+    min-height: 40px;
+    
+}
+
+.folders-container ul#tabs > li.active a{
+    color: #0067b1;
+    
+}
+
+.folders-container ul#tabs > li a:hover{
+    color: #0067b1;
+    background: #fff;
+    
+}
+
+
+
+/*  Inicia Menú vertical */
+nav#menu-izquierda-container.navbar.navbar-default{
+    border: none;
+}
+#menu-izquierda-container{
+    z-index: 9999;
+    /*background-color: #000;*/
+}
+#menu-izquierda li a{
+        color: #FFF;
+}
+
+menu#menu-izquierda li{
+        background: rgba(61,61,61,0.85);
+}
+
+menu#menu-izquierda li a:hover{
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+}
+
+#menu-izquierda li.active a:hover{
+    background-color: #FFF;
+}
+#menu-izquierda li a:hover, #menu-izquierda li.active a:hover{
+        color: #0067b1;
+}
+
+#menu-izquierda li a span{
+  -webkit-transition: -webkit-transform .3s;
+     -moz-transition:    -moz-transform .3s;
+          transition:         transform .3s;
+
+  -webkit-transform: translateX(-100px);
+     -moz-transform: translateX(-100px);
+          transform: translateX(-100px);
+    display: none;
+}
+
+
+
+#menu-izquierda:hover > li > a span{
+  -webkit-transition: -webkit-transform .3s;
+     -moz-transition:    -moz-transform .3s;
+          transition:         transform .3s;
+
+  -webkit-transform: translateX(1px);
+     -moz-transform: translateX(1px);
+          transform: translateX(1px);
+    display: block;
+    margin-top: -20px;
+    margin-left: 32px;
+    min-width: 140px;
+    
+
+}
+
+ul#favoritos > li, ul#favoritos{
+    
+margin-top: 10px
+}
+
+figure{
+  margin-bottom: 20px;
+}
+/* Finaliza vertical menu */
+
+/* inicia acordeon */
+
+#contenedor-fichas{
+    color: #0067b1;
+    overflow-y: scroll;
+    height: 500px;
+}
+
+#contenedor-fichas > div.panel-body{
+    margin-top: 5px;
+}
+
+hr.gen-color{
+    border: 0.5px solid #1f1f1f;
+}
+
+#content-extra.container.col-md-12 {
+    
+    /*background:#fff !important;*/
+    color: #0067b1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+    -moz-border-bottom-left-radius: 15px;
+    -moz-border-bottom-right-radius: 15px;
+    
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    
+    
+}
+
+/* inicia fila llamar siguiente */
+
+div#fila-llamar-siguiente{
+    
+    border-right: 1px solid #fff;
+}
+
+div#filaTransito{
+    
+    border-right: 1px solid #fff;
+}
+
+/* finaliza fila llamar siguiente */
+
+/* finaliza acordeon */
+
+
+
+
+/* pagina principal */
+
+h3.limit, h2.limit{
+    border-bottom: 1px solid #fff;
+}
+
+#content-message-dashboard .init {
+    
+    max-height:700px;
+
+}
+
+#mensaje, #dashboard{
+    overflow-x:scroll;
+}
+
+#mensaje div.panel-body>ul, #dashboard div.panel-body>ul{
+    
+    color: #0067b1;
+    max-height: 415px;
+    
+    -webkit-border-radius:  5px;
+    -moz-border-radius:     5px;
+    border-radius:          5px;    
+    padding-top:           25px;
+}
+
+.well:hover{
+    
+    -webkit-box-shadow: 5px 4px 22px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    5px 4px 22px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         5px 4px 22px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+
+#contenedor-fichas > div.atendido{
+       
+    background: rgba(2, 180, 36, 0.50);
+    color: #464443;
+    
+    
+    
+}
+
+
+#contenedor-fichas > div.activo{
+    
+    -webkit-box-shadow: 5px 4px 22px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    5px 4px 22px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         5px 4px 22px 0px rgba(50, 50, 50, 0.75);
+    background: #0067b1;
+    border: 1px solid #000;
+    color: #fff;
+    
+}
+
+#content-extra.container.col-md-12.atendido{
+    color: #464443;
+}
+
+
+#content-extra.container.col-md-12.activo{
+    color: #fff;
+}
+
+
+/* fin pagina Principal  */
+
+
+/* Inicia Botonera */
+
+.header-s, .content-f{
+    padding-top: 10px;
+    color: #0067b1;
+    background:#fff;
+    border-radius: 5px;
+    /*max-height: 450px;*/
+    
+    
+}
+
+#espaciador{
+    margin-top: 15px;
+}
+
+.antecedentes, .labTab{
+    color: #0067b1;
+    
+}
+
+#atenciones{
+    
+    margin-top:25px
+}
+
+
+
+
+/* Ingreso antecedentes */
+
+
+a.nuevo-antecedente, a.add-signo-vital{
+    text-decoration: none;
+    color: #FFF;
+}
+
+a.nuevo-antecedente:hover, a.add-signo-vital:hover{
+    text-decoration: none;
+    color: #FFF;   
+}
+
+a.add-signo-vital > i{
+    margin-top:20px;
+}
+
+
+.image-style{
+    border-radius: 10px;
+    width: 250px;
+    height: auto;
+
+}
+
+
+#acciones > ul > li{
+    
+    border: 1px solid #cecece;
+    padding: 6px 15px 7px 14px;
+   
+    
+    border-radius: 8px;
+    margin-left: 8px
+    
+}
+
+#acciones > ul > li:hover{
+    background: rgba(255,255,255,0.2);
+}
+
+    
+
+.nuevo-examen-fisico{
+  text-decoration: none;
+    color: #FFF;    
+    text-align: left;
+
+}
+
+.nuevo-examen-fisico:hover{
+  text-decoration: none;
+    color: #FFF;    
+    text-align: left;
+
+}
+
+.separador{
+    margin-bottom: 15px;
+}
+
+#mensajeMotivo, #mensajeHistorial, #contentInsumos, #contentProcedimientos{
+    
+    overflow-x: scroll;   
+    max-height: 250px;
+    min-height: 250px;
+    color: #0067b1;
+
+}
+
+#paquetes, #medicamentos{
+    margin-top:10px;
+}
+
+.checkbox{
+    color:#0067b1;
+}
+
+div#historico > div.checkbox, div.row > div.col-sm-6 > div.checkbox, div#ordenesMedicas > div.col-md-6 > div.checkbox, #ordenesMedicina > div.checkbox{
+    color: #fff;
+}
+
+div#ordenesMedicas{
+    border-left: 1px solid #fff;
+    
+}
+
+button#buscar{
+    
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+select#selectOrdenes, select#selectMedicinas, select#selectProcedimientos{
+    margin-top: 15px;
+    color: #0067b1;
+}
+
+#medicina{
+    font-size:16px;
+    margin-top: 12px
+}
+
+#contentInsumos > div.panel-body > ul > li.well, #contentProcedimientos > div.panel-body > ul > li.well{
+    color: #0067b1;
+    
+}
+
+
+
+
+
+
