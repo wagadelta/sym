@@ -7,8 +7,6 @@ use App\Libraries\Repositories\ImagenesRepository;
 use Mitul\Controller\AppBaseController;
 use Response;
 use Flash;
-//use ImageIntervention;
-//use Intervention\Image\ImageManager;
 use Intervention\Image\Facades\Image;
 
 class ImagenesController extends AppBaseController
@@ -158,19 +156,22 @@ class ImagenesController extends AppBaseController
 	
 	public function upload(Request $request)
 	{
-	//dd( base_path());
-	// read image from temporary file
-	//$manager = new ImageManager(array('driver' => 'dg'));
+		
+	$watermark = Image::make(base_path().'/storage/images/logot.png');
 	$img 	 	= Image::make($_FILES['file']['tmp_name']);
-	//$image 	 = $manager->make('public/foo.jpg')->resize(300, 200);
 	
-	
-	// resize image
-	$img->fit(300, 200);
-	
-	$fileName = $_FILES['file']['name'];
-	// save image
+	$img->resize(800, 600)->insert($watermark, 'bottom-right');
+	$fileName = "800x600_".$_FILES['file']['name'];
 	$img->save( base_path().'/storage/images/'.$fileName);
+	
+	$img->resize(300, 200)->insert($watermark, 'bottom-right');
+	$fileName = "300x200_".$_FILES['file']['name'];
+	$img->save( base_path().'/storage/images/'.$fileName);
+
+	$img->resize(75, 75)->insert($watermark, 'bottom-right');
+	$fileName = "75x75_".$_FILES['file']['name'];
+	$img->save( base_path().'/storage/images/'.$fileName);
+
 
 	}
 
