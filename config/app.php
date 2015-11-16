@@ -202,7 +202,6 @@ return [
 		'HTML'  	=> 'Illuminate\Html\HtmlFacade',
 		'Flash' 	=> 'Laracasts\Flash\Flash',
 		'Image' 	=> 'Intervention\Image\Facades\Image',
-
 	],
 
 ];

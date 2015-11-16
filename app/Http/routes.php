@@ -15,8 +15,36 @@
 
 Route::get('/', 'WelcomeController@index');
 
+
+// usage inside a laravel route
+// Route::get('/intervention', function()
+// {
+//     $img = Image::make('foo.jpg')->resize(300, 200);
+
+//     return $img->response('jpg');
+// });
+
+
 route::get('/phpinfo', function(){
-    echo phpinfo();
+        if(extension_loaded('gd')) {
+            echo '<pre>';
+            print_r(gd_info());
+            echo '</pre>';
+        }
+        else {
+            echo 'GD is not available.';
+        }
+        
+        if(extension_loaded('imagick')) {
+            $imagick = new Imagick();
+            echo '<pre>';
+            print_r($imagick->queryFormats());
+            echo '</pre>';
+        }
+        else {
+            echo 'ImageMagick is not available.';
+        }
+    //echo phpinfo();
 });
 
 Route::get('home', 'HomeController@index');
@@ -92,3 +120,5 @@ Route::get('imagenes/{id}/delete', [
     'as' => 'imagenes.delete',
     'uses' => 'ImagenesController@destroy',
 ]);
+
+Route::post('/image-upload', 'ImagenesController@upload');

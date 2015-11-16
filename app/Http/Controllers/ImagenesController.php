@@ -7,6 +7,9 @@ use App\Libraries\Repositories\ImagenesRepository;
 use Mitul\Controller\AppBaseController;
 use Response;
 use Flash;
+//use ImageIntervention;
+//use Intervention\Image\ImageManager;
+use Intervention\Image\Facades\Image;
 
 class ImagenesController extends AppBaseController
 {
@@ -32,7 +35,7 @@ class ImagenesController extends AppBaseController
 
 		$imagenes = \DB::table('imagenes')->paginate(50);
 		$imagenes->setPath($request->url());
-dd($imagenes->render());
+//dd($imagenes->render());
 		return view('imagenes.index')
 		    ->with('imagenes', $imagenes);
 	}
@@ -151,6 +154,24 @@ dd($imagenes->render());
 		Flash::message('Imagenes deleted successfully.');
 
 		return redirect(route('imagenes.index'));
+	}
+	
+	public function upload(Request $request)
+	{
+	//dd( base_path());
+	// read image from temporary file
+	//$manager = new ImageManager(array('driver' => 'dg'));
+	$img 	 	= Image::make($_FILES['file']['tmp_name']);
+	//$image 	 = $manager->make('public/foo.jpg')->resize(300, 200);
+	
+	
+	// resize image
+	$img->fit(300, 200);
+	
+	$fileName = $_FILES['file']['name'];
+	// save image
+	$img->save( base_path().'/storage/images/'.$fileName);
+
 	}
 
 }

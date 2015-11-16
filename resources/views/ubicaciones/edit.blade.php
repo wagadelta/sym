@@ -11,4 +11,18 @@
 
     {!! Form::close() !!}
 </div>
+
+<form action="/image-upload" class="dropzone" method="post">
+  <div class="fallback" id="myId">
+    <input name="file" type="file" multiple />
+  </div>
+</form>
+
+
+@endsection
+
+@section('script')
+<script>
+$("div#myId").dropzone({ url: "/storage" });
+</script>
 @endsection
