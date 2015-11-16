@@ -13,7 +13,7 @@
 
 \Event::subscribe('App\Subscriber\Auth');
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'InicioController@index');
 
 
 // usage inside a laravel route
@@ -44,7 +44,7 @@ route::get('/phpinfo', function(){
         else {
             echo 'ImageMagick is not available.';
         }
-    //echo phpinfo();
+    echo phpinfo();
 });
 
 Route::get('home', 'HomeController@index');
@@ -122,3 +122,6 @@ Route::get('imagenes/{id}/delete', [
 ]);
 
 Route::post('/image-upload', 'ImagenesController@upload');
+
+
+Route::get('login', 'WelcomeController@index');
