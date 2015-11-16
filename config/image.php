@@ -15,6 +15,7 @@ return array(
     |
     */
 
-    'driver' => 'gd'
+    'driver' => 'gd'  // use it, after read: http://www.sitepoint.com/imagick-vs-gd/
+    //'driver' => 'imagick'
 
 );
