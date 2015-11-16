@@ -15,6 +15,10 @@
 
 Route::get('/', 'WelcomeController@index');
 
+route::get('/phpinfo', function(){
+    echo phpinfo();
+});
+
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
