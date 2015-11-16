@@ -150,7 +150,7 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
 		'Mitul\Generator\GeneratorServiceProvider',
-
+		'Intervention\Image\ImageServiceProvider',
 	],
 
 	/*
@@ -198,9 +198,10 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-		'Form'  => 'Illuminate\Html\FormFacade',
-		'HTML'  => 'Illuminate\Html\HtmlFacade',
-		'Flash' => 'Laracasts\Flash\Flash'
+		'Form'  	=> 'Illuminate\Html\FormFacade',
+		'HTML'  	=> 'Illuminate\Html\HtmlFacade',
+		'Flash' 	=> 'Laracasts\Flash\Flash',
+		'Image' 	=> 'Intervention\Image\Facades\Image',
 
 	],
 
