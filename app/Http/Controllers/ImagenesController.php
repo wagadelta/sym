@@ -7,6 +7,7 @@ use App\Libraries\Repositories\ImagenesRepository;
 use Mitul\Controller\AppBaseController;
 use Response;
 use Flash;
+use Intervention\Image\Facades\Image;
 
 class ImagenesController extends AppBaseController
 {
@@ -32,7 +33,7 @@ class ImagenesController extends AppBaseController
 
 		$imagenes = \DB::table('imagenes')->paginate(50);
 		$imagenes->setPath($request->url());
-dd($imagenes->render());
+//dd($imagenes->render());
 		return view('imagenes.index')
 		    ->with('imagenes', $imagenes);
 	}
@@ -151,6 +152,27 @@ dd($imagenes->render());
 		Flash::message('Imagenes deleted successfully.');
 
 		return redirect(route('imagenes.index'));
+	}
+	
+	public function upload(Request $request)
+	{
+		
+	$watermark = Image::make(base_path().'/storage/images/logot.png');
+	$img 	 	= Image::make($_FILES['file']['tmp_name']);
+	
+	$img->resize(800, 600)->insert($watermark, 'bottom-right');
+	$fileName = "800x600_".$_FILES['file']['name'];
+	$img->save( base_path().'/storage/images/'.$fileName);
+	
+	$img->resize(300, 200)->insert($watermark, 'bottom-right');
+	$fileName = "300x200_".$_FILES['file']['name'];
+	$img->save( base_path().'/storage/images/'.$fileName);
+
+	$img->resize(75, 75)->insert($watermark, 'bottom-right');
+	$fileName = "75x75_".$_FILES['file']['name'];
+	$img->save( base_path().'/storage/images/'.$fileName);
+
+
 	}
 
 }
