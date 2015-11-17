@@ -1,6 +1,7 @@
 @extends('layout.publicalayout')
 
 @section('content')
+        @include('flash::message')
         <div  class="col-xs-2 hidden-xs">
         		CONTENT 1
         	</div>
@@ -63,30 +64,12 @@
                     </div>
                     <h1>Últimas Carreras</h1>
                     <div class="row center col-md-12">
-                    	<div class="col-lg-3 col-md-4 col-xs-6"> 
-                    	    <a href="#" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6"> 
-                    	    <a href="#" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6"> 
-                    	    <a href="#" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6"> 
-                    	    <a href="#" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6"> 
-                    	    <a href="#" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6"> 
-                    	    <a href="#" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6"> 
-                    	    <a href="#" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6"> 
-                    	    <a href="#" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
-                        </div>
+                        @foreach($images as $imagenes)    
+                            	<div class="col-lg-3 col-md-4 col-xs-6"> 
+                            	    <a href="#" class="thumbnail"> <img src="/uploads/{{ $imagenes->archivo }}"> </img></a>
+                                </div>
+                                
+                        @endforeach
                     </div>
                 </div>
         	</div>

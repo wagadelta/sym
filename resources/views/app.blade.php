@@ -33,7 +33,7 @@
     <![endif]--> 
 
 </head>
-<body class="skin-blue-light">
+<body class="skin-green-light">
         <div class="wrapper">
             @include('includes.header')
             @include('includes.sidebar')

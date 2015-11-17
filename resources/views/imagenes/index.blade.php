@@ -37,7 +37,7 @@
                             <td>{!! $imagen->id_fotografo !!}</td>
         					<td>{!! $imagen->id_etiquetador !!}</td>
         					<td><img src="uploads/{!! $imagen->archivo !!}" width="75" height="75">
-        					    <br>{!! $imagen->path !!}
+        					    <!--<br>{!! $imagen->path !!} -->
         					</td>
         					<td>{!! $imagen->archivo !!}</td>
         					<td>{!! $imagen->slug !!}</td>
