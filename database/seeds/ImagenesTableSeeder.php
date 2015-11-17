@@ -3,6 +3,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Faker\Factory as Faker;
+use Intervention\Image\Facades\Image;
 
 
 class ImagenesTableSeeder extends Seeder {
@@ -12,7 +13,7 @@ public function run()
     $faker = Faker::create('es_ES');
     $imagePath = '/storage/images/';
     
-    foreach(range(1,25) as $index)
+    foreach(range(1,75) as $index)
      {
         $name = 'Carrera '.$faker->sentence($nbWords = 3);
         $val = $faker->numberBetween($min = 2, $max = 10);
@@ -26,17 +27,60 @@ public function run()
      $ubicacionId = $faker->numberBetween($min = 1, $max = 200);
      
      
-    // thumbnail
-      $imageFake     = file_get_contents($faker->imageUrl('150', '100', 'sports'));
-      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-thumb.jpg';
-      $thumb_to_save = base_path() .$imagePath. $imageName;
-      file_put_contents($thumb_to_save, $imageFake);
+    // FULL image
+      $watermark = Image::make(base_path().'/storage/images/sym-watermark.png');
+      $imageFake     = file_get_contents($faker->imageUrl('1024', '768'));
+      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-full.jpg';
+      $pathToSave    = base_path() .$imagePath. $imageName;
+      file_put_contents($pathToSave, $imageFake);
+      $img = Image::make($pathToSave);
+      $img->insert($watermark, 'bottom-right')->save($pathToSave);
     
       $imagen =
       [
       'id_fotografo'      => $fotografoId,
       'id_etiquetador'    => $faker->randomElement($array = array (2,4)),
-      'path'              => $thumb_to_save,
+      'path'              => $pathToSave,
+      'archivo'           => $imageName,
+      'slug'              => $imageName,
+      'tipo_imagen'       => 'full', //$faker->randomElement($array = array ('full','normal','thumb')),
+      'etiquetas'         => $etiquetas,
+      'fecha_etiqueta'    => $faker->dateTimeThisYear($max='now'),
+      'id_ubicacion'      => $ubicacionId,
+      'estado'            => '1'
+      ];
+      DB::table('imagenes')->insert($imagen);
+      
+    // NORMAL  image
+      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-normal.jpg';
+      $pathToSave    = base_path() .$imagePath. $imageName;
+      $img->resize(452, 340)->save($pathToSave);
+    
+      $imagen =
+      [
+      'id_fotografo'      => $fotografoId,
+      'id_etiquetador'    => $faker->randomElement($array = array (2,4)),
+      'path'              => $pathToSave,
+      'archivo'           => $imageName,
+      'slug'              => $imageName,
+      'tipo_imagen'       => 'normal', //$faker->randomElement($array = array ('full','normal','thumb')),
+      'etiquetas'         => $etiquetas,
+      'fecha_etiqueta'    => $faker->dateTimeThisYear($max='now'),
+      'id_ubicacion'      => $ubicacionId,
+      'estado'            => '1'
+      ];
+      DB::table('imagenes')->insert($imagen);
+
+// THUMB  image
+      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-thumb.jpg';
+      $pathToSave    = base_path() .$imagePath. $imageName;
+      $img->resize(150, 100)->save($pathToSave);
+    
+      $imagen =
+      [
+      'id_fotografo'      => $fotografoId,
+      'id_etiquetador'    => $faker->randomElement($array = array (2,4)),
+      'path'              => $pathToSave,
       'archivo'           => $imageName,
       'slug'              => $imageName,
       'tipo_imagen'       => 'thumb', //$faker->randomElement($array = array ('full','normal','thumb')),
@@ -45,7 +89,8 @@ public function run()
       'id_ubicacion'      => $ubicacionId,
       'estado'            => '1'
       ];
-      DB::table('imagenes')->insert($imagen);
+      DB::table('imagenes')->insert($imagen);      
+
     } //foreach
  }//function
 }//class

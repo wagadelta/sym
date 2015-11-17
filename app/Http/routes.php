@@ -113,7 +113,7 @@ Route::get('ubicaciones/{id}/delete', [
 
 
 Route::resource('api/imagenes', 'API\ImagenesAPIController');
-
+Route::get('api/imagenes/tipo_imagen/{tipo_imagen}', 'API\ImagenesAPIController@tipo_imagen');
 Route::resource('imagenes', 'ImagenesController');
 
 Route::get('imagenes/{id}/delete', [
