@@ -11,7 +11,7 @@ class ImagenesTableSeeder extends Seeder {
 public function run()
  {
     $faker = Faker::create('es_ES');
-    $imagePath = '/storage/images/';
+    $imagePath = '/public/uploads/';
     
     foreach(range(1,75) as $index)
      {
@@ -28,7 +28,7 @@ public function run()
      
      
     // FULL image
-      $watermark = Image::make(base_path().'/storage/images/sym-watermark.png');
+      $watermark = Image::make(base_path().'/public/images/sym-watermark.png');
       $imageFake     = file_get_contents($faker->imageUrl('1024', '768'));
       $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-full.jpg';
       $pathToSave    = base_path() .$imagePath. $imageName;
