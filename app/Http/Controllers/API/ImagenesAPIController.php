@@ -153,4 +153,15 @@ class ImagenesAPIController extends AppBaseController
 
 		return Response::json(ResponseManager::makeResult($id, "Imagenes deleted successfully."));
 	}
+	
+	
+	public function tipo_imagen($tipoImagen, Request $request)
+	{
+
+		//$contratos= \DB::table('contratos')->where('estado','=', $estado);
+		$query = Imagenes::query();
+		$query->where('tipo_imagen', '=', $tipoImagen);
+		$imagenes = $query->get();
+		return Response::json(ResponseManager::makeResult($imagenes->toArray(), "Imagenes por tipo."));
+	}
 }
