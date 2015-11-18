@@ -12,11 +12,12 @@
                         	<img src="/images/logo.png">
                         </a> 
                     </div>
+                    
                     <div class="row">
-                        
-                        <div class="col-md-12 banner">
-                        	
-                        	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+                      <div class="col-md-12 banner">
+                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+                                    <!-- Indicators -->
+                                                	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
                                   <!-- Indicators -->
                                   <ol class="carousel-indicators">
                                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -26,30 +27,22 @@
                                  
                                   <!-- Wrapper for slides -->
                                   <div class="carousel-inner">
-                                      
-                                    <div class="item active">
+                                      <?php  
+                                        $Counter = 1;
+                                      ?>
+                                    @foreach($imagenes as $slide)
+                                    <div class="item <?php echo ($Counter == 1 )? 'active' : '';   ?>">
                                         
-                                          <img src="/images/banner.jpg" alt="...">
+                                          <img src="uploads/{{$slide->archivo}}" alt="..." style="width:auto;height:auto">
                                           <div class="carousel-caption">
-                                              <h3>Caption Text</h3>
+                                              <h3>S&M</h3>
                                           </div>
                                       
                                     </div>
-                                    
-                                    <div class="item">
-                                      <img src="/images/banner.jpg" alt="...">
-                                      <div class="carousel-caption">
-                                          <h3>Caption Text</h3>
-                                      </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                      <img src="/images/banner.jpg" alt="...">
-                                      <div class="carousel-caption">
-                                          <h3>Caption Text</h3>
-                                      </div>
-                                    </div>
-                                    
+                                    <?php  
+                                        $Counter++;
+                                      ?>
+                                    @endforeach
                                   </div>
                                  
                                   <!-- Controls -->
@@ -59,23 +52,25 @@
                                   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
                                     <span class="glyphicon glyphicon-chevron-right"></span>
                                   </a>
-                                </div> <!-- Carousel -->
-                        	
-                       		<div class="col-md-8 search ">
-                            	<input type="text" class="searchinput vertical" placeholder="Busca un corredor">
-                                <button class="searchbutton vertical"> </button> 				               	
-                        	</div>
-                        </div>
+                              </div>
                         
+                              <div class="col-md-8 search ">
+                              <input type="text" class="searchinput vertical" id="qry" placeholder="Busca un corredor">
+                              <button class="searchbutton vertical" id="goSearch"> </button> 				               	
+                              </div>
+                        </div>
+                      </div>
                     </div>
-                    <h1>Carreras Recientes</h1>
+                    <div class="row">
                     <div class="row center col-md-12">
+                      <h1>Carreras Recientes</h1>
                         @foreach($runners as $runn)    
                             	<div class="col-lg-3 col-md-4 col-xs-6"> 
                             	    <a href="carrera/{{$runn->id}}" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
                             	    <p class="text-justify images-caption">{{ $runn->nombre }}</p>
                                 </div>
                         @endforeach
+                    </div>
                     </div>
                 </div>
         	</div>
@@ -84,4 +79,18 @@
         	</div>
 
 
+@endsection
+
+@section('script')
+<script>
+     jQuery(document).ready(function($) {
+         
+        
+        $('#goSearch').on('click', function(e){
+            var searchUrl = 'http://' + document.location.hostname + "/corredores/id/"+$('#qry').val();
+            //alert(searchUrl);
+            window.location.href = searchUrl;
+        });// onchange
+    });// jQuery
+</script>
 @endsection
