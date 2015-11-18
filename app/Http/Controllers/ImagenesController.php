@@ -8,6 +8,7 @@ use Mitul\Controller\AppBaseController;
 use Response;
 use Flash;
 use Intervention\Image\Facades\Image;
+use App\Models\Imagenes;
 
 class ImagenesController extends AppBaseController
 {
@@ -173,6 +174,18 @@ class ImagenesController extends AppBaseController
 	$img->save( base_path().'/public/uploads/'.$fileName);
 
 
+	}
+	
+	public function searchById($id = null, Request $request)
+	{
+		$imagenes= Imagenes::where('etiquetas', 'LIKE', "%$id%")
+							->where ('tipo_imagen', 'full')
+							->get();
+		//dd($imagenes);
+		//$NombreCorredor = $imagenes->corredor()->name; // TODO: DEBE DE SETEAR LOS RELATIONSHIPS.
+		return view('resultados.byname')
+		    ->with('images', $imagenes);
+		    //->with('corredorName', $NombreCorredor)   // TODO
 	}
 
 }

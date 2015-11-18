@@ -20,11 +20,7 @@
                     <thead>
                     <th>Nombres</th>
 			<th>Apellidos</th>
-			<th>Slug</th>
-			<th>Identificacion</th>
-			<th>Id Carrera</th>
-			<th>Estado</th>
-                    <th width="50px">Action</th>
+			<th>Imagenes</th>
                     </thead>
                     <tbody>
                      
@@ -32,14 +28,7 @@
                         <tr>
                             <td>{!! $corredor->nombres !!}</td>
         					<td>{!! $corredor->apellidos !!}</td>
-        					<td>{!! $corredor->slug !!}</td>
-        					<td>{!! $corredor->identificacion !!}</td>
-        					<td>{!! $corredor->id_carrera !!}</td>
-        					<td>{!! $corredor->estado !!}</td>
-                            <td>
-                                <a href="{!! route('corredores.edit', [$corredor->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
-                                <a href="{!! route('corredores.delete', [$corredor->id]) !!}" onclick="return confirm('Are you sure wants to delete this Corredores?')"><i class="glyphicon glyphicon-remove"></i></a>
-                            </td>
+        					<td><a href ="/corredores/{!! $corredor->id !!}/images">Ver Fotos</a></td>
                         </tr>
                     @endforeach
                     </tbody>
