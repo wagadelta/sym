@@ -7,6 +7,7 @@
     <title>T4M SPORTS</title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/bootstrap/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/bootstrap/ekko-ligthbox.min.css" rel="stylesheet" type="text/css" />
 
 
 </head>
@@ -28,14 +29,15 @@
                     , Guatemala Centro América &copy;</p>    
         </div>
     </footer>
-
+       
     <!-- jQuery -->
     <script src="/bootstrap/js/jquery.js"></script>
     <script src="/bootstrap/js/jquery-1.11.3.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/bootstrap/js/bootstrap.min.js"></script>
-
+    <script src="/bootstrap/js/ekko-lightbox.min.js"></script>
+     @yield('script')
 </body>
 
 </html>

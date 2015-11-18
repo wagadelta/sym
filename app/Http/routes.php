@@ -14,6 +14,8 @@
 \Event::subscribe('App\Subscriber\Auth');
 
 Route::get('/', 'InicioController@index');
+Route::get('carrera/{id}','InicioController@locationRunner');
+Route::get('/carrera/location/{id}', 'InicioController@runnerImgs');
 
 
 // usage inside a laravel route

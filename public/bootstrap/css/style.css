@@ -49,6 +49,21 @@ h1{
 	padding:15px;
 }
 
+.search-internal{
+	z-index:999999; 
+	position:relative; 
+	background-color:transparent; 
+	height:18%;	
+	border:3px  solid rgba(255,255,255,0.50);
+	border-radius:100px;
+	width:80%;
+	left:10%;
+	top:15%;
+	bottom:-20%;
+	margin:0 auto;
+	padding:15px;
+}
+
 .searchinput{
 	background-color:transparent;
 	border:none;
@@ -123,6 +138,18 @@ h1{
 .linkCopy, .linkCopy:hover, a.linkCopy:visited{
 	text-decoration:none;
 	color: #fff;
+}
+
+.images-caption
+{
+	font-size: 11px;
+	
+}
+
+.internal-hiegth
+{
+	max-height: 50%;
+	width: 100%;
 }
 
 

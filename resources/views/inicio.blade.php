@@ -1,7 +1,7 @@
 @extends('layout.publicalayout')
 
 @section('content')
-        @include('flash::message')
+       
         <div  class="col-xs-2 hidden-xs">
         		CONTENT 1
         	</div>
@@ -20,30 +20,36 @@
                                   <!-- Indicators -->
                                   <ol class="carousel-indicators">
                                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                                     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                                   </ol>
                                  
                                   <!-- Wrapper for slides -->
                                   <div class="carousel-inner">
+                                      
                                     <div class="item active">
-                                      <img src="/images/banner.jpg" alt="...">
-                                      <div class="carousel-caption">
-                                          <h3>Caption Text</h3>
-                                      </div>
+                                        
+                                          <img src="/images/banner.jpg" alt="...">
+                                          <div class="carousel-caption">
+                                              <h3>Caption Text</h3>
+                                          </div>
+                                      
                                     </div>
+                                    
                                     <div class="item">
                                       <img src="/images/banner.jpg" alt="...">
                                       <div class="carousel-caption">
                                           <h3>Caption Text</h3>
                                       </div>
                                     </div>
+                                    
                                     <div class="item">
                                       <img src="/images/banner.jpg" alt="...">
                                       <div class="carousel-caption">
                                           <h3>Caption Text</h3>
                                       </div>
                                     </div>
+                                    
                                   </div>
                                  
                                   <!-- Controls -->
@@ -62,13 +68,13 @@
                         </div>
                         
                     </div>
-                    <h1>Últimas Carreras</h1>
+                    <h1>Carreras Recientes</h1>
                     <div class="row center col-md-12">
-                        @foreach($images as $imagenes)    
+                        @foreach($runners as $runn)    
                             	<div class="col-lg-3 col-md-4 col-xs-6"> 
-                            	    <a href="#" class="thumbnail"> <img src="/uploads/{{ $imagenes->archivo }}"> </img></a>
+                            	    <a href="carrera/{{$runn->id}}" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
+                            	    <p class="text-justify images-caption">{{ $runn->nombre }}</p>
                                 </div>
-                                
                         @endforeach
                     </div>
                 </div>

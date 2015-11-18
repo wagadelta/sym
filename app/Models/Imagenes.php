@@ -35,16 +35,56 @@ class Imagenes extends Model
 		"tipo_imagen" => "required"
 	];
 	
-	public static function ImgNormal()
+	
+	public static function ImgLastRunner()
+	{
+		return DB::table('carreras')
+			->select('id', 'nombre')
+			->orderBy('id', 'desc')
+			->skip(0)
+			->take(8)
+			->get();
+	}
+	
+	
+	public static function ImgSlideShow()
 	{
 		
 		return DB::table('imagenes')
-			->join('ubicaciones', 'ubicaciones.id','=','imagenes.id_ubicacion')
-			->select('imagenes.*','ubicaciones.nombre')
-				->where('tipo_imagen', '=', 'normal')
-			->skip(10)
-			->take(5)
+			->select('id', 'archivo')
+			->where('tipo_imagen', '=', 'full')
+			->orderBy('id', 'desc')
+			->skip(0)
+			->take(3)
 			->get();
 	}
+	
+	public static function ImgUbicaciones($id)
+	{
+		
+		return DB::table('ubicaciones')
+		->select('id', 'nombre')
+		->where('id_carrera', '=', $id)
+		->orderBy('id_carrera', 'desc')
+		->skip(0)
+		->take(8)
+		->get();
+	}
+	
+	public static function ImgRunners($id)
+	{
+		
+		return DB::table('imagenes')
+		->select('id', 'archivo','tipo_imagen','etiquetas')
+		->where('tipo_imagen', '=', 'full')
+		->where('id_ubicacion', '=', $id)
+		->orderBy('id', 'desc')
+		->skip(0)
+		->take(12)
+		->get();
+	}
+	
+	
+	
 
 }

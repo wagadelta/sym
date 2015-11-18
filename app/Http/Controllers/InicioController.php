@@ -12,13 +12,7 @@ use Illuminate\Http\Request;
 
 class InicioController extends Controller {
 
-	private $imagenesRepository;
-	
-	function __construct(ImagenesRepository $imagenesRepo)
-	{
-		$this->imagenesRepository = $imagenesRepo;
-		$this->middleware('guest');
-	}
+	//private $imagenesRepository;
 	
 	/*
 	public function __construct()
@@ -29,10 +23,26 @@ class InicioController extends Controller {
 	
 	public function index()
 	{
-		$images = Imagenes::ImgNormal();
-		//return $images;
-		return view('inicio', compact('images'));
+		$runners = Imagenes::ImgLastRunner();
+		$imagenes = Imagenes::ImgSlideShow();
+		//return $imagenes;
+		return view('inicio', compact('runners', 'imagenes'));
 		
+	}
+	
+	public function locationRunner($id)
+	{
+		
+		$locationRun = Imagenes::ImgUbicaciones($id);
+		return view('ubicaciones', compact('locationRun'));
+		
+	}
+	
+	public function runnerImgs($id)
+	{
+		$images = Imagenes::ImgRunners($id);
+		//return $images;
+		return view('imagesxlocate',compact('images'));
 	}
 	
 	
