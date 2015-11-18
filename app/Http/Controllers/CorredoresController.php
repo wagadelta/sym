@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Requests\CreateCorredoresRequest;
 use Illuminate\Http\Request;
 use App\Libraries\Repositories\CorredoresRepository;
+use App\Models\Corredores;
 use Mitul\Controller\AppBaseController;
 use Response;
 use Flash;
@@ -151,6 +152,25 @@ class CorredoresController extends AppBaseController
 		Flash::message('Corredores deleted successfully.');
 
 		return redirect(route('corredores.index'));
+	}
+	
+	
+	public function searchByName($qry = null, Request $request)
+	{
+		$corredores= Corredores::where('nombres', 'LIKE', "%$qry%")
+							->orWhere('apellidos', 'LIKE', "%$qry%")
+							->get();
+							
+							//dd($corredores);
+							//->paginate(10);
+		//$corredores->setPath($request->url());
+		//$cobros->setPath($request->url());
+		return view('corredores.results')
+		    ->with('corredores', $corredores)
+		    ->with('qry',$qry)
+		    ;
+		
+		
 	}
 
 }

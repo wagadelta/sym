@@ -66,8 +66,8 @@ class Imagenes extends Model
 		->select('id', 'nombre')
 		->where('id_carrera', '=', $id)
 		->orderBy('id_carrera', 'desc')
-		->skip(0)
-		->take(8)
+		/*->skip(0)
+		->take(8)*/
 		->get();
 	}
 	
@@ -79,8 +79,8 @@ class Imagenes extends Model
 		->where('tipo_imagen', '=', 'full')
 		->where('id_ubicacion', '=', $id)
 		->orderBy('id', 'desc')
-		->skip(0)
-		->take(12)
+		/*->skip(0)
+		->take(12)*/
 		->get();
 	}
 	

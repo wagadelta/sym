@@ -24,7 +24,7 @@
                         	</div>
                         </div>
                     </div>
-                    <h1>Ubicaiones</h1>
+                    <h1>Ubicaciones</h1>
                     <div class="row center col-md-12">
                         @foreach($locationRun as $location)    
                             	<div class="col-lg-3 col-md-4 col-xs-6"> 

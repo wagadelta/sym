@@ -94,6 +94,8 @@ Route::get('carreras/{id}/delete', [
 ]);
 
 
+Route::get('corredores/id/{qry?}', 'CorredoresController@searchByName');
+
 Route::resource('api/corredores', 'API\CorredoresAPIController');
 
 Route::resource('corredores', 'CorredoresController');

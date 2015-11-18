@@ -157,20 +157,20 @@ class ImagenesController extends AppBaseController
 	public function upload(Request $request)
 	{
 		
-	$watermark = Image::make(base_path().'/storage/images/logot.png');
+	$watermark = Image::make(base_path().'/public/images/logot.png');
 	$img 	 	= Image::make($_FILES['file']['tmp_name']);
 	
 	$img->resize(800, 600)->insert($watermark, 'bottom-right');
 	$fileName = "800x600_".$_FILES['file']['name'];
-	$img->save( base_path().'/storage/images/'.$fileName);
+	$img->save( base_path().'/public/uploads/'.$fileName);
 	
 	$img->resize(300, 200)->insert($watermark, 'bottom-right');
 	$fileName = "300x200_".$_FILES['file']['name'];
-	$img->save( base_path().'/storage/images/'.$fileName);
+	$img->save( base_path().'/public/uploads/'.$fileName);
 
 	$img->resize(75, 75)->insert($watermark, 'bottom-right');
 	$fileName = "75x75_".$_FILES['file']['name'];
-	$img->save( base_path().'/storage/images/'.$fileName);
+	$img->save( base_path().'/public/uploads/'.$fileName);
 
 
 	}

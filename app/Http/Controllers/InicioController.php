@@ -20,7 +20,7 @@ class InicioController extends Controller {
 		$this->middleware('guest');
 	}*/
 
-	
+	# Muestra las ultimas carreras
 	public function index()
 	{
 		$runners = Imagenes::ImgLastRunner();
@@ -30,6 +30,7 @@ class InicioController extends Controller {
 		
 	}
 	
+	// Muestra todas las ubicaciones de la carrera
 	public function locationRunner($id)
 	{
 		
@@ -38,12 +39,15 @@ class InicioController extends Controller {
 		
 	}
 	
+	// Muestra todas las imagenes que pertenecen a una ubicación
 	public function runnerImgs($id)
 	{
 		$images = Imagenes::ImgRunners($id);
 		//return $images;
 		return view('imagesxlocate',compact('images'));
 	}
+	
+
 	
 	
 }
