@@ -16,7 +16,7 @@ public function run()
     foreach(range(1,75) as $index)
      {
         $name = 'Carrera '.$faker->sentence($nbWords = 3);
-        $val = $faker->numberBetween($min = 2, $max = 10);
+        $val = $faker->numberBetween($min = 2, $max = 15);
         $etiquetas="";
         foreach(range(1,$val) as $index)
          {

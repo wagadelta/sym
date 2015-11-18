@@ -23,7 +23,7 @@
                         	</div>
                         </div>
                     </div>
-                    <h1>Corredores</h1>
+                    <h1>Corredor: {{ $corredorData->apellidos}}, {{ $corredorData->nombres}}</h1>           
                     <div class="row center col-md-12">
                         @foreach($images as $image)    
                             	<div class="col-lg-3 col-md-4 col-xs-6"> 

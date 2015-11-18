@@ -9,6 +9,7 @@ use Response;
 use Flash;
 use Intervention\Image\Facades\Image;
 use App\Models\Imagenes;
+use App\Models\Corredores;
 
 class ImagenesController extends AppBaseController
 {
@@ -178,13 +179,16 @@ class ImagenesController extends AppBaseController
 	
 	public function searchById($id = null, Request $request)
 	{
-		$imagenes= Imagenes::where('etiquetas', 'LIKE', "%$id%")
+		$imagenes= Imagenes::where('etiquetas', 'LIKE', "%|$id|%")
 							->where ('tipo_imagen', 'full')
 							->get();
-		//dd($imagenes);
+		$corredor= Corredores::where('id', $id)
+							->first();							
+		//dd($corredor);
 		//$NombreCorredor = $imagenes->corredor()->name; // TODO: DEBE DE SETEAR LOS RELATIONSHIPS.
 		return view('resultados.byname')
-		    ->with('images', $imagenes);
+		    ->with('images', $imagenes)
+		    ->with('corredorData', $corredor);
 		    //->with('corredorName', $NombreCorredor)   // TODO
 	}
 
