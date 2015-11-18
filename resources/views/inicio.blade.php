@@ -17,7 +17,7 @@
                       <div class="col-md-12 banner">
                          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
                                     <!-- Indicators -->
-                                                	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
                                   <!-- Indicators -->
                                   <ol class="carousel-indicators">
                                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -33,7 +33,7 @@
                                     @foreach($imagenes as $slide)
                                     <div class="item <?php echo ($Counter == 1 )? 'active' : '';   ?>">
                                         
-                                          <img src="uploads/{{$slide->archivo}}" alt="..." style="width:auto;height:auto">
+                                          <img src="uploads/{{$slide->archivo}}" alt="..." class="image-size-slide">
                                           <div class="carousel-caption">
                                               <h3>S&M</h3>
                                           </div>
@@ -53,12 +53,12 @@
                                     <span class="glyphicon glyphicon-chevron-right"></span>
                                   </a>
                               </div>
-                        
-                              <div class="col-md-8 search ">
-                              <input type="text" class="searchinput vertical" id="qry" placeholder="Busca un corredor">
-                              <button class="searchbutton vertical" id="goSearch"> </button> 				               	
-                              </div>
                         </div>
+                          <div class="col-md-8 search-internal-slide">
+                            
+                              <input type="text" class="searchinput vertical form-control" id="qry" placeholder="Busca un corredor" >
+                              <button class="searchbutton vertical form-control" id="goSearch" type="submit"> </button>
+                          </div>
                       </div>
                     </div>
                     <div class="row">

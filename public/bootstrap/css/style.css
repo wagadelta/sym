@@ -54,12 +54,25 @@ h1{
 	position:relative; 
 	background-color:transparent; 
 	height:18%;	
-	border:3px  solid rgba(255,255,255,0.50);
+	border:3px  solid rgba(255,255,255,0.80);
 	border-radius:100px;
 	width:80%;
 	left:10%;
-	top:15%;
-	bottom:-20%;
+	bottom:95%;
+	margin:0 auto;
+	padding:15px;
+}
+
+.search-internal-slide{
+	z-index:999999; 
+	position:relative; 
+	background-color:transparent; 
+	height:18%;	
+	border:3px  solid rgba(255,255,255,0.80);
+	border-radius:100px;
+	width:80%;
+	left:10%;
+	bottom:80%;
 	margin:0 auto;
 	padding:15px;
 }
@@ -89,6 +102,10 @@ h1{
 	position: relative;
  	top: 50%;
 	transform: translateY(-50%);	
+}
+
+.vertical-corecc{
+	transform: translateY(-1%);	
 }
 
 .banner{
@@ -140,17 +157,29 @@ h1{
 	color: #fff;
 }
 
+.color-text-b{
+	color:#000;
+}
+
 .images-caption
 {
-	font-size: 11px;
+	font-size: 8px;
+	
 	
 }
 
-.internal-hiegth
+.internal-hieght
 {
-	max-height: 10%;
+	max-height: 100%;
 	width: 100%;
 }
+
+.image-size-slide
+{
+	height: 330px !important;
+	width: 100%;
+}
+
 
 
 

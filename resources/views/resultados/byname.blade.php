@@ -15,9 +15,9 @@
                         
                         <div class="col-md-12 banner">
                         	
-                            <img src="/images/banner.jpg" class="img-responsive internal-hiegth"/>
+                            <img src="/images/banner.jpg" class="img-responsive internal-hieght"/>
                         	
-                       		<div class="col-md-8 search-internal ">
+                       		<div class="col-md-8 search-internal">
                             	<input type="text" class="searchinput vertical" placeholder="Busca un corredor">
                                 <button class="searchbutton vertical"> </button> 				               	
                         	</div>
@@ -41,4 +41,25 @@
         		CONTENT 3
         	</div>
 
+@endsection
+
+@section('script')
+<script>
+     jQuery(document).ready(function($) {
+         
+        
+        $('#goSearch').on('click', function(e){
+            var searchUrl = 'http://' + document.location.hostname + "/corredores/id/"+$('#qry').val();
+            //alert(searchUrl);
+            window.location.href = searchUrl;
+        });// onchange
+    });// jQuery
+</script>
+
+<script type="text/javascript">
+            $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            }); 
+        </script>
 @endsection
