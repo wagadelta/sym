@@ -114,7 +114,8 @@ Route::get('ubicaciones/{id}/delete', [
 
 Route::resource('api/imagenes', 'API\ImagenesAPIController');
 Route::get('api/imagenes/tipo_imagen/{tipo_imagen}', 'API\ImagenesAPIController@tipo_imagen');
-Route::get('imagenes/etiquetar/{imageId?}', 'ImagenesController@etiquetar');
+Route::get('imagenes/etiquetar', 'ImagenesController@getCarrera');
+Route::get('imagenes/etiquetar/carrera/{idCarrera}', 'ImagenesController@etiquetar');
 Route::resource('imagenes', 'ImagenesController');
 
 Route::get('imagenes/{id}/delete', [

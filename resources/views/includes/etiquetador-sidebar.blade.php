@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="/users">
+                <a href="/imagenes/etiquetar">
                     <i class="fa fa-user-secret"></i>
                     <span>Etiquetar</span>
                 </a>
