@@ -33,7 +33,7 @@ class ImagenesController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$imagenes = \DB::table('imagenes')->orderBy('id', 'desc')->paginate(50);
+		$imagenes = \DB::table('imagenes')->orderBy('id_ubicacion', 'desc')->paginate(50);
 		$imagenes->setPath($request->url());
 //dd($imagenes->render());
 		return view('imagenes.index')
