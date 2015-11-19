@@ -174,5 +174,33 @@ class ImagenesController extends AppBaseController
 
 
 	}
+	
+	public function etiquetar($imageId =null, Request $request){
+		//dd($imageId);
+		
+		// validar rol de usuario
+		
+		if (\Auth::user()->id_rol == 2 ){  // if is Etiquetador ROL
+ 			return view('proyectos.show')->with('proyecto', $proyecto);   //Admin view
+		}else{
+			
+		// validar si ya seleciono carrera )
+		
+			$proyectos = \DB::table('proyectos')->where('id_cliente',\Auth::user()->id_cliente)->get();
+			$comentarios = \DB::table('comentarios')->where('id_proyecto', $id)->orderBy('created_at', 'desc')->paginate(25);
+			$comentarios->setPath('http://ts50-wagagt.c9.io/proyectos/'.$id);
+			//dd($comentarios);
+			return view('proyectos.client-show')
+			->with('proyectos',$proyectos)
+			->with('proyecto',$proyecto)
+			->with('comentarios', $comentarios);
+			
+		} //else auth
+		
+		// mostrar la siguiente imagen sin etiquetar o nueva
+		
+		
+	}
 
 }
+
