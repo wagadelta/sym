@@ -19,7 +19,8 @@
             
                 <table class="table table-striped table-condensed">
                     <thead>
-                    <th>Nombre</th>
+            <td>Carrera</td>
+            <th>Nombre</th>
 			<th>Slug</th>
 			<th>Fecha</th>
 			<th>Descripcion</th>
@@ -31,6 +32,7 @@
                      
                     @foreach($carreras as $carrera)
                         <tr>
+                            <td>{!! $carrera->id !!}</td>
                             <td>{!! $carrera->nombre !!}</td>
 					<td>{!! $carrera->slug !!}</td>
 					<td>{!! $carrera->fecha !!}</td>

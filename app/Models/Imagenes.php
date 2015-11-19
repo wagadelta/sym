@@ -39,7 +39,7 @@ class Imagenes extends Model
 	public static function ImgLastRunner()
 	{
 		return DB::table('carreras')
-			->select('id', 'nombre')
+			->select('id', 'nombre','imagen')
 			->orderBy('id', 'desc')
 			->skip(0)
 			->take(8)
@@ -53,16 +53,16 @@ class Imagenes extends Model
 		return DB::table('imagenes')
 			->select('id', 'archivo')
 			->where('tipo_imagen', '=', 'full')
-			->orderBy('id', 'desc')
+			->orderBy('id', 'asc')
 			->skip(0)
-			->take(3)
+			->take(10)
 			->get();
 	}
 	
-	public static function ImgUbicaciones($id)
+	public static function ImgRunners($id)
 	{
 		
-		return DB::table('ubicaciones')
+		return DB::table('imagenes')
 		->select('id', 'nombre')
 		->where('id_carrera', '=', $id)
 		->orderBy('id_carrera', 'desc')
@@ -71,17 +71,34 @@ class Imagenes extends Model
 		->get();
 	}
 	
-	public static function ImgRunners($id)
+	public static function ImgsRunners($id)
 	{
 		
-		return DB::table('imagenes')
-		->select('id', 'archivo','tipo_imagen','etiquetas')
-		->where('tipo_imagen', '=', 'full')
-		->where('id_ubicacion', '=', $id)
-		->orderBy('id', 'desc')
-		/*->skip(0)
-		->take(12)*/
-		->get();
+		 //$nameR = DB::table('users')->where('name', 'John')->pluck('name');
+		 
+		 
+		 $imagenes = DB::table('ubicaciones as u')
+			->join('imagenes as i', 'i.id_ubicacion', '=', 'u.id')
+			->select('i.id',  'i.archivo', 'i.id_ubicacion', 'u.id_carrera as carrera')
+			->where('i.tipo_imagen', '=', 'full')
+			->where('u.id_carrera', '=', $id)
+			->get();
+			
+		 
+		
+		
+		return  $imagenes;
+		
+		
+	}
+	public static function nameRunner($id)
+	{
+		
+		 $nameR = DB::table('carreras')->where('id', $id)->pluck('nombre');
+		 
+		return $nameR; 
+		
+		
 	}
 	
 	

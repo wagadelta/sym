@@ -182,4 +182,12 @@ h1{
 
 
 
+.centerT {
+     float: none;
+     margin: 0 auto;
+}
 
+.modal-footer{
+	text-align: left;
+	color: #000;
+}

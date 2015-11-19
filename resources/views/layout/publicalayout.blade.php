@@ -6,8 +6,11 @@
     <meta charset="utf-8">
     <title>T4M SPORTS</title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/bootstrap/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/bootstrap/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/bootstrap/css/bootstrap-ligthbox.min.css" rel="stylesheet" type="text/css">
     <link href="/bootstrap/ekko-ligthbox.min.css" rel="stylesheet" type="text/css" />
+    <link href="/bootstrap/css/style.css" rel="stylesheet" type="text/css">
+    
 
 
 </head>

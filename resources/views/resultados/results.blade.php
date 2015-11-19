@@ -2,37 +2,37 @@
 
 @section('content')
        
-        <div  class="col-xs-2 hidden-xs">
+        <div  class="col-lg-2 col-md-2 hidden-xs">
         		CONTENT 1
         	</div>
-        	<div class="col-md-8 div-center">
+        	<div class="col-lg-8 col-md-8 col-xs-12 div-center">
             	<div class="row">
-                	<div id="logo" class="col-md-12">
+                	<div id="logo" class="col-lg-12 col-md-12 col-xs-12">
                     	<a href="/" >
                         	<img src="/images/logo.png">
                         </a> 
                     </div>
                     
                     <div class="row">
-                      <div class="col-md-12 banner">
+                      <div class="col-lg-12 col-md-12 col-xs-12 banner">
                          <img src="/images/banner.jpg" class="img-responsive internal-hiegth"/>
                       </div>
                     </div>
                     <div class="row">
-                        <div class="row center col-md-12">
+                        <div class="row center col-lg-12 col-md-12 col-xs-12">
                               @include('flash::message')
         
-                                <div class="row">
+                                <div class="row col-lg-12 col-md-12 col-xs-12">
                                     <h1 class="pull-left"> <i class="fa fa-child"></i> Resultado de búsqueda {{ $qry }}</h1>
                                     <!--<a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('corredores.create') !!}">Add New</a>-->
                                 </div>
                                 
-                                 <div class="row">
+                                 <div class="row col-lg-12 col-md-12 col-xs-12 centerT">
                                     @if($corredores->isEmpty())
                                         <div class="well text-center color-text-b"> <h5> No hay corredores para esta busqueda. </h5></div>
                                     @else
                                     
-                                        <table class="table table-striped table-condensed color-text-b">
+                                        <table class="well table table-striped tablb-condensed color-text-b ">
                                             <thead>
                                             <th>Nombres</th>
                         			<th>Apellidos</th>
@@ -44,7 +44,11 @@
                                                 <tr>
                                                     <td>{!! $corredor->nombres !!}</td>
                                 					<td>{!! $corredor->apellidos !!}</td>
-                                					<td><a href ="/corredores/{!! $corredor->id !!}/images">Ver Fotos</a></td>
+                                					<td>
+                                					    <a href ="/corredores/{!! $corredor->id !!}/images" title="Ver imágenes relacionadas">
+                                					    <i class="fa fa-camera fa-2x"></i>
+                                					    </a>
+                                					</td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
@@ -56,7 +60,7 @@
                     </div>
                 </div>
         	</div>
-       	 	<div class="col-xs-2 hidden-xs">
+       	 	<div class="col-lg-2 col-md-2 hidden-xs">
         		CONTENT 3
         	</div>
 

@@ -31,7 +31,7 @@ class CorredoresController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$corredores = \DB::table('corredores')->paginate(20);
+		$corredores = \DB::table('corredores')->orderBy('id', 'desc')->paginate(20);
 		$corredores->setPath($request->url());
 
 		return view('corredores.index')
@@ -167,8 +167,7 @@ class CorredoresController extends AppBaseController
 		//$cobros->setPath($request->url());
 		return view('resultados.results')
 		    ->with('corredores', $corredores)
-		    ->with('qry',$qry)
-		    ;
+		    ->with('qry',$qry);
 		
 		
 	}

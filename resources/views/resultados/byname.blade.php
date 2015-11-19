@@ -2,7 +2,7 @@
 
 @section('content')
         <div  class="col-xs-2 hidden-xs">
-        		CONTENT 1
+        		PUBLICIDAD
         	</div>
         	<div class="col-md-8 div-center">
             	<div class="row">
@@ -38,7 +38,7 @@
                 </div>
         	</div>
        	 	<div class="col-xs-2 hidden-xs">
-        		CONTENT 3
+        	PUBLICIDAD
         	</div>
 
 @endsection
@@ -61,5 +61,5 @@
                 event.preventDefault();
                 $(this).ekkoLightbox();
             }); 
-        </script>
+</script>
 @endsection

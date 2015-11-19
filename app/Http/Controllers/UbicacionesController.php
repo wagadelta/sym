@@ -30,7 +30,7 @@ class UbicacionesController extends AppBaseController
 	{
 	    $input = $request->all();
 
-		$ubicaciones = \DB::table('ubicaciones')->paginate(15);
+		$ubicaciones = \DB::table('ubicaciones')->orderBy('id', 'desc')->paginate(15);
 		$ubicaciones->setPath($request->url());
 
 		return view('ubicaciones.index')

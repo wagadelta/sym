@@ -25,7 +25,7 @@ class InicioController extends Controller {
 	{
 		$runners = Imagenes::ImgLastRunner();
 		$imagenes = Imagenes::ImgSlideShow();
-		//return $imagenes;
+		//return $runners;
 		return view('inicio', compact('runners', 'imagenes'));
 		
 	}
@@ -34,8 +34,12 @@ class InicioController extends Controller {
 	public function locationRunner($id)
 	{
 		
-		$locationRun = Imagenes::ImgUbicaciones($id);
-		return view('ubicaciones', compact('locationRun'));
+		$allImgsRun = Imagenes::ImgsRunners($id);
+		$runner = Imagenes:: nameRunner($id);
+		//dd($runner);
+		return view('ubicaciones')
+				->with('allImgsRun', $allImgsRun)
+				->with('name', $runner);
 		
 	}
 	
@@ -43,7 +47,6 @@ class InicioController extends Controller {
 	public function runnerImgs($id)
 	{
 		$images = Imagenes::ImgRunners($id);
-		//return $images;
 		return view('imagesxlocate',compact('images'));
 	}
 	

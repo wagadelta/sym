@@ -32,7 +32,7 @@ class CarrerasController extends AppBaseController
 
 		//$result = $this->carrerasRepository->search($input)->paginate(20);
 
-		$carreras = \DB::table('carreras')->paginate(20);
+		$carreras = \DB::table('carreras')->orderBy('id','desc')->paginate(20);
 		$carreras->setPath($request->url());
 
 		return view('carreras.index')

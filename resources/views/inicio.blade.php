@@ -2,27 +2,44 @@
 
 @section('content')
        
-        <div  class="col-xs-2 hidden-xs">
-        		CONTENT 1
+        <div  class="col-lg-2 col-md-2 col-xs-0 hidden-xs">
+        		<img src="/uploads/ad2.jpg" class="img-responsive"/> </img>
         	</div>
         	<div class="col-md-8 div-center">
             	<div class="row">
-                	<div id="logo" class="col-md-12">
+                	<div id="logo" class="col-md-10">
                     	<a href="#" >
                         	<img src="/images/logo.png">
                         </a> 
                     </div>
+                    <div id="logo" class="col-md-2">
+                    	<a href="#" >
+                        	Registro
+                        </a> 
+                        |
+                        <a href="#" >
+                        	Ingresar
+                        </a> 
+                        
+                    </div>
                     
                     <div class="row">
                       <div class="col-md-12 banner">
-                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
                                     <!-- Indicators -->
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
                                   <!-- Indicators -->
                                   <ol class="carousel-indicators">
                                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                                     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                                     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="8"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="9"></li>
+                                    
                                   </ol>
                                  
                                   <!-- Wrapper for slides -->
@@ -52,12 +69,13 @@
                                   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
                                     <span class="glyphicon glyphicon-chevron-right"></span>
                                   </a>
-                              </div>
+                              
                         </div>
                           <div class="col-md-8 search-internal-slide">
                             
                               <input type="text" class="searchinput vertical form-control" id="qry" placeholder="Busca un corredor" >
                               <button class="searchbutton vertical form-control" id="goSearch" type="submit"> </button>
+                              
                           </div>
                       </div>
                     </div>
@@ -66,16 +84,26 @@
                       <h1>Carreras Recientes</h1>
                         @foreach($runners as $runn)    
                             	<div class="col-lg-3 col-md-4 col-xs-6"> 
-                            	    <a href="carrera/{{$runn->id}}" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
+                            	    <a href="carrera/{{$runn->id}}" class="thumbnail"> <img src="{{ $runn->imagen}}"> </img></a>
                             	    <p class="text-justify images-caption">{{ $runn->nombre }}</p>
                                 </div>
                         @endforeach
                     </div>
+                    
+                    <div class="row center col-md-12">
+                      <h1>Favoritas</h1>
+                        
+                            	<div class="col-lg-3 col-md-4 col-xs-6"> 
+                            	    <!--<a href="carrera/{{$runn->id}}" class="thumbnail"> <img src="/images/placeholder.jpg"> </img></a>
+                            	    <p class="text-justify images-caption">{{ $runn->nombre }}</p>-->
+                                </div>
+                        
+                    </div>
                     </div>
                 </div>
         	</div>
-       	 	<div class="col-xs-2 hidden-xs">
-        		CONTENT 3
+       	 	<div class="col-lg-2 col-md-2 col-xs-0 hidden-xs">
+        		<img src="/uploads/ad2.jpg"/> </img>
         	</div>
 
 
