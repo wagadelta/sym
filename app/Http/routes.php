@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Ubicaciones;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -126,3 +127,4 @@ Route::get('imagenes/{id}/delete', [
     'uses' => 'ImagenesController@destroy',
 ]);
 
+Route::get('getUbicaciones/{id}','UbicacionesController@byCarrera');
