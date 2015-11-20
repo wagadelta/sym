@@ -34,12 +34,16 @@ class HomeController extends Controller {
 		
 		switch( \Auth::user()->id_rol )
 		{
-			case 1: 
+			case 1: // admin 
 				return view('home');
 			break;
 			
-			case 2: 
+			case 2: // etiquetador
 				return view('etiquetador-home');
+			break;
+			
+			case 3: // fotografo
+				return view('fotografo-home');
 			break;
 		}
 	}

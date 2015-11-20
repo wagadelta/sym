@@ -112,6 +112,9 @@ Route::get('ubicaciones/{id}/delete', [
 ]);
 
 
+Route::post('/image-upload', 'ImagenesController@upload');
+Route::get('/imagenes/upload', 'ImagenesController@uploadImages');
+
 Route::resource('api/imagenes', 'API\ImagenesAPIController');
 Route::get('api/imagenes/tipo_imagen/{tipo_imagen}', 'API\ImagenesAPIController@tipo_imagen');
 Route::get('imagenes/etiquetar', 'ImagenesController@getCarrera');
@@ -123,4 +126,3 @@ Route::get('imagenes/{id}/delete', [
     'uses' => 'ImagenesController@destroy',
 ]);
 
-Route::post('/image-upload', 'ImagenesController@upload');

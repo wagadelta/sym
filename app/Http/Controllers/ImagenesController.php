@@ -193,14 +193,16 @@ class ImagenesController extends AppBaseController
 	
 	public function etiquetar($carreraId, Request $request)
 	{
-		
 		$imagen = Imagenes::first();
 	 //dd($imagen);
 		return view('etiquetador.show-image')
 				->with('image', $imagen);
-			
 	}
-	
+
+	public function uploadImages(){
+		return view('fotografo.index');
+		
+	}
 
 }
 
