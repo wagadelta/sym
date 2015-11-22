@@ -191,7 +191,7 @@ class ImagenesController extends AppBaseController
 		//$img =  Image::make($outputDir.$fileTempName);
 		
 		// FULL image
-		$watermark = Image::make(base_path().'/storage/images/sym-watermark.png');
+		$watermark = Image::make(base_path().'/public/images/sym-watermark.png');
 		$img->resize(1024, 768)->insert($watermark, 'bottom-right');
 		//$fileName = "800x600_".$_FILES['file']['name'];
 		$imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-'.$fileTempName.'-full.jpg';
