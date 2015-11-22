@@ -59,15 +59,16 @@ class InicioController extends Controller {
 		DB::enableQueryLog();
 		$allImgsRun = DB::table('imagenes as i')
 			->join('ubicaciones as u', 'i.id_ubicacion', '=', 'u.id')
-			->select('i.id',  'i.archivo', 'i.id_ubicacion as ubicacion',
-						"i.etiquetas as tags", 'u.id_carrera as carrera')
-			->where('i.etiquetas LIKE \'%|?|%\' OR i.etiquetas LIKE \'%?|%\' ', array($runParam_2,$runParam_2))
-			->where('i.tipo_imagen', '=', 'full')
+			->select('i.id', 'i.archivo', 'i.id_ubicacion', 'i.etiquetas', 'u.id_carrera')
+			->where('i.tipo_imagen', '=', '\'full\'')
+			//->where("i.etiquetas LIKE '%|?|%' OR i.etiquetas LIKE '%?|%'",array($runParam_2,$runParam_2))
+			->where('i.etiquetas', 'like', "%|$runParam_2|%")
+			//->orWhere('i.etiquetas', 'like', "%$runParam_2|%")
 			->where('u.id_carrera', '=', $corParam_1)
 			->get();
 		$name = Imagenes::nameRunner($corParam_1);
 		$id = Imagenes::idRunner($corParam_1);
-		dd(DB::getQueryLog());
+	//	dd(DB::getQueryLog());
 			
 		return  view('corredoresxcarrera')
 					->with('allImgsRun',$allImgsRun)
