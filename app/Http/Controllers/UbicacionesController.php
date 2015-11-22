@@ -153,4 +153,16 @@ class UbicacionesController extends AppBaseController
 		return redirect(route('ubicaciones.index'));
 	}
 
+	public function byCarrera($id){
+		
+		$result = \DB::table('ubicaciones')
+            ->select('nombre', 'id')
+            ->where('id_carrera', '=', $id)
+            ->get();
+   
+		return \DB::table('ubicaciones')
+            ->select('nombre', 'id')
+            ->where('id_carrera', '=', $id)
+            ->get();
+	}
 }

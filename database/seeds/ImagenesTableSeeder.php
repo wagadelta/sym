@@ -13,7 +13,7 @@ public function run()
     $faker = Faker::create('es_ES');
     $imagePath = '/public/uploads/';
     
-    foreach(range(1,75) as $index)
+    foreach(range(1,10) as $index)
      {
         $name = 'Carrera '.$faker->sentence($nbWords = 3);
         $val = $faker->numberBetween($min = 2, $max = 15);

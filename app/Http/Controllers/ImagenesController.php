@@ -10,6 +10,10 @@ use Flash;
 use Intervention\Image\Facades\Image;
 use App\Models\Imagenes;
 use App\Models\Corredores;
+use App\Models\Carreras;
+use DB;
+use Input;
+use Carbon\Carbon;
 
 class ImagenesController extends AppBaseController
 {
@@ -158,23 +162,129 @@ class ImagenesController extends AppBaseController
 	
 	public function upload(Request $request)
 	{
+		ini_set('post_max_size', '64M');
+		ini_set('upload_max_filesize', '64M');
+		// data en general
+		$input = $request->all();
+		$now = Carbon::now()->toDateTimeString();
+		$fileTempName   = str_slug($now, '_');
+		$fotografoId = $request->input('id_fotografo'); //$input->id_fotografo();  TODO: RECUPERAR VALOR DEL INPUT DEL FORM
+		$ubicacionId = $request->input('ubicacion'); //$input->ubicacion();	TODO: RECUPERAR VALOR DEL INPUT DEL FORM
+		$imagePath = '/public/uploads/';
+		$outputDir = base_path().$imagePath.'temp/';
+		//dd($_FILES['file']['tmp_name'][0]);
+		// if (move_uploaded_file( $_FILES['file']['tmp_name'][0], $outputDir.$fileTempName )) {
+		//     echo "File is valid, and was successfully uploaded.\n";
+		//     //$img = Image::make($outputDir.$fileTempName);
+		//     //dd($img);
+		// } else {
+		//     echo "Possible file upload attack!\n";
+		// }
 		
-	$watermark = Image::make(base_path().'/public/images/logot.png');
-	$img 	 	= Image::make($_FILES['file']['tmp_name']);
+		
+		// guardar el archivo temporal
+		//$file = Input::file('file');
+		
+		//dd(array($now, $file, Input::file('file')->getClientOriginalName() ) );
+		var_dump( $_FILES['file'] );
+		$img =  Image::make($_FILES['file']['tmp_name'][0]);
+		//$img =  Image::make($outputDir.$fileTempName);
+		
+		// FULL image
+		$watermark = Image::make(base_path().'/storage/images/sym-watermark.png');
+		$img->resize(1024, 768)->insert($watermark, 'bottom-right');
+		//$fileName = "800x600_".$_FILES['file']['name'];
+		$imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-'.$fileTempName.'-full.jpg';
+		$pathToSave    = base_path() .$imagePath. $imageName;
+		$img->save($pathToSave);
+		
+		$imagen =
+	      [
+	      'id_fotografo'      => $fotografoId,
+	      'id_etiquetador'    => '',
+	      'path'              => 'public/uploads/',
+	      'archivo'           => $imageName,
+	      'slug'              => $imageName,
+	      'tipo_imagen'       => 'full', //$faker->randomElement($array = array ('full','normal','thumb')),
+	      'etiquetas'         => '',
+	      //'fecha_etiqueta'    => $faker->dateTimeThisYear($max='now'),
+	      'id_ubicacion'      => $ubicacionId,
+	      'estado'            => '1'
+	      ];
+	      DB::table('imagenes')->insert($imagen);
+	      
+	     // NORMAL  image
+	      $img = Image::make($pathToSave);
+	      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-'.$fileTempName.'-normal.jpg';
+	      $pathToSave    = base_path() .$imagePath. $imageName;
+	      $img->resize(452, 340)->save($pathToSave);
+	      
+	      	$imagen =
+	      [
+	      'id_fotografo'      => $fotografoId,
+	      'id_etiquetador'    => '',
+	      'path'              => 'public/uploads/',
+	      'archivo'           => $imageName,
+	      'slug'              => $imageName,
+	      'tipo_imagen'       => 'normal', //$faker->randomElement($array = array ('full','normal','thumb')),
+	      'etiquetas'         => '',
+	      //'fecha_etiqueta'    => $faker->dateTimeThisYear($max='now'),
+	      'id_ubicacion'      => $ubicacionId,
+	      'estado'            => '1'
+	      ];
+	      DB::table('imagenes')->insert($imagen);
+	      
+	      // THUMB  image
+	      $img = Image::make($pathToSave);
+	      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-'.$fileTempName.'-thumb.jpg';
+	      $pathToSave    = base_path() .$imagePath. $imageName;
+	      $img->resize(150, 100)->save($pathToSave);
+    	$imagen =
+	      [
+	      'id_fotografo'      => $fotografoId,
+	      'id_etiquetador'    => '',
+	      'path'              => 'public/uploads/',
+	      'archivo'           => $imageName,
+	      'slug'              => $imageName,
+	      'tipo_imagen'       => 'thumb', //$faker->randomElement($array = array ('full','normal','thumb')),
+	      'etiquetas'         => '',
+	      //'fecha_etiqueta'    => $faker->dateTimeThisYear($max='now'),
+	      'id_ubicacion'      => $ubicacionId,
+	      'estado'            => '1'
+	      ];
+	      DB::table('imagenes')->insert($imagen);
+	      
+	      // \File::Delete($outputDir.$fileTempName);
+	}
 	
-	$img->resize(800, 600)->insert($watermark, 'bottom-right');
-	$fileName = "800x600_".$_FILES['file']['name'];
-	$img->save( base_path().'/public/uploads/'.$fileName);
+	public function getCarrera(Request $request)
+	{
+		$input = $request->all();		
+		if (\Auth::user()->id_rol == 2 )
+		{  // if is Etiquetador ROL
+			// mostrar la siguiente imagen sin etiquetar o nueva		
+				$carreras = Carreras::get();
+				return view('etiquetador.show-carreras')
+						->with('carreras', $carreras);
+
+		} // if auth
+		
+	}
 	
-	$img->resize(300, 200)->insert($watermark, 'bottom-right');
-	$fileName = "300x200_".$_FILES['file']['name'];
-	$img->save( base_path().'/public/uploads/'.$fileName);
+	public function etiquetar($carreraId, Request $request)
+	{
+		$imagen = Imagenes::first();
+	 //dd($imagen);
+		return view('etiquetador.show-image')
+				->with('image', $imagen);
+	}
 
-	$img->resize(75, 75)->insert($watermark, 'bottom-right');
-	$fileName = "75x75_".$_FILES['file']['name'];
-	$img->save( base_path().'/public/uploads/'.$fileName);
-
-
+	public function uploadImages(){
+		$carreras = Carreras::get();
+		//dd($carreras);
+		return view('fotografo.index')
+			->with('carreras', $carreras);
+		
 	}
 	
 	public function searchById($id = null, Request $request1)
@@ -197,3 +307,4 @@ class ImagenesController extends AppBaseController
 
 
 }
+

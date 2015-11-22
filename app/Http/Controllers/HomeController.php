@@ -31,7 +31,21 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+		
+		switch( \Auth::user()->id_rol )
+		{
+			case 1: // admin 
+				return view('home');
+			break;
+			
+			case 2: // etiquetador
+				return view('etiquetador-home');
+			break;
+			
+			case 3: // fotografo
+				return view('fotografo-home');
+			break;
+		}
 	}
-
+		
 }

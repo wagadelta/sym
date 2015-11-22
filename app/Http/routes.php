@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Ubicaciones;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -118,9 +119,14 @@ Route::get('ubicaciones/{id}/delete', [
     'uses' => 'UbicacionesController@destroy',
 ]);
 
+Route::post('/imagen/upload', 'ImagenesController@upload');
+Route::get('/imagenes/upload', 'ImagenesController@uploadImages');
+
 
 Route::resource('api/imagenes', 'API\ImagenesAPIController');
 Route::get('api/imagenes/tipo_imagen/{tipo_imagen}', 'API\ImagenesAPIController@tipo_imagen');
+Route::get('imagenes/etiquetar', 'ImagenesController@getCarrera');
+Route::get('imagenes/etiquetar/carrera/{idCarrera}', 'ImagenesController@etiquetar');
 Route::resource('imagenes', 'ImagenesController');
 
 Route::get('imagenes/{id}/delete', [
@@ -129,6 +135,5 @@ Route::get('imagenes/{id}/delete', [
 ]);
 
 Route::post('/image-upload', 'ImagenesController@upload');
-
-
 Route::get('login', 'WelcomeController@index');
+Route::get('getUbicaciones/{id}','UbicacionesController@byCarrera');
