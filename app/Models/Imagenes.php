@@ -23,7 +23,9 @@ class Imagenes extends Model
 		"etiquetas",
 		"fecha_etiqueta",
 		"id_ubicacion",
-		"estado"
+		"estado", 
+		"created_at",
+		"updated_at"
 	];
 
 	public static $rules = [
