@@ -2,14 +2,14 @@
 
 @section('content')
        
-        <div  class="col-lg-2 col-md-2 col-xs-0 hidden-xs">
-        		<img src="/uploads/ad2.jpg" class="img-responsive"/> </img>
+        <div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2  ">
+        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive ads-cls"/> </img>
         	</div>
         	<div class="col-md-8 div-center">
             	<div class="row">
                 	<div id="logo" class="col-md-10">
                     	<a href="#" >
-                        	<img src="/images/logo.png">
+                        	<img src="{{ asset('/images/logo.png')}}">
                         </a> 
                     </div>
                     <div id="logo" class="col-md-2">
@@ -73,8 +73,14 @@
                         </div>
                           <div class="col-md-8 search-internal-slide">
                             
-                              <input type="text" class="searchinput vertical form-control" id="qry" placeholder="Busca un corredor" >
-                              <button class="searchbutton vertical form-control" id="goSearch" type="submit"> </button>
+                              <div class="input-group searchinput">
+                                <input type="text" class=" vertical form-control color-text-g" id="qry" placeholder="Introduzca nombre de corredor" >
+                                <span class="input-group-btn goSearch">
+                                 <button class="btn btn-primary vertical-correc"  id="goSearch" type="submit"><i class="fa fa-search fa-x5"></i> Buscar</button>  
+                               </span>
+                            </div>   
+                             
+                             
                               
                           </div>
                       </div>
@@ -90,6 +96,8 @@
                         @endforeach
                     </div>
                     
+                    
+                    
                     <div class="row center col-md-12">
                       <h1>Favoritas</h1>
                         
@@ -102,8 +110,8 @@
                     </div>
                 </div>
         	</div>
-       	 	<div class="col-lg-2 col-md-2 col-xs-0 hidden-xs">
-        		<img src="/uploads/ad2.jpg"/> </img>
+       	 	<div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
+        		<img src="{{ asset('/uploads/ad2.jpg')}}" class="img-responsive  ads-cls"/> </img>
         	</div>
 
 

@@ -1,19 +1,25 @@
 @charset "utf-8";
 /* CSS Document */
 ::-webkit-input-placeholder {
-   color: white;
+   color: #7C7C7C !important;
+   font-weight:bold !important;
+   font-size:1.2em;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: white;  
+   color: #fff !important;  
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: white;  
+   color: #7C7C7C !important;
+   font-weight:bold !important;
+   font-size:1.2em;
 }
 
 :-ms-input-placeholder {  
-   color: white;  
+  color: #7C7C7C !important;
+   font-weight:bold !important;
+   font-size:1.2em; 
 }
 
 body{
@@ -51,61 +57,80 @@ h1{
 
 .search-internal{
 	z-index:999999; 
+	color: #fff;
 	position:relative; 
 	background-color:transparent; 
-	height:18%;	
+	height:15%;	
 	border:3px  solid rgba(255,255,255,0.80);
 	border-radius:100px;
-	width:80%;
+	width:90%;
 	left:10%;
 	bottom:95%;
 	margin:0 auto;
-	padding:15px;
+	padding-top:40px;
+	padding-left: 10px;
+	-moz-padding-top:40px;
+	-webkit-padding-top:40px;
+	-webkit-padding-left: 20px;
+	-moz-padding-left: 20px;
+		/*padding-bottom:5px;*/
 }
 
 .search-internal-slide{
 	z-index:999999; 
 	position:relative; 
 	background-color:transparent; 
-	height:18%;	
+	height:14%;	
 	border:3px  solid rgba(255,255,255,0.80);
 	border-radius:100px;
-	width:80%;
+	width:60%;
 	left:10%;
 	bottom:80%;
 	margin:0 auto;
-	padding:15px;
+	padding:5px;
 }
 
 .searchinput{
 	background-color:transparent;
 	border:none;
-	width:400px;
+	width:90%;
 	height:50px;
 	vertical-align:middle;
-	float:left;
+	
 	font-size:35px;
 	font-weight:lighter;
-	color:#FFF;
+	position: relative;
+
 }
 
 .searchbutton{
     display:block;
     width:50px; height:50px;
-	background:url(/images/lupa.png) 0 0 no-repeat;
+	/*background:url(/images/lupa.png) 0 0 no-repeat;*/
 	border:0;
 	background-color:transparent;
 	float:right;
+	font-size: 3.55em;
 }
 
 .vertical{
-	position: relative;
- 	top: 50%;
-	transform: translateY(-50%);	
+	top: -15%;
+ 	left:4%;
+	/*transform: translateY(-127%);*/
+	width: 100%;
+	/*font-size:1em;*/
+	position:relative;	
 }
 
 .vertical-corecc{
-	transform: translateY(-1%);	
+	/*position: relative;*/
+ 	top: -100%;
+ 	left:95%;
+	/*transform: translateY(-127%);*/
+	width: 60%;
+	font-size:1em;
+	position:relative;
+	
 }
 
 .banner{
@@ -113,8 +138,8 @@ h1{
 	position:relative; 
 	height:400px;
 	min-width:190px;
-	margin:0 auto;
-	margin-bottom:15px;
+	margin:0 auto 0;
+	
 }
 
 .div-center{
@@ -161,6 +186,10 @@ h1{
 	color:#000;
 }
 
+.color-text-g{
+	color:#666 !important;
+}
+
 .images-caption
 {
 	font-size: 8px;
@@ -190,4 +219,27 @@ h1{
 .modal-footer{
 	text-align: left;
 	color: #000;
+}
+.ads-cls{
+	position:relative;
+	margin-top: 90%
+}
+
+#qry
+{
+	background: rgba(255,255,255,0) !important;
+	color: #666 !important;
+	border: 1px solid rgba(255,255,255,0.0) !important;
+}
+
+
+
+#search{
+	z-index:1;
+}
+
+.goSearch{
+	/*padding-bottom:%;*/
+	padding-left:5%;
+	
 }

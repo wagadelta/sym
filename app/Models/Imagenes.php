@@ -79,14 +79,10 @@ class Imagenes extends Model
 		 
 		 $imagenes = DB::table('ubicaciones as u')
 			->join('imagenes as i', 'i.id_ubicacion', '=', 'u.id')
-			->select('i.id',  'i.archivo', 'i.id_ubicacion', 'u.id_carrera as carrera')
+			->select('i.id',  'i.archivo', 'i.id_ubicacion',"i.etiquetas as tags", 'u.id_carrera as carrera')
 			->where('i.tipo_imagen', '=', 'full')
 			->where('u.id_carrera', '=', $id)
 			->get();
-			
-		 
-		
-		
 		return  $imagenes;
 		
 		
@@ -101,7 +97,15 @@ class Imagenes extends Model
 		
 	}
 	
-	
+		public static function idRunner($id)
+	{
+		
+		 $idRun = DB::table('carreras')->where('id', $id)->pluck('id');
+		 
+		return $idRun; 
+		
+		
+	}
 	
 
 }

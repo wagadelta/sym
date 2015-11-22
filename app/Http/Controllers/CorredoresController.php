@@ -165,11 +165,12 @@ class CorredoresController extends AppBaseController
 							//->paginate(10);
 		//$corredores->setPath($request->url());
 		//$cobros->setPath($request->url());
-		return view('resultados.results')
+		 return view('resultados.results')
 		    ->with('corredores', $corredores)
 		    ->with('qry',$qry);
 		
 		
 	}
-
+	
+	
 }

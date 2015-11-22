@@ -7,7 +7,7 @@ use Response;
 use Flash;
 use Intervention\Image\Facades\Image;
 use App\Models\Imagenes;
-
+use DB;
 use Illuminate\Http\Request;
 
 class InicioController extends Controller {
@@ -25,7 +25,7 @@ class InicioController extends Controller {
 	{
 		$runners = Imagenes::ImgLastRunner();
 		$imagenes = Imagenes::ImgSlideShow();
-		//return $runners;
+		//dd(public_path('something'));
 		return view('inicio', compact('runners', 'imagenes'));
 		
 	}
@@ -36,10 +36,13 @@ class InicioController extends Controller {
 		
 		$allImgsRun = Imagenes::ImgsRunners($id);
 		$runner = Imagenes:: nameRunner($id);
-		//dd($runner);
-		return view('ubicaciones')
+		$idRunner = Imagenes:: idRunner($id);
+		//dd($allImgsRun);
+		return view('corredoresxcarrera')
 				->with('allImgsRun', $allImgsRun)
-				->with('name', $runner);
+				->with('name', $runner)
+				->with('id', $idRunner);
+				
 		
 	}
 	
@@ -50,7 +53,29 @@ class InicioController extends Controller {
 		return view('imagesxlocate',compact('images'));
 	}
 	
-
+	
+	public static function searchByTag($corParam_1 = null, $runParam_2 = null, Request $request)
+	{
+		
+		$allImgsRun = DB::table('imagenes as i')
+			->join('ubicaciones as u', 'i.id_ubicacion', '=', 'u.id')
+			->select('i.id',  'i.archivo', 'i.id_ubicacion as ubicacion',
+						"i.etiquetas as tags", 'u.id_carrera as carrera')
+			->where('i.etiquetas', 'LIKE', '%|'.$runParam_2.'|%')
+			//->orWhere('i.etiquetas', 'LIKE', '%'.$runParam_2.'|%')
+			->where('i.tipo_imagen', '=', 'full')
+			->where('u.id_carrera', '=', $corParam_1)
+			->get();
+		$name = Imagenes::nameRunner($corParam_1);
+		$id = Imagenes::idRunner($corParam_1);
+		//dd($id);
+			
+		return  view('corredoresxcarrera')
+					->with('allImgsRun',$allImgsRun)
+					->with('id', $id)
+					->with('name', $name);
+		
+	}
 	
 	
 }
