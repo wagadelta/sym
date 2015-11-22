@@ -34,7 +34,7 @@
         <!-- AdminLTE App -->
         <script src="{{ asset('/dist/js/app.min.js') }}" type="text/javascript"></script>
         <!-- dropzone -->
-        <script src="{{ asset('/js/dropzone.js') }}" type="text/javascript"></script>
+        
         <!--<script src="{{ asset('/js/jquery-dropzone.js') }}" type="text/javascript"></script>-->
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <!--<script src="{{ asset('/dist/js/pages/dashboard.js') }}" type="text/javascript"></script>-->

@@ -11,6 +11,9 @@ use Intervention\Image\Facades\Image;
 use App\Models\Carreras;
 use App\Models\Imagenes;
 use DB;
+use Input;
+use Carbon\Carbon;
+
 
 class ImagenesController extends AppBaseController
 {
@@ -159,25 +162,40 @@ class ImagenesController extends AppBaseController
 	
 	public function upload(Request $request)
 	{
+		ini_set('post_max_size', '64M');
+		ini_set('upload_max_filesize', '64M');
+		// data en general
 		$input = $request->all();
-		
-		
-		// full image
-		$fotografoId = 9; //$input->id_fotografo();  TODO: RECUPERAR VALOR DEL INPUT DEL FORM
-		$ubicacionId = 2; //$input->ubicacion();	TODO: RECUPERAR VALOR DEL INPUT DEL FORM
+		$now = Carbon::now()->toDateTimeString();
+		$fileTempName   = str_slug($now, '_');
+		$fotografoId = $request->input('id_fotografo'); //$input->id_fotografo();  TODO: RECUPERAR VALOR DEL INPUT DEL FORM
+		$ubicacionId = $request->input('ubicacion'); //$input->ubicacion();	TODO: RECUPERAR VALOR DEL INPUT DEL FORM
 		$imagePath = '/public/uploads/';
+		$outputDir = base_path().$imagePath.'temp/';
+		//dd($_FILES['file']['tmp_name'][0]);
 		
+		// if (move_uploaded_file( $_FILES['file']['tmp_name'][0], $outputDir.$fileTempName )) {
+		//     echo "File is valid, and was successfully uploaded.\n";
+		//     //$img = Image::make($outputDir.$fileTempName);
+		//     //dd($img);
+		// } else {
+		//     echo "Possible file upload attack!\n";
+		// }
+		
+		
+		// guardar el archivo temporal
+		//$file = Input::file('file');
+		
+		//dd(array($now, $file, Input::file('file')->getClientOriginalName() ) );
+		var_dump( $_FILES['file'] );
+		$img =  Image::make($_FILES['file']['tmp_name'][0]);
+		//$img =  Image::make($outputDir.$fileTempName);
+		
+		// FULL image
 		$watermark = Image::make(base_path().'/storage/images/sym-watermark.png');
-		$img 	 	= Image::make($_FILES['file']['tmp_name']);  // TODO: FOR EACH $FILE{}FILE
-		
-		// dd($_FILES);
-		// $files = $_FILES['file']['tmp_name'];
-		// $count = 0;
-		// //foreach ($files as $file) {
-		
 		$img->resize(1024, 768)->insert($watermark, 'bottom-right');
 		//$fileName = "800x600_".$_FILES['file']['name'];
-		$imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-full.jpg';
+		$imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-'.$fileTempName.'-full.jpg';
 		$pathToSave    = base_path() .$imagePath. $imageName;
 		$img->save($pathToSave);
 		
@@ -198,7 +216,7 @@ class ImagenesController extends AppBaseController
 	      
 	     // NORMAL  image
 	      $img = Image::make($pathToSave);
-	      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-normal.jpg';
+	      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-'.$fileTempName.'-normal.jpg';
 	      $pathToSave    = base_path() .$imagePath. $imageName;
 	      $img->resize(452, 340)->save($pathToSave);
 	      
@@ -219,7 +237,7 @@ class ImagenesController extends AppBaseController
 	      
 	      // THUMB  image
 	      $img = Image::make($pathToSave);
-	      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-thumb.jpg';
+	      $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-'.$fileTempName.'-thumb.jpg';
 	      $pathToSave    = base_path() .$imagePath. $imageName;
 	      $img->resize(150, 100)->save($pathToSave);
     	$imagen =
@@ -236,6 +254,8 @@ class ImagenesController extends AppBaseController
 	      'estado'            => '1'
 	      ];
 	      DB::table('imagenes')->insert($imagen);
+	      
+	      // \File::Delete($outputDir.$fileTempName);
 	}
 	
 	public function getCarrera(Request $request)
