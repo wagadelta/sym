@@ -78,4 +78,28 @@ class InicioController extends Controller {
 	}
 	
 	
+	public static function searchByNameR($corParam_1 = null, $runParam_2 = null, Request $request)
+	{
+		
+		$allImgsRun = DB::table('imagenes as i')
+			->join('ubicaciones as u', 'i.id_ubicacion', '=', 'u.id')
+			->select('i.id',  'i.archivo', 'i.id_ubicacion as ubicacion',
+						"i.etiquetas as tags", 'u.id_carrera as carrera')
+			->where('i.etiquetas', 'LIKE', '%|'.$runParam_2.'|%')
+			//->orWhere('i.etiquetas', 'LIKE', '%'.$runParam_2.'|%')
+			->where('i.tipo_imagen', '=', 'full')
+			->where('u.id_carrera', '=', $corParam_1)
+			->get();
+		$name = Imagenes::nameRunner($corParam_1);
+		$id = Imagenes::idRunner($corParam_1);
+		//dd($id);
+			
+		return  view('corredoresxcarrera')
+					->with('allImgsRun',$allImgsRun)
+					->with('id', $id)
+					->with('name', $name);
+		
+	}
+	
+	
 }

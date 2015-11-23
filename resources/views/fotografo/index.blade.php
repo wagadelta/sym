@@ -79,7 +79,7 @@ $(document).ready(function(){
         var carrera = $('#carrera').val();
         $('#ubicacion').empty();
 
-        $.get( "/getUbicaciones/"+carrera )
+        $.get( "{{asset('/getUbicaciones')}}/"+carrera )
             .done(function( data ) {
                 $.each(data, function (i, item) {
                     $('#ubicacion').append($('<option>', { 

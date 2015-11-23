@@ -7,11 +7,22 @@
         	</div>
         	<div class="col-lg-8 col-md-8 col-xs-8 div-center">
             	<div class="row">
-                	<div id="logo" class="col-lg-12 col-md-12 col-xs-12">
+                	<div id="logo" class="col-lg-8 col-md-8 col-xs-6">
                     	<a href="/" >
-                        	<img src="/images/logo.png">
+                        	<img src="{{asset('/images/logo.png')}}">
                         </a> 
                     </div>
+                    <div id="logo" class="col-lg-2 col-md-2 col-xs-6">
+                    	<a href="#" >
+                        	Registro
+                        </a> 
+                        |
+                        <a href="#" >
+                        	Ingresar
+                        </a> 
+                        
+                    </div>
+                    
                     <div class="row">
                         
                         <div class="col-md-8 search-internal-slide">
@@ -68,7 +79,7 @@
                 
                 jQuery(document).ready(function($) {
          
-            if(isNaN($('#qry'))){
+            if(isNaN($('#qry').val())){
                 $('#goSearch').on('click', function(e){
                     var searchUrl = 'http://' + document.location.hostname + "/corredores/{{$id}}/"+$('#qry').val();
                     //alert(searchUrl);

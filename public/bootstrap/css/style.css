@@ -77,7 +77,7 @@ h1{
 }
 
 .search-internal-slide{
-	z-index:999999; 
+	z-index:1; 
 	position:relative; 
 	background-color:transparent; 
 	height:14%;	

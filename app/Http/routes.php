@@ -95,6 +95,8 @@ Route::get('carreras/{id}/delete', [
 ]);
 
 
+Route::resource('corredores', 'CorredoresController');
+
 Route::get('corredores/id/{qry?}', 'CorredoresController@searchByName');
 Route::get('corredores/{id?}/{qry?}', 'InicioController@searchByTag');
 Route::get('corredores-nombre/{id?}/{qry}', 'InicioController@searchByNameR');
@@ -102,7 +104,7 @@ Route::get('corredores/{id?}/images', 'ImagenesController@searchById');
 
 Route::resource('api/corredores', 'API\CorredoresAPIController');
 
-Route::resource('corredores', 'CorredoresController');
+
 
 Route::get('corredores/{id}/delete', [
     'as' => 'corredores.delete',
