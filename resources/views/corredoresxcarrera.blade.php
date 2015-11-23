@@ -63,6 +63,9 @@
                         @endforeach
                         
                     </div>
+                    <div>
+                        <?php echo $allImgsRun->render(); ?>
+                    </div>
                 </div>
         	</div>
        	 	<div class="col-lg-2 col-md-2 hidden-xs">
