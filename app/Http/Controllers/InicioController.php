@@ -10,6 +10,7 @@ use App\Models\Imagenes;
 use DB;
 use Illuminate\Http\Request;
 
+
 class InicioController extends Controller {
 
 	//private $imagenesRepository;
@@ -31,10 +32,10 @@ class InicioController extends Controller {
 	}
 	
 	// Muestra todas las ubicaciones de la carrera
-	public function locationRunner($id)
+	public function locationRunner($id, Request $requests)
 	{
-		
-		$allImgsRun = Imagenes::ImgsRunners($id);
+		//dd($requests);
+		$allImgsRun = Imagenes::ImgsRunners($id, $requests);
 		$runner = Imagenes:: nameRunner($id);
 		$idRunner = Imagenes:: idRunner($id);
 		//dd($allImgsRun);

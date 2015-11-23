@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
-
+use App\Http\Requests;
 
 class Imagenes extends Model
 {
@@ -73,7 +73,7 @@ class Imagenes extends Model
 		->get();
 	}
 	
-	public static function ImgsRunners($id)
+	public static function ImgsRunners($id, $requests)
 	{
 		
 		 //$nameR = DB::table('users')->where('name', 'John')->pluck('name');
@@ -84,7 +84,8 @@ class Imagenes extends Model
 			->select('i.id',  'i.archivo', 'i.id_ubicacion',"i.etiquetas as tags", 'u.id_carrera as carrera')
 			->where('i.tipo_imagen', '=', 'full')
 			->where('u.id_carrera', '=', $id)
-			->get();
+			->paginate(1);
+			$imagenes->setPath($requests->url());
 		return  $imagenes;
 		
 		
