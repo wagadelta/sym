@@ -31,17 +31,17 @@ class InicioController extends Controller {
 		
 	}
 	
-	// Muestra todas las ubicaciones de la carrera
+	// Muestra todas los corredores de una carrera con paginacion
 	public function locationRunner($id, Request $requests)
 	{
 		//dd($requests);
 		$allImgsRun = Imagenes::ImgsRunners($id, $requests);
-		$runner = Imagenes:: nameRunner($id);
+		$Namerunner = Imagenes:: nameRunner($id);
 		$idRunner = Imagenes:: idRunner($id);
 		//dd($allImgsRun);
 		return view('corredoresxcarrera')
 				->with('allImgsRun', $allImgsRun)
-				->with('name', $runner)
+				->with('name', $Namerunner)
 				->with('id', $idRunner);
 				
 		
@@ -55,52 +55,47 @@ class InicioController extends Controller {
 	}
 	
 	
-	public static function searchByTag($corParam_1 = null, $runParam_2 = null, Request $request)
+	public static function searchByTag($idRace, $qry, Request $request)
 	{
 		
-		$allImgsRun = DB::table('imagenes as i')
-			->join('ubicaciones as u', 'i.id_ubicacion', '=', 'u.id')
-			->select('i.id',  'i.archivo', 'i.id_ubicacion as ubicacion',
-						"i.etiquetas as tags", 'u.id_carrera as carrera')
-			->where('i.etiquetas', 'LIKE', '%|'.$runParam_2.'|%')
-			//->orWhere('i.etiquetas', 'LIKE', '%'.$runParam_2.'|%')
-			->where('i.tipo_imagen', '=', 'full')
-			->where('u.id_carrera', '=', $corParam_1)
-			->get();
-		$name = Imagenes::nameRunner($corParam_1);
-		$id = Imagenes::idRunner($corParam_1);
-		//dd($id);
-			
-		return  view('corredoresxcarrera')
-					->with('allImgsRun',$allImgsRun)
-					->with('id', $id)
-					->with('name', $name);
+		
+			if(ctype_digit($qry))
+			{
+				//	dd($runParam_2);
+		
+				$allImgsRun = Imagenes::searchTagNameId($idRace, $qry, $request);
+				//dd($result);
+				$name = Imagenes::nameRunner($idRace);
+				$id = Imagenes::idRunner($idRace);
+				//dd($id);
+					
+				return  view('corredoresxcarrera')
+							->with('allImgsRun',$allImgsRun)
+							->with('id', $id)
+							->with('name', $name);
+			}else
+			{
+				//	dd($runParam_2);
+		
+				$allImgsRun = Imagenes::searchTagCorrByName($idRace, $qry, $request);
+				//dd($result);
+				$nameRace = Imagenes::nameRunner($idRace);
+				$id = Imagenes::idRunner($idRace);
+				//dd($id);
+				
+				//dd($allImgsRun);
+					
+				return  view('resultados.results-tagin')
+							->with('allImgsRun',$allImgsRun)
+							->with('qry', $qry)
+							->with('name', $nameRace);
+			}
+		
 		
 	}
 	
 	
-	public static function searchByNameR($corParam_1 = null, $runParam_2 = null, Request $request)
-	{
-		
-		$allImgsRun = DB::table('imagenes as i')
-			->join('ubicaciones as u', 'i.id_ubicacion', '=', 'u.id')
-			->select('i.id',  'i.archivo', 'i.id_ubicacion as ubicacion',
-						"i.etiquetas as tags", 'u.id_carrera as carrera')
-			->where('i.etiquetas', 'LIKE', '%|'.$runParam_2.'|%')
-			//->orWhere('i.etiquetas', 'LIKE', '%'.$runParam_2.'|%')
-			->where('i.tipo_imagen', '=', 'full')
-			->where('u.id_carrera', '=', $corParam_1)
-			->get();
-		$name = Imagenes::nameRunner($corParam_1);
-		$id = Imagenes::idRunner($corParam_1);
-		//dd($id);
-			
-		return  view('corredoresxcarrera')
-					->with('allImgsRun',$allImgsRun)
-					->with('id', $id)
-					->with('name', $name);
-		
-	}
+
 	
 	
 }

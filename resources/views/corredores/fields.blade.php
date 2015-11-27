@@ -28,6 +28,12 @@
     {!! Form::text('id_carrera', null, ['class' => 'form-control']) !!}
 </div>
 
+<!--- Id Carrera Field --->
+<div class="form-group col-sm-6 col-lg-4">
+    {!! Form::label('etiquetado', 'Tiene Imágenes:') !!}
+    {!! Form::text('etiquetado', null, ['class' => 'form-control']) !!}
+</div>
+
 <!--- Estado Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('estado', 'Estado:') !!}

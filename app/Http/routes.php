@@ -97,10 +97,12 @@ Route::get('carreras/{id}/delete', [
 
 Route::resource('corredores', 'CorredoresController');
 
+
+// Route Searchs by runners in races
 Route::get('corredores/id/{qry?}', 'CorredoresController@searchByName');
-Route::get('corredores/{id?}/{qry?}', 'InicioController@searchByTag');
-Route::get('corredores-nombre/{id?}/{qry}', 'InicioController@searchByNameR');
+Route::get('corredores-imagenes/{id?}/{qry?}', 'InicioController@searchByTag');
 Route::get('corredores/{id?}/images', 'ImagenesController@searchById');
+
 
 Route::resource('api/corredores', 'API\CorredoresAPIController');
 

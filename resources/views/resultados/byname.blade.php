@@ -12,16 +12,11 @@
                         </a> 
                     </div>
                     <div class="row">
+                        <div class="row">
+                      <!--<div class="col-lg-12 col-md-12 col-xs-12 banner">-->
+                         
+                      </div>
                         
-                        <div class="col-md-12 banner">
-                        	
-                            <img src="/images/banner.jpg" class="img-responsive internal-hieght"/>
-                        	
-                       		<div class="col-md-8 search-internal">
-                            	<input type="text" class="searchinput vertical" placeholder="Busca un corredor">
-                                <button class="searchbutton vertical"> </button> 				               	
-                        	</div>
-                        </div>
                     </div>
                     <h1>Corredor: {{ $corredorData->apellidos}}, {{ $corredorData->nombres}}</h1>           
                     <div class="row center col-md-12">

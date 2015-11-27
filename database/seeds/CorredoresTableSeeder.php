@@ -23,6 +23,7 @@ public function run()
       'apellidos'       => $lastName,
       'slug'            => $slug,
       'identificacion'  => $faker->ean8,
+      'etiquetado'      => $faker->randomElement($array = array ('0','1')),
       'id_carrera'      => $faker->numberBetween($min = 1, $max = 25),
       'estado'          => '1'
       ];

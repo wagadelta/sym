@@ -23,6 +23,7 @@
 			<th>Slug</th>
 			<th>Identificacion</th>
 			<th>Id Carrera</th>
+			<th>Tiene imágenes</th>
 			<th>Estado</th>
                     <th width="50px">Action</th>
                     </thead>
@@ -34,7 +35,8 @@
         					<td>{!! $corredor->apellidos !!}</td>
         					<td>{!! $corredor->slug !!}</td>
         					<td>{!! $corredor->identificacion !!}</td>
-        					<td>{!! $corredor->id_carrera !!}</td>
+        				 	<td>{!! $corredor->id_carrera !!}</td>
+        					<td>{!! $corredor->etiquetado !!}</td>
         					<td>{!! $corredor->estado !!}</td>
                             <td>
                                 <a href="{!! route('corredores.edit', [$corredor->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>

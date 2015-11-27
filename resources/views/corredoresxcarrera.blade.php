@@ -2,10 +2,10 @@
 
 @section('content')
        
-        <div  class="col-lg-2 col-md-2 hidden-xs">
+        <div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2">
         		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
         	</div>
-        	<div class="col-lg-8 col-md-8 col-xs-8 div-center">
+        	<div class="col-md-8 div-center">
             	<div class="row">
                 	<div id="logo" class="col-lg-8 col-md-8 col-xs-6">
                     	<a href="/" >
@@ -23,16 +23,19 @@
                         
                     </div>
                     
-                    <div class="row">
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 div-center">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
                         
-                        <div class="col-md-8 search-internal-slide">
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 search-internal-slide">
                         	 
                              <div class="input-group searchinput">
-                                <input type="text" class=" vertical form-control color-text-g" id="qry" placeholder="Nombre/Número corredor" >
-                                <input type="hidden" name="oculto" id="{{$id}}"/>
+                                 
+                                <input type="text" class=" vertical form-control color-text-g" name="quest" id="qry" placeholder="Nombre/Número corredor" >
+                                <!--<input type="hidden" name="oculto" id="{{$id}}"/>-->
                                 <span class="input-group-btn goSearch">
                                  <button class="btn btn-primary vertical-correc"  id="goSearch" type="submit"><i class="fa fa-search fa-x5"></i> Buscar</button>  
                                </span>
+                               
                             </div>
                                 
                         	
@@ -41,12 +44,12 @@
                         	</div>-->
                         </div>
                     </div>
-                    
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <h1>Carrera: {{ $name }}</h1>
                     
-                    <div class="row center col-lg-12 col-md-12 col-xs-12">
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
                         @foreach($allImgsRun as $image)    
-                            <div class="col-lg-3 col-md-4 col-xs-6">
+                            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
                             	    <div> 
                             	    <a href="/uploads/{{$image->archivo}}" class="thumbnail color-text-b" 
                             	            data-toggle="lightbox" 
@@ -63,12 +66,24 @@
                         @endforeach
                         
                     </div>
-                    <div>
-                        <?php echo $allImgsRun->render(); ?>
                     </div>
+                    <div class="row center">
+                            <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
+                                
+                            </div>
+                            
+                            <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 text-center">
+                                <?php echo $allImgsRun->render(); ?>
+                            </div>
+                            
+                            <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
+                                
+                            </div>
+                    </div>
+                    
                 </div>
         	</div>
-       	 	<div class="col-lg-2 col-md-2 hidden-xs">
+       	   <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
         		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
         	</div>
 
@@ -79,24 +94,15 @@
 @section('script')
 
         <script type="text/javascript">
+        
                 
                 jQuery(document).ready(function($) {
          
-            if(isNaN($('#qry').val())){
-                $('#goSearch').on('click', function(e){
-                    var searchUrl = 'http://' + document.location.hostname + "/corredores/{{$id}}/"+$('#qry').val();
-                    //alert(searchUrl);
-                    window.location.href = searchUrl;
-                    });// onchange
-                
-                }else{
-                   $('#goSearch').on('click', function(e){
-                    var searchUrl = 'http://' + document.location.hostname + "/corredores-nombre/{{$id}}/"+$('#qry').val();
-                    //alert(searchUrl);
-                    window.location.href = searchUrl;
-                    });// onchange 
-                    
-                }     
+                        $('#goSearch').on('click', function(e){
+                        var searchUrl = 'http://' + document.location.hostname + "/corredores-imagenes/{{$id}}/"+$('#qry').val();
+                        //alert(searchUrl);
+                        window.location.href = searchUrl;
+                        });// onchange 
                     
                 });// jQuery
             

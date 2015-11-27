@@ -12,12 +12,11 @@
                         	<img src="/images/logo.png">
                         </a> 
                     </div>
-                    
                     <div class="row">
                       <!--<div class="col-lg-12 col-md-12 col-xs-12 banner">-->
                          
                       </div>
-                    </div>
+                    
                     <div class="row">
                         <div class="row center col-lg-12 col-md-12 col-xs-12">
                               @include('flash::message')
@@ -28,7 +27,7 @@
                                 </div>
                                 
                                  <div class="row col-lg-12 col-md-12 col-xs-12 centerT">
-                                    @if($corredores->isEmpty())
+                                    @if($allImgsRun->isEmpty())
                                         <div class="well text-center color-text-b"> <h5> No hay corredores para esta busqueda. </h5></div>
                                     @else
                                     
@@ -40,7 +39,7 @@
                                             </thead>
                                             <tbody>
                                              
-                                            @foreach($corredores as $corredor)
+                                            @foreach($allImgsRun as $corredor)
                                                 <tr>
                                                     <td>{!! $corredor->nombres !!}</td>
                                 					<td>{!! $corredor->apellidos !!}</td>
@@ -56,6 +55,20 @@
                                         
                                     @endif
                                 </div>
+                                
+                            <div class="row center">
+                                    <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 text-center">
+                                        <?php echo $allImgsRun->render(); ?>
+                                    </div>
+                                    
+                                    <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
+                                
+                            </div>
+                    </div>
                         </div>
                     </div>
                 </div>
