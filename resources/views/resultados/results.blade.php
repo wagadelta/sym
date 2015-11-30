@@ -2,22 +2,33 @@
 
 @section('content')
        
-        <div  class="col-lg-2 col-md-2 hidden-xs">
-        		CONTENT 1
+        <div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2">
+        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
         	</div>
-        	<div class="col-lg-8 col-md-8 col-xs-12 div-center">
+        	<div class="col-sm-8  div-center">
             	<div class="row">
-                	<div id="logo" class="col-lg-12 col-md-12 col-xs-12">
-                    	<a href="/" >
-                        	<img src="/images/logo.png">
+                    	<div id="logo" class="col-xs-6 col-sm-8 col-md-8 col-lg-8">
+                        	<a href="/" >
+                            	<img src="/images/logo.png">
+                            </a> 
+                        </div>
+                
+                    <div id="logo" class="col-lg-2 col-md-2 col-xs-6">
+                    	<a href="#" >
+                        	Registro
                         </a> 
+                        |
+                        <a href="#" >
+                        	Ingresar
+                        </a> 
+                        
                     </div>
-                    
                     <div class="row">
-                      <!--<div class="col-lg-12 col-md-12 col-xs-12 banner">-->
+                      
                          
                       </div>
-                    </div>
+                    
+                    
                     <div class="row">
                         <div class="row center col-lg-12 col-md-12 col-xs-12">
                               @include('flash::message')
@@ -56,12 +67,29 @@
                                         
                                     @endif
                                 </div>
+                        
+                        
+                        <div class="row center">
+                                    <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 text-center">
+                                        <?php //echo $allImgsRun->render(); ?>
+                                    </div>
+                                    
+                                    <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
+                                
+                                    </div>
                         </div>
+                        
+                        
+                    </div>
                     </div>
                 </div>
         	</div>
-       	 	<div class="col-lg-2 col-md-2 hidden-xs">
-        		CONTENT 3
+       	 	<div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2">
+        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
         	</div>
 
 

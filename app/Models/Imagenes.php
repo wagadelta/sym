@@ -145,6 +145,7 @@ class Imagenes extends Model
 				$corredores = DB::table('corredores as c')
 					->select('c.id', 'c.nombres', 'c.apellidos')
 					->where('c.etiquetado', '=', '1')
+					->where('c.id_carrera', '=', $idRace)
 					->where('c.nombres', 'LIKE', '%'.$qry.'%')
 					->orWhere('c.apellidos', 'LIKE', '%'.$qry.'%')
 					//->get(); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página

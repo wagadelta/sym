@@ -63,7 +63,7 @@ class InicioController extends Controller {
 			{
 				//	dd($runParam_2);
 		
-				$allImgsRun = Imagenes::searchTagNameId($idRace, $qry, $request);
+				$allImgsRun = Imagenes::searchTagCorrId($idRace, $qry, $request);
 				//dd($result);
 				$name = Imagenes::nameRunner($idRace);
 				$id = Imagenes::idRunner($idRace);
