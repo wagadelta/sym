@@ -237,32 +237,25 @@ class ImagenesController extends AppBaseController
 	
 	public function etiquetar($carreraId, Request $request)
 	{
-		
-// 		select * 
-// from imagenes i 
-// inner join ubicaciones u on ( i.id_ubicacion = u.id )
-// inner join carreras c on ( u.id_carrera = c.id )
-// where c.id =20;
-
-// DB::table('users')
-//             ->join('contacts', 'users.id', '=', 'contacts.user_id')
-//             ->join('orders', 'users.id', '=', 'orders.user_id')
-//             ->select('users.id', 'contacts.phone', 'orders.price')
-//             ->get();
-            
 		$imagen = DB::table('imagenes')
 			->join('ubicaciones', 'imagenes.id_ubicacion', '=', 'ubicaciones.id')
 			->join('carreras', 'ubicaciones.id_carrera', '=', 'carreras.id')
 			->where ('carreras.id', '=', $carreraId)
+			->where ('imagenes.tipo_imagen', '=', 'normal')
 			//->where('bloqueo_etiquetar', '=', '0')   // TODO: USAR CAMPO DE BLOQUEO, PARA NO SOBREESCRIBIR ETIQUETAS
 			->first();
 			//Imagenes::where-> first();
-	 	dd($imagen);
+	 	//dd($imagen);
 	 	
 	 	// blockImagenToEtiquetar() // TODO: HACER FUNCION PARA BLOQUEAR IMAGEN
 	 	
 		return view('etiquetador.show-image')
 				->with('image', $imagen);
+	}
+	
+	public function updateEtiquetar(Request $request){
+		
+		dd($request);
 	}
 
 	public function uploadImages(){
