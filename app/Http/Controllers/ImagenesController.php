@@ -237,6 +237,7 @@ class ImagenesController extends AppBaseController
 	
 	public function etiquetar($carreraId, Request $request)
 	{
+		//dd($carreraId);
 		$imagen = DB::table('imagenes')
 			->join('ubicaciones', 'imagenes.id_ubicacion', '=', 'ubicaciones.id')
 			->join('carreras', 'ubicaciones.id_carrera', '=', 'carreras.id')
@@ -249,13 +250,31 @@ class ImagenesController extends AppBaseController
 	 	
 	 	// blockImagenToEtiquetar() // TODO: HACER FUNCION PARA BLOQUEAR IMAGEN
 	 	
+	 	$etiquetasArray  = array_filter(explode('|', $imagen->etiquetas) );
+	 	$etiquetasString = implode(", ", $etiquetasArray);
+	 	//dd(array($etiquetasArray,$etiquetasString));
+	 	
 		return view('etiquetador.show-image')
-				->with('image', $imagen);
+				->with('image', $imagen)
+				->with('etiquetasString', $etiquetasString)
+				->with('carreraId', $carreraId);
 	}
 	
-	public function updateEtiquetar(Request $request){
+	public function updateEtiquetar($id, Request $request){
+		$input = $request->all();
+		// formatear comas -> pipe
+		$etiquetas = str_replace(' ','',$input['etiquetas']);
+		$etiquetas = '|'.str_replace(',','|',$etiquetas).'|';
+		//dd($etiquetas);
+		$imagen = Imagenes::find($id); //select the book using primary id
+		$imagen->etiquetas = $etiquetas;
+		//dd($imagen);
+		$imagen->save();
+		//dd($imagen);
+		//TODO liberar estado de la foto (etiquetando)
 		
-		dd($request);
+		return redirect('/imagenes/etiquetar/carrera/'.$input['carreraId']);
+		
 	}
 
 	public function uploadImages(){
