@@ -24,7 +24,7 @@ public function run()
          }
 
      $fotografoId = $faker->randomElement($array = array (3,5,6));
-     $ubicacionId = $faker->numberBetween($min = 1, $max = 200);
+     $ubicacionId = $faker->numberBetween($min = 1, $max = 10);
      
      
     // FULL image
@@ -39,7 +39,7 @@ public function run()
       $imagen =
       [
       'id_fotografo'      => $fotografoId,
-      'id_etiquetador'    => $faker->randomElement($array = array (2,4)),
+      'id_etiquetador'    => 0, //$faker->randomElement($array = array (2,4)),
       'path'              => $pathToSave,
       'archivo'           => $imageName,
       'slug'              => $imageName,
@@ -47,6 +47,7 @@ public function run()
       'etiquetas'         => $etiquetas,
       'fecha_etiqueta'    => $faker->dateTimeThisYear($max='now'),
       'id_ubicacion'      => $ubicacionId,
+      'is_blocked'        => '0',
       'estado'            => '1'
       ];
       DB::table('imagenes')->insert($imagen);
@@ -59,7 +60,7 @@ public function run()
       $imagen =
       [
       'id_fotografo'      => $fotografoId,
-      'id_etiquetador'    => $faker->randomElement($array = array (2,4)),
+      'id_etiquetador'    => 0, //$faker->randomElement($array = array (2,4)),
       'path'              => $pathToSave,
       'archivo'           => $imageName,
       'slug'              => $imageName,
@@ -67,6 +68,7 @@ public function run()
       'etiquetas'         => $etiquetas,
       'fecha_etiqueta'    => $faker->dateTimeThisYear($max='now'),
       'id_ubicacion'      => $ubicacionId,
+      'is_blocked'        => '0',
       'estado'            => '1'
       ];
       DB::table('imagenes')->insert($imagen);
@@ -79,7 +81,7 @@ public function run()
       $imagen =
       [
       'id_fotografo'      => $fotografoId,
-      'id_etiquetador'    => $faker->randomElement($array = array (2,4)),
+      'id_etiquetador'    => 0, //$faker->randomElement($array = array (2,4)),
       'path'              => $pathToSave,
       'archivo'           => $imageName,
       'slug'              => $imageName,
@@ -87,6 +89,7 @@ public function run()
       'etiquetas'         => $etiquetas,
       'fecha_etiqueta'    => $faker->dateTimeThisYear($max='now'),
       'id_ubicacion'      => $ubicacionId,
+      'is_blocked'        => '0',
       'estado'            => '1'
       ];
       DB::table('imagenes')->insert($imagen);      

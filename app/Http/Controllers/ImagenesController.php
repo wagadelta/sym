@@ -240,10 +240,63 @@ class ImagenesController extends AppBaseController
 	
 	public function etiquetar($carreraId, Request $request)
 	{
-		$imagen = Imagenes::first();
-	 //dd($imagen);
+		$userId = \Auth::user()->id;
+		//dd($carreraId);
+		DB::enableQueryLog();
+		$imagen = DB::table('imagenes')
+			->join('ubicaciones', 'imagenes.id_ubicacion', '=', 'ubicaciones.id')
+			->join('carreras', 'ubicaciones.id_carrera', '=', 'carreras.id')
+			->where ('carreras.id', '=', $carreraId)
+			->where ('imagenes.tipo_imagen', '=', 'normal')
+			->where ('imagenes.is_blocked', '=', '0')
+			->where('id_etiquetador', '=', 0)
+			->first();
+			//dd(array($imagen, DB::getQueryLog() ));
+			//Imagenes::where-> first();
+	 
+	 	// blockImagenToEtiquetar() //BLOQUEAR IMAGEN
+	 	$imagenBlock = Imagenes::find($imagen->id); //select the book using primary id
+	 	$imagenBlock->is_blocked = '1';
+	 	$saved = $imagenBlock->save();
+	 	
+	 	if(!$saved){
+    		App::abort(500, 'Error NO GRABO');
+		}else{
+			//dd(array($imagenBlock,$imagen->id,'saved ok'));
+		}
+	 	
+	 	$etiquetasArray  = array_filter(explode('|', $imagen->etiquetas) );
+	 	$etiquetasString = implode(", ", $etiquetasArray);
+	 	//dd(\Auth::user()->id);
+	 	
 		return view('etiquetador.show-image')
-				->with('image', $imagen);
+				->with('image', $imagenBlock)
+				->with('etiquetasString', $etiquetasString)
+				->with('etiquetadorId', $userId)
+				->with('carreraId', $carreraId);
+	}
+	
+	public function updateEtiquetar($id, Request $request){
+		$input = $request->all();
+		// formatear comas -> pipe
+		$etiquetas = str_replace(' ','',$input['etiquetas']);
+		$etiquetas = '|'.str_replace(',','|',$etiquetas).'|';
+		//dd($etiquetas);
+		$imagen = Imagenes::find($id); //select the book using primary id
+		$imagenOrigen = $imagen;
+		$imagen->etiquetas = $etiquetas;
+		$imagen->id_etiquetador = $input['etiquetadorId'];
+		$imagen->is_blocked = '0';
+
+		$saved = $imagen->save();
+			 	if(!$saved){
+    		App::abort(500, 'Error NO GRABO');
+		}else{
+			//dd(array($imagen,$imagen->id,'saved updated ok'));
+		}
+		
+		return redirect('/imagenes/etiquetar/carrera/'.$input['carreraId'].'#');
+		
 	}
 
 	public function uploadImages(){

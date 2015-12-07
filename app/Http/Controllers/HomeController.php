@@ -31,7 +31,6 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		
 		switch( \Auth::user()->id_rol )
 		{
 			case 1: // admin 

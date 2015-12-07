@@ -11,7 +11,7 @@ public function run()
  {
     $faker = Faker::create('es_ES');
 
-    foreach(range(1,500) as $index)
+    foreach(range(1,50) as $index)
      {
         $name       = $faker->firstName($gender = null|'male'|'female');
         $lastName   = $faker->lastName;
@@ -24,7 +24,7 @@ public function run()
       'slug'            => $slug,
       'identificacion'  => $faker->ean8,
       'etiquetado'      => $faker->randomElement($array = array ('0','1')),
-      'id_carrera'      => $faker->numberBetween($min = 1, $max = 25),
+      'id_carrera'      => $faker->numberBetween($min = 1, $max = 5),
       'estado'          => '1'
       ];
       DB::table('corredores')->insert($corredor);
