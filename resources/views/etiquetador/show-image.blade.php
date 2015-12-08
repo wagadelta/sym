@@ -71,5 +71,12 @@
     <script type="text/javascript">
         var evt = new Event(),
         m = new Magnifier(evt);
+        m.attach({
+            thumb: '#thumb',
+            large: '/uploads/{!! $image->archivo !!}',
+            mode: 'inside',
+            zoom: 3,
+            zoomable: true
+        });
     </script>
 @endsection
