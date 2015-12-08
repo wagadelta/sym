@@ -24,7 +24,7 @@
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6>
                         <a class="magnifier-thumb-wrapper" href="#">
-                            <img id="thumb" src="/uploads/{!! $image->archivo !!}">
+                            <img id="thumb" src="/uploads/{!! $image->archivo !!}" width="452" height="340">
                         </a>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
