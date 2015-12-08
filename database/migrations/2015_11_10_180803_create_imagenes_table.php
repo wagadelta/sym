@@ -17,7 +17,7 @@ class CreateImagenesTable extends Migration
 		{
 			$table->increments('id');
 			$table->integer('id_fotografo');
-			$table->integer('id_etiquetador')->default('0');
+			$table->integer('id_etiquetador')->default(0);
 			$table->string('path');
 			$table->string('archivo');
 			$table->string('slug');

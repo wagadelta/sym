@@ -15,6 +15,7 @@ use DB;
 use Input;
 use Carbon\Carbon;
 use Session;
+use Cache;
 
 class ImagenesController extends AppBaseController
 {
@@ -244,7 +245,9 @@ class ImagenesController extends AppBaseController
 		$userId = \Auth::user()->id;
 		//dd($carreraId);
 		DB::enableQueryLog();
+		Cache::forget('imagenes');
 		$imagen = DB::table('imagenes')
+			->select('imagenes.id', 'imagenes.etiquetas')
 			->join('ubicaciones', 'imagenes.id_ubicacion', '=', 'ubicaciones.id')
 			->join('carreras', 'ubicaciones.id_carrera', '=', 'carreras.id')
 			->where ('carreras.id', '=', $carreraId)
@@ -266,7 +269,7 @@ class ImagenesController extends AppBaseController
 	 	if(!$saved){
     		App::abort(500, 'Error NO GRABO');
 		}else{
-			//dd(array($imagenBlock,$imagen->id,'saved ok'));
+			//dd(array($imagenBlock,$imagen->id,'saved ok',DB::getQueryLog()));
 		}
 	 	
 	 	$etiquetasArray  = array_filter(explode('|', $imagen->etiquetas) );
@@ -285,8 +288,9 @@ class ImagenesController extends AppBaseController
 		// formatear comas -> pipe
 		$etiquetas = str_replace(' ','',$input['etiquetas']);
 		$etiquetas = '|'.str_replace(',','|',$etiquetas).'|';
-		//dd($etiquetas);
-		$imagen = Imagenes::find($id); //select the book using primary id
+		$etiquetas = str_replace('',' ', $etiquetas);
+		//dd(array($id,$input,$etiquetas));
+		$imagen = Imagenes::find($id); //select the image using primary id
 		$imagenOrigen = $imagen;
 		$imagen->etiquetas = $etiquetas;
 		$imagen->id_etiquetador = $input['etiquetadorId'];
@@ -297,9 +301,11 @@ class ImagenesController extends AppBaseController
     		App::abort(500, 'Error NO GRABO');
 		}else{
 			//dd(array($imagen,$imagen->id,'saved updated ok'));
+			//dd(array($id,$input,$etiquetas, $imagen, 'saved update ok'));
 		}
 		
-		return redirect('/imagenes/etiquetar/carrera/'.$input['carreraId'].'#');
+		return redirect('/imagenes/etiquetar/carrera/'.$input['carreraId'].'?');
+		//return redirect('/imagenes/etiquetar');
 		
 	}
 
