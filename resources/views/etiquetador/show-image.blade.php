@@ -89,7 +89,7 @@
         m = new Magnifier(evt);
         m.attach({
             thumb: '#thumb',
-            large: '/uploads/{!! $image->archivo !!}',
+            large: "{{ asset('uploads') }}/{!! $image->archivo !!}",
             largeWrapper: 'preview',
             mode: 'outside',
             zoom: 8,

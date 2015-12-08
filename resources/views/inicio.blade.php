@@ -3,13 +3,13 @@
 @section('content')
        
         <div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2  ">
-        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive ads-cls"/> </img>
+        		<img src="{{asset('images')}}/ad2.jpg" class="img-responsive ads-cls"/> </img>
         	</div>
         	<div class="col-md-8 div-center">
             	<div class="row">
                 	<div id="logo" class="col-md-10">
-                    	<a href="#" >
-                        	<img src="{{ asset('/images/logo.png')}}">
+                    	<a href="{{asset('/')}}" >
+                        	<img src="{{ asset('images/logo.png') }}">
                         </a> 
                     </div>
                     <div id="logo" class="col-md-2">
@@ -27,7 +27,7 @@
                       <div class="col-md-12 banner">
                          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
                                     <!-- Indicators -->
-                                  <!-- Indicators -->
+                                  <!-- Indicators 
                                   <ol class="carousel-indicators">
                                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                                     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -40,8 +40,8 @@
                                     <li data-target="#carousel-example-generic" data-slide-to="8"></li>
                                     <li data-target="#carousel-example-generic" data-slide-to="9"></li>
                                     
-                                  </ol>
-                                 
+                                  </ol>-->
+                                  
                                   <!-- Wrapper for slides -->
                                   <div class="carousel-inner">
                                       <?php  
@@ -50,9 +50,9 @@
                                     @foreach($imagenes as $slide)
                                     <div class="item <?php echo ($Counter == 1 )? 'active' : '';   ?>">
                                         
-                                          <img src="uploads/{{$slide->archivo}}" alt="..." class="image-size-slide">
+                                          <img src="{{ asset('uploads') }}/{{$slide->archivo}}" alt="..." class="image-size-slide">
                                           <div class="carousel-caption">
-                                              <h3>S&M</h3>
+                                              <h3>Sports & Marketing</h3>
                                           </div>
                                       
                                     </div>
@@ -90,7 +90,7 @@
                       <h1>Carreras Recientes</h1>
                         @foreach($runners as $runn)    
                             	<div class="col-lg-3 col-md-4 col-xs-6"> 
-                            	    <a href="carrera/{{$runn->id}}" class="thumbnail"> <img src="{{ $runn->imagen}}"> </img></a>
+                            	    <a href="{{ asset('carrera') }}/{{$runn->id}}" class="thumbnail"> <img src="{{ $runn->imagen}}"> </img></a>
                             	    <p class="text-justify images-caption">{{ $runn->nombre }}</p>
                                 </div>
                         @endforeach
@@ -111,7 +111,7 @@
                 </div>
         	</div>
        	 	<div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-        		<img src="{{ asset('/uploads/ad2.jpg')}}" class="img-responsive  ads-cls"/> </img>
+        		<img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
         	</div>
 
 

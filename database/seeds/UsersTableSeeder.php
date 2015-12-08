@@ -46,6 +46,37 @@ public function run()
     		'password' => Hash::make('fabiopass'),
     		'id_rol' => 3,  //fotografo
 	    ],
+	    
+	    [
+      'id_supervisor' => 0,
+      'identificacion' => '2576081380303',
+    		'otra_identificacion' => '',
+    		'email' => 'axelue@gmail.com',
+    		'nombres' => 'axel',
+    		'apellidos' => 'sarceno',
+    		'telefonos' => '30368985',
+    		'foto' => '',
+    		'usuario' => 'axelhwm',
+    		'password' => Hash::make('axel2015'),
+    		'id_rol' => 2,  //etiquetador
+	    ],
+	    	
+	    	
+	    	[
+      'id_supervisor' => 0,
+      'identificacion' => '2576081380202',
+    		'otra_identificacion' => '',
+    		'email' => 'axelgt@gmail.com',
+    		'nombres' => 'axel',
+    		'apellidos' => 'sarceno',
+    		'telefonos' => '30368985',
+    		'foto' => '',
+    		'usuario' => 'axelh',
+    		'password' => Hash::make('axel2015'),
+    		'id_rol' => 3,  //fotografo
+	    ],
+	    
+	    
 	    	    [
       'id_supervisor' => 0,
       'identificacion' => '2757704190101',

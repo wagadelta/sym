@@ -26,37 +26,37 @@
         <ul class="sidebar-menu">
             <li class="header"</li>
             <li>
-                <a href="/home">
+                <a href="{{ asset('home') }}">
                     <i class="fa fa-home"></i>
                     <span>Inicio</span>
                 </a>
             </li>
             <li>
-                <a href="/users">
+                <a href="{{ asset('users') }}">
                     <i class="fa fa-user-secret"></i>
                     <span>Admin. Usuarios</span>
                 </a>
             </li>
             <li>
-                <a href="/carreras">
+                <a href="{{ asset('carreras') }}">
                     <i class="fa fa-clock-o"></i>
                     <span>Admin. Carreras</span>
                 </a>
             </li>
             <li>
-                <a href="/corredores">
+                <a href="{{ asset('corredores') }}">
                     <i class="fa fa-child"></i>
                     <span>Admin. Corredores</span>
                 </a>
             </li>            
             <li>
-                <a href="/ubicaciones">
+                <a href="{{ asset('ubicaciones') }}">
                     <i class="fa fa-map-marker"></i>
                     <span>Admin. Ubicaciones</span>
                 </a>
             </li>            
             <li>
-                <a href="/imagenes">
+                <a href="{{ asset('imagenes') }}">
                     <i class="fa fa-picture-o"></i>
                     <span>Admin. Imagenes</span>
                 </a>
@@ -69,11 +69,11 @@
                 </i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/roles"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
+                    <li><a href="{{ asset('roles') }}"><i class="fa fa-level-up"></i> Admin. Roles</a></li>
                 </ul>
             </li>   
             <li>
-                <a href="/auth/logout">
+                <a href="{{ asset('auth') }}/logout">
                 <i class="fa fa-sign-out"></i> <span>Cerrar Sesión</span> 
                 </a>
             </li>

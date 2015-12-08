@@ -26,25 +26,25 @@
         <ul class="sidebar-menu">
             <li class="header"</li>
             <li>
-                <a href="/home">
+                <a href="{{ asset('home') }}">
                     <i class="fa fa-home"></i>
                     <span>Inicio</span>
                 </a>
             </li>
             <li>
-                <a href="/imagenes/upload">
+                <a href="{{ asset('imagenes') }}/upload">
                     <i class="fa fa-user-secret"></i>
                     <span>Subir Fotos</span>
                 </a>
             </li>
             <li>
-                <a href="/imagenes/">
+                <a href="{{ asset('imagenes') }}/">
                     <i class="fa fa-clock-o"></i>
                     <span>Admin. Fotos</span>
                 </a>
             </li>
             <li>
-                <a href="/auth/logout">
+                <a href="{{ asset('auth') }}/logout">
                 <i class="fa fa-sign-out"></i> <span>Cerrar Sesión</span> 
                 </a>
             </li>          

@@ -2,13 +2,13 @@
 
 @section('content')
         <div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2">
-        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
+        		<img src="{{ asset('images') }}/ad2.jpg" class="img-responsive"/>
         	</div>
         	<div class="col-md-8 div-center">
             	<div class="row">
                 	<div id="logo" class="col-md-12">
-                    	<a href="/" >
-                        	<img src="/images/logo.png"/>
+                    	<a href="{{asset('/') }}" >
+                        	<img src="{{ asset('images') }}/logo.png"/>
                         </a> 
                     </div>
                     <div class="row">
@@ -22,14 +22,14 @@
                     <div class="row center col-md-12">
                         @foreach($images as $image)    
                             	<div class="col-lg-3 col-md-4 col-xs-6"> 
-                            	    <a href="/uploads/{{$image->archivo}}" class="thumbnail color-text-b" 
+                            	    <a href="{{ asset('uploads') }}/{{$image->archivo}}" class="thumbnail color-text-b" 
                             	            data-toggle="lightbox" 
-                            	             data-footer="<a href='/uploads/{{$image->archivo}}' 
-                            	                    download='{{$image->archivo}}'>
-                            	                        <i class='fa fa-download fa-2x' title='Descargar imagen {{$image->archivo}}'>
+                            	             data-footer="<a href='{{ asset('uploads') }}/{{$image->archivo}}' 
+                            	                    download='{{ $image->archivo }}'>
+                            	                        <i class='fa fa-download fa-2x' title='Descargar imagen {{ $image->archivo }}'>
                             	                           </i></a> " > 
                             	    
-                            	         <img src="{{ asset('/uploads')}}/{{$image->archivo}}"/>
+                            	         <img src="{{ asset('uploads') }}/{{$image->archivo}}"/>
                             	    </a>
                                 </div>
                         @endforeach
@@ -37,7 +37,7 @@
                 </div>
         	</div>
        	 	<div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2">
-        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
+        		<img src="{{ asset('images') }}/ad2.jpg" class="img-responsive"/>
         	</div>
 
 @endsection

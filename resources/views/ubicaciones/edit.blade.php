@@ -12,7 +12,7 @@
     {!! Form::close() !!}
 </div>
 
-<form action="/image-upload" class="dropzone" method="post">
+<form action="{{ asset('image-upload') }}" class="dropzone" method="post">
   <div class="fallback" id="myId">
     <input name="file" type="file" multiple />
   </div>
@@ -23,6 +23,6 @@
 
 @section('script')
 <script>
-$("div#myId").dropzone({ url: "/storage" });
+$("div#myId").dropzone({ url: "{{ asset('storage') }}" });
 </script>
 @endsection

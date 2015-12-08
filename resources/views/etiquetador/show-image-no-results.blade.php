@@ -26,7 +26,7 @@
         
         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                    <a class="btn btn-primary pull-right" style="margin-top: 25px" href="/imagenes/etiquetar">Volver</a>
+                    <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{{ asset('imagenes') }}/etiquetar">Volver</a>
                 </div>
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10"></div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>

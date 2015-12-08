@@ -3,13 +3,13 @@
 @section('content')
        
         <div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2">
-        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
+        		<img src="{{ asset('images') }}/ad2.jpg" class="img-responsive"/>
         	</div>
         	<div class="col-md-8 div-center">
             	<div class="row">
                 	<div id="logo" class="col-lg-8 col-md-8 col-xs-6">
-                    	<a href="/" >
-                        	<img src="{{asset('/images/logo.png')}}">
+                    	<a href="{{ asset('/') }}" >
+                        	<img src="{{ asset('images/logo.png') }}">
                         </a> 
                     </div>
                     <div id="logo" class="col-lg-2 col-md-2 col-xs-6">
@@ -30,7 +30,7 @@
                         	 
                              <div class="input-group searchinput">
                                  
-                                <input type="text" class=" vertical form-control color-text-g" name="quest" id="qry" placeholder="Nombre/Número corredor" >
+                                <input type="text" class=" vertical form-control color-text-g" name="quest" id="qry" placeholder="Nombres, o Apellidos, o Número" >
                                 <!--<input type="hidden" name="oculto" id="{{$id}}"/>-->
                                 <span class="input-group-btn goSearch">
                                  <button class="btn btn-primary vertical-correc"  id="goSearch" type="submit"><i class="fa fa-search fa-x5"></i> Buscar</button>  
@@ -51,11 +51,11 @@
                         @foreach($allImgsRun as $image)    
                             <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
                             	    <div> 
-                            	    <a href="/uploads/{{$image->archivo}}" class="thumbnail color-text-b" 
+                            	    <a href="{{ asset('uploads') }}/{{$image->archivo}}" class="thumbnail color-text-b" 
                             	            data-toggle="lightbox" 
-                            	             data-footer="<a href='/uploads/{{$image->archivo}}' 
-                            	                    download='{{$image->archivo}}'>
-                            	                        <i class='fa fa-download fa-2x' title='Descargar imagen {{$image->archivo}}'>
+                            	             data-footer="<a href='{{ asset('uploads') }}/{{$image->archivo}}' 
+                            	                    download='{{ $image->archivo }}'>
+                            	                        <i class='fa fa-download fa-2x' title='Descargar imagen {{ $image->archivo }}'>
                             	                           </i></a> " > 
                             	    
                             	         <img src="{{ asset('/uploads')}}/{{$image->archivo}}"/>
@@ -84,7 +84,7 @@
                 </div>
         	</div>
        	   <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
+        		<img src="{{asset('images')}}/ad2.jpg" class="img-responsive"/>
         	</div>
 
 
@@ -105,10 +105,6 @@
                         });// onchange 
                     
                 });// jQuery
-            
-        
-        
-        
             
             $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
                 event.preventDefault();

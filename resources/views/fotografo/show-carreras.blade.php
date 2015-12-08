@@ -27,7 +27,7 @@
                         <td>{!! $carrera->nombre !!}<br><textarea row=2>{!! $carrera->descripcion !!}</textarea></td>
     					<td>{!! $carrera->slug !!}</td>
     					<td>{!! $carrera->fecha !!}</td>
-    					<td><a class="btn btn-primary pull-right" style="margin-top: 25px" href="/imagenes/etiquetar/carrera/{!! $carrera->id !!}">Etiquetar</a></td>
+    					<td><a class="btn btn-primary pull-right" style="margin-top: 25px" href="{{ asset('imagenes') }}/etiquetar/carrera/{!! $carrera->id !!}">Etiquetar</a></td>
                     </tr>
                     @endforeach
                     </tbody>

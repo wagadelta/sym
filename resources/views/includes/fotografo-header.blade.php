@@ -32,7 +32,7 @@
                             <!--    <a href="#" class="btn btn-default btn-flat">Profile</a>-->
                             <!--</div>-->
                             <div class="pull-right">
-                                <a href="/auth/logout" class="btn btn-danger btn-flat">Cerrar Sesión</a>
+                                <a href="{{ asset('auth') }}/logout" class="btn btn-danger btn-flat">Cerrar Sesión</a>
                             </div>
                         </li>
                     </ul>

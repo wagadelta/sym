@@ -51,7 +51,7 @@
 									Login
 								</button>
 
-								<a href="/password/email">Olvidó su clave?</a>
+								<a href="{{ asset('password') }}/email">Olvidó su clave?</a>
 							</div>
 						</div>
 					</form>

@@ -55,7 +55,7 @@ class Imagenes extends Model
 		return DB::table('imagenes')
 			->select('id', 'archivo')
 			->where('tipo_imagen', '=', 'full')
-			->orderBy('id', 'asc')
+			->orderBy('id', 'desc')
 			->skip(0)
 			->take(10)
 			->get();
@@ -84,7 +84,7 @@ class Imagenes extends Model
 			->select('i.id',  'i.archivo', 'i.id_ubicacion',"i.etiquetas as tags", 'u.id_carrera as carrera')
 			->where('i.tipo_imagen', '=', 'full')
 			->where('u.id_carrera', '=', $id)
-			->paginate(1); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
+			->paginate(25); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
 			$imagenes->setPath($requests->url());
 		return  $imagenes;
 		
@@ -124,7 +124,7 @@ class Imagenes extends Model
 					//->orWhere('i.etiquetas', 'LIKE', '%'.$runParam_2.'|%')
 					->where('i.tipo_imagen', '=', 'normal')
 					->where('u.id_carrera', '=', $idRace)
-					->paginate(1); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
+					->paginate(25); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
 					//->get(); 
 					$allImgsRun->setPath($request->url());
 					return $allImgsRun;
@@ -150,7 +150,7 @@ class Imagenes extends Model
 					->orWhere('c.apellidos', 'LIKE', '%'.$qry.'%')
 					//->get(); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
 					//dd(DB::getQueryLog());
-					->paginate(2); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
+					->paginate(25); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
 					 
 					
 					//dd($corredores);

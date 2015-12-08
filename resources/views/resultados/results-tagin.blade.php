@@ -3,13 +3,13 @@
 @section('content')
        
         <div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2">
-        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
+        		<img src="{{asset('images')}}/ad2.jpg" class="img-responsive"/>
         	</div>
         	<div class="col-lg-8 col-md-8 col-xs-12 div-center">
             	<div class="row">
                 	<div id="logo" class="col-xs-6 col-sm-8 col-md-8 col-lg-8 ">
-                    	<a href="/" >
-                        	<img src="/images/logo.png">
+                    	<a href="{{ asset('/') }}" >
+                        	<img src="{{ asset('images') }}/logo.png">
                         </a> 
                     </div>
                     <div id="logo" class="col-lg-2 col-md-2 col-xs-6">
@@ -54,7 +54,7 @@
                                                     <td>{!! $corredor->nombres !!}</td>
                                 					<td>{!! $corredor->apellidos !!}</td>
                                 					<td>
-                                					    <a href ="/corredores/{!! $corredor->id !!}/images" title="Ver imágenes relacionadas">
+                                					    <a href ="{{ asset('corredores') }}/{!! $corredor->id !!}/images" title="Ver imágenes relacionadas">
                                 					    <i class="fa fa-camera fa-2x"></i>
                                 					    </a>
                                 					</td>
@@ -84,7 +84,7 @@
                 </div>
         	</div>
        	 	<div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2">
-        		<img src="{{asset('/uploads')}}/ad2.jpg" class="img-responsive"/>
+        		<img src="{{asset('images')}}/ad2.jpg" class="img-responsive"/>
         	</div>
 
 
