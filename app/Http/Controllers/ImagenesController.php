@@ -14,6 +14,7 @@ use App\Models\Carreras;
 use DB;
 use Input;
 use Carbon\Carbon;
+use Session;
 
 class ImagenesController extends AppBaseController
 {
@@ -252,6 +253,9 @@ class ImagenesController extends AppBaseController
 			->where('id_etiquetador', '=', 0)
 			->first();
 			//dd(array($imagen, DB::getQueryLog() ));
+			if(!$imagen) {	
+				return view('etiquetador.show-image-no-results');
+			}
 			//Imagenes::where-> first();
 	 
 	 	// blockImagenToEtiquetar() //BLOQUEAR IMAGEN
