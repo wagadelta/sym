@@ -34,24 +34,6 @@
     {!! Form::text('telefonos', null, ['class' => 'form-control']) !!}
 </div>
 
-<!--- foto Field --->
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('foto', 'Fotografía:') !!}
-    {!! Form::text('foto', null, ['class' => 'form-control']) !!}
-</div>
-
-<!--- correlativo_recibo_cobro Field --->
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('correlativo_recibo_cobro', 'Correlativo (Cobros):') !!}
-    {!! Form::text('correlativo_recibo_cobro', null, ['class' => 'form-control']) !!}
-</div>
-
-<!--- correlativo_recibo_entrega Field --->
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('correlativo_recibo_entrega', 'Correlativo (Entregas):') !!}
-    {!! Form::text('correlativo_recibo_entrega', null, ['class' => 'form-control']) !!}
-</div>
-
 
 <!--- usuario Field --->
 <div class="form-group col-sm-6 col-lg-4">

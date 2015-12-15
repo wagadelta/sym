@@ -15,33 +15,31 @@
             @if($users->isEmpty())
                 <div class="well text-center">No Users found.</div>
             @else
-                <table class="table">
+                <table class="well table">
                     <thead>
                         <th>Usuario</th>
                         <th>Identificacion /<br> (otra id)</th>
             			<th>Nombres</th>
             			<th>Apellidos</th>
             			<th>Email</th>
-            			<th>Telefonos</th>
-            			<th>Foto</th>
+            			<th>Telefono</th>
             			<th>Rol</th>
-            			<th>Correlativos<br> Cobro/Entrega</th>
             			<th>Supervisado por:</th>
                         <th>Action</th>
                     </thead>
-                    <tbody>
+                    <tbody class="table-hover">
                      
                     @foreach($users as $user)
                     <?php
                     switch($user->id_rol){
                         case 3: // cobrador
-                            $icon = '<i class="fa fa-money"></i>';
+                            $icon = '<i class="fa fa-camera"></i>';
                         break; // supervisor
                         case 2:
-                            $icon = '<i class="fa fa-search-plus"></i>';
+                            $icon = '<i class="fa fa-tags"></i>';
                         break;
                         case 1: //administrator
-                            $icon = '<i class="fa fa-key"></i>';
+                            $icon = '<i class="fa fa-lock"></i>';
                         break;
                         default:
                             $icon = '<i class="fa fa-check-circle"></i>';
@@ -54,9 +52,9 @@
 					<td>{!! $user->apellidos !!}</td>
 					<td>{!! $user->email !!}</td>
 					<td>{!! $user->telefonos !!}</td>
-					<td>{!! $user->foto !!}</td>
+				
 					<td>{!!$icon!!}-{!! $user->Rol->descripcion !!}</td>
-					<td>{!! $user->correlativo_recibo_cobro !!} / {!! $user->correlativo_recibo_entrega !!}</td>
+				
 					<td>{!! $user->supervisorName($user->id_supervisor) !!}</td>
 					        <td>
                                 <a href="{!! route('users.edit', [$user->id]) !!}"><i class="fa fa-pencil-square-o"></i></a>

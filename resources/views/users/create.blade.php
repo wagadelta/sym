@@ -16,20 +16,20 @@
 @section('script')
 <script>
      jQuery(document).ready(function($) {
-        if($('select[name="id_rol"]').val()!=3) // si es NO ES Cobrador
+        if($('select[name="id_rol"]').val()!=1) // si es NO ES Cobrador
             {
                 $('select[name="id_supervisor"]').val(0); // NA
             };
         
         $('select[name="id_rol"]').on('change', function(e){
-            if($('select[name="id_rol"]').val()!=3) // si no es rol Cobrador
+            if($('select[name="id_rol"]').val()!=1) // si no es rol Cobrador
             {
                 $('select[name="id_supervisor"]').val(0); //NA
             };
         });// onchange
             
          $('select[name="id_supervisor"]').on('change', function(e){
-            if($('select[name="id_rol"]').val()!=3) // si No es rol Cobrador
+            if($('select[name="id_rol"]').val()!=1) // si No es rol Cobrador
             {
                 $('select[name="id_supervisor"]').val(0); //NA
             };
