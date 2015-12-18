@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ asset('imagenes') }}/">
+                <a href="{{ asset('imagenes') }}">
                     <i class="fa fa-clock-o"></i>
                     <span>Admin. Fotos</span>
                 </a>
