@@ -18,9 +18,9 @@
         </div>
 
         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                
+
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
-                
+
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6>
                         <a class="magnifier-thumb-wrapper" href="#">
@@ -32,7 +32,7 @@
                             Use el scroll del mouse para <br>agrandar el area.
                         </div>
                     </div>
-                    
+
                     <!--<div>-->
                     <!--    <a class="magnifier-thumb-wrapper" href="#">-->
                     <!--        <img id="thumb" src="/uploads/{!! $image->archivo !!}"-->
@@ -48,9 +48,9 @@
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                     <div>
-                        <div class="strong">  
-                            Nombre de archivo: {!! $image->archivo !!} 
-                            <?php 
+                        <div class="strong">
+                            Nombre de archivo: {!! $image->archivo !!}
+                            <?php
                                 if($image->is_blocked == '1'){
                                     echo ' - Bloqueada a otros usuarios. ';
                                 }
@@ -58,7 +58,7 @@
                         </div>
                     <br>
                     {!! Form::label('Etiquetas', 'Etiquetas:') !!}
-                    {!! Form::textarea('etiquetas', $etiquetasString, ['class' => 'form-control','size' => '30x2']) !!}
+                    {!! Form::textarea('etiquetas', $etiquetasString, ['class' => 'form-control','size' => '30x2', 'autofocus']) !!}
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
         </div>
@@ -69,14 +69,14 @@
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
         </div>
-        
-        
+
+
     </div>
     {!! Form::hidden('etiquetas_original', $image->etiquetas) !!}
     {!! Form::hidden('carreraId', $carreraId) !!}
     {!! Form::hidden('etiquetadorId', $etiquetadorId) !!}
     {!! Form::close() !!}
-    
+
     @endif
 @endsection
 
