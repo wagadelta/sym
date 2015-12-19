@@ -74,7 +74,7 @@
                           <div class="col-md-8 search-internal-slide">
 
                               <div class="input-group searchinput">
-                                <input type="text" class=" vertical form-control color-text-g" id="qry" placeholder="Introduzca nombre de corredor" >
+                                <input type="text" class=" vertical form-control color-text-g" id="qry" placeholder="Introduzca nombre de corredor" onkeypress="return runScript(submit)">
                                 <span class="input-group-btn goSearch">
                                  <button class="btn btn-primary vertical-correc"  id="goSearch" type="submit"><i class="fa fa-search fa-x5"></i> Buscar</button>
                                </span>
@@ -128,5 +128,15 @@
             window.location.href = searchUrl;
         });// onchange
     });// jQuery
+</script>
+
+<script type="text/javascript">
+function runScript(e) {
+  if (e.keyCode == 13) {
+      var tb = document.getElementById("qry");
+      eval(tb.value);
+      return false;
+  }
+}
 </script>
 @endsection
