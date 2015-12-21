@@ -23,22 +23,27 @@
 </div>
 
 <!--- Id Carrera Field --->
+<!--<div class="form-group col-sm-6 col-lg-4">
+    {--!! Form::label('id_carrera', 'Id Carrera:') !!--}
+    {--!! Form::text('id_carrera', null, ['class' => 'form-control']) !!--}
+</div>-->
+
 <div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('id_carrera', 'Id Carrera:') !!}
-    {!! Form::text('id_carrera', null, ['class' => 'form-control']) !!}
+  {!! Form::label('id_carrera', 'Carrera:') !!}
+  {!! Form::select('id_carrera', $carreras_options, Input::old('id_carrera'), ['class' => 'form-control']) !!}
 </div>
 
 <!--- Id Carrera Field --->
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('etiquetado', 'Tiene Imágenes:') !!}
-    {!! Form::text('etiquetado', null, ['class' => 'form-control']) !!}
-</div>
+<!--<div class="form-group col-sm-6 col-lg-4">
+    {--!! Form::label('etiquetado', 'Tiene Imágenes:') !!--}
+    {--!! Form::text('etiquetado', null, ['class' => 'form-control']) !!--}
+</div>-->
 
 <!--- Estado Field --->
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('estado', 'Estado:') !!}
-    {!! Form::text('estado', null, ['class' => 'form-control']) !!}
-</div>
+<!-- <div class="form-group col-sm-6 col-lg-4">
+    {--!! Form::label('estado', 'Estado:') !!--}
+    {--!! Form::text('estado', null, ['class' => 'form-control']) !!--}
+</div> -->
 
 
 <!--- Submit Field --->

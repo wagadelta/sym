@@ -22,7 +22,7 @@ class CreateCorredoresTable extends Migration
 			$table->text('bib_number');
 			$table->integer('id_carrera');
 			$table->string('etiquetado')->default('0'); // 0 es = sin imagenes etiquetadas y 1 es si hay imagenes por lo menos 1
-			$table->string('estado');
+			$table->string('estado')->default('1');
 			$table->timestamps();
 		});
 	}

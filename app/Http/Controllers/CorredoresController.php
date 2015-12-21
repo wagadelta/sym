@@ -38,10 +38,11 @@ class CorredoresController extends AppBaseController
 		$corredores = \DB::table('corredores')->orderBy('id_carrera', 'desc')->paginate(20);
 		$corredores->setPath($request->url());
 		$carreras_options = $this->carrerasRepository->optionList();
-		dd($carreras_options);
+		//dd($carreras_options);
 
 		return view('corredores.index')
-		    ->with('corredores', $corredores);
+		    ->with('corredores', $corredores)
+				->with('carreras_options', $carreras_options);
 	}
 
 	/**
@@ -51,7 +52,10 @@ class CorredoresController extends AppBaseController
 	 */
 	public function create()
 	{
-		return view('corredores.create');
+			$carreras_options = $this->carrerasRepository->optionList();
+			//dd(	$carreras_options);
+		return view('corredores.create')
+						->with('carreras_options' , $carreras_options);
 	}
 
 	/**
@@ -101,14 +105,16 @@ class CorredoresController extends AppBaseController
 	public function edit($id)
 	{
 		$corredores = $this->corredoresRepository->findCorredoresById($id);
-
+$carreras_options = $this->carrerasRepository->optionList();
 		if(empty($corredores))
 		{
 			Flash::error('Corredores not found');
 			return redirect(route('corredores.index'));
 		}
 
-		return view('corredores.edit')->with('corredores', $corredores);
+		return view('corredores.edit')
+		->with('corredores', $corredores)
+		->with('carreras_optios', $carreras_options);
 	}
 
 	/**
