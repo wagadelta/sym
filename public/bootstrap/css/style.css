@@ -7,7 +7,7 @@
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #fff !important;  
+   color: #fff !important;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
@@ -16,10 +16,10 @@
    font-size:1.2em;
 }
 
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
   color: #fff !important;
    font-weight:bold !important;
-   font-size:1.2em; 
+   font-size:1.2em;
 }
 
 body{
@@ -42,10 +42,10 @@ h1{
 
 
 .search{
-	z-index:999999; 
-	position:relative; 
-	background-color:transparent; 
-	height:18%;	
+	z-index:999999;
+	position:relative;
+	background-color:transparent;
+	height:18%;
 	border:3px  solid rgba(255,255,255,0.50);
 	border-radius:100px;
 	width:80%;
@@ -56,11 +56,11 @@ h1{
 }
 
 .search-internal{
-	z-index:999999; 
+	z-index:999999;
 	color: #fff;
-	position:relative; 
-	background-color:transparent; 
-	height:15%;	
+	position:relative;
+	background:rgba(21,42,92,0.65);
+	height:15%;
 	border:3px  solid rgba(255,255,255,0.80);
 	border-radius:100px;
 	width:90%;
@@ -77,10 +77,10 @@ h1{
 }
 
 .search-internal-slide{
-	z-index:1; 
-	position:relative; 
-	background-color:transparent; 
-	height:14%;	
+	z-index:1;
+	position:relative;
+	background: rgba(21,42,92,0.65);
+	height:14%;
 	border:3px  solid rgba(255,255,255,0.80);
 	border-radius:100px;
 	width:60%;
@@ -96,7 +96,7 @@ h1{
 	width:90%;
 	height:50px;
 	vertical-align:middle;
-	
+
 	font-size:35px;
 	font-weight:lighter;
 	position: relative;
@@ -119,7 +119,7 @@ h1{
 	/*transform: translateY(-127%);*/
 	width: 100%;
 	/*font-size:1em;*/
-	position:relative;	
+	position:relative;
 }
 
 .vertical-corecc{
@@ -130,22 +130,22 @@ h1{
 	width: 60%;
 	font-size:1em;
 	position:relative;
-	
+
 }
 
 .banner{
-	z-index:1; 
-	position:relative; 
+	z-index:1;
+	position:relative;
 	height:400px;
 	min-width:190px;
 	margin:0 auto 0;
-	
+
 }
 
 .div-center{
 	margin:0 auto;
 	background-color:#333;
-	padding-bottom:50px;	
+	padding-bottom:50px;
 }
 
 .imagenes{
@@ -158,7 +158,7 @@ h1{
 .buttonimagenes{
 	display:block;
 	border:0;
-	background-color:transparent;	
+	background-color:transparent;
 }
 
 .center {
@@ -170,11 +170,11 @@ h1{
 #logo{
 	 padding: 15px;
 	 padding-bottom:28px;
-	 	 
+
 	}
 
 #contenedor{
-	min-height:100%;	
+	min-height:100%;
 }
 
 .linkCopy, .linkCopy:hover, a.linkCopy:visited{
@@ -193,8 +193,8 @@ h1{
 .images-caption
 {
 	font-size: 8px;
-	
-	
+
+
 }
 
 .internal-hieght
@@ -238,10 +238,12 @@ h1{
 
 #search{
 	z-index:1;
+
 }
 
 .goSearch{
 	/*padding-bottom:%;*/
 	padding-left:5%;
-	
+  bottom: 5px;
+
 }
