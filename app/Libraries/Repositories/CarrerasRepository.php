@@ -79,4 +79,9 @@ class CarrerasRepository
 
 		return $carreras;
 	}
+	
+		public function optionList()
+	{
+		return Carreras::lists('descripcion', 'id');
+	}
 }

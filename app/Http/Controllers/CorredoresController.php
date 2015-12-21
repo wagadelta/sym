@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Requests\CreateCorredoresRequest;
 use Illuminate\Http\Request;
 use App\Libraries\Repositories\CorredoresRepository;
+use App\Libraries\Repositories\CarrerasRepository;
 use App\Models\Corredores;
 use App\Models\Carreras;
 use Mitul\Controller\AppBaseController;
@@ -15,10 +16,12 @@ class CorredoresController extends AppBaseController
 
 	/** @var  CorredoresRepository */
 	private $corredoresRepository;
+	private $carrerasRepository;
 
-	function __construct(CorredoresRepository $corredoresRepo)
+	function __construct(CorredoresRepository $corredoresRepo, CarrerasRepository $carrerasRepo)
 	{
 		$this->corredoresRepository = $corredoresRepo;
+		$this->carrerasRepository = $carrerasRepo;
 	}
 
 	/**
@@ -34,6 +37,8 @@ class CorredoresController extends AppBaseController
 
 		$corredores = \DB::table('corredores')->orderBy('id_carrera', 'desc')->paginate(20);
 		$corredores->setPath($request->url());
+		$carreras_options = $this->carrerasRepository->optionList();
+		dd($carreras_options);
 
 		return view('corredores.index')
 		    ->with('corredores', $corredores);
