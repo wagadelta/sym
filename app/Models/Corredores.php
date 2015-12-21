@@ -4,18 +4,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Corredores extends Model
 {
-    
+
 	public $table = "corredores";
 
 	public $primaryKey = "id";
-    
+
 	public $timestamps = true;
 
 	public $fillable = [
 	    "nombres",
 		"apellidos",
 		"slug",
-		"identificacion",
+		"bib_number",
 		"etiquetado",
 		"id_carrera",
 		"estado"

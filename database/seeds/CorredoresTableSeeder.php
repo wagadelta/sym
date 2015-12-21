@@ -16,13 +16,13 @@ public function run()
         $name       = $faker->firstName($gender = null|'male'|'female');
         $lastName   = $faker->lastName;
         $slug       = Str::slug($name.'-'.$lastName);
-        
+
       $corredor =
       [
       'nombres'         => $name,
       'apellidos'       => $lastName,
       'slug'            => $slug,
-      'identificacion'  => $faker->ean8,
+      'bib_number'  => $faker->numberBetween($min = 1, $max = 200),
       'etiquetado'      => $faker->randomElement($array = array ('0','1')),
       'id_carrera'      => $faker->numberBetween($min = 1, $max = 5),
       'estado'          => '1'

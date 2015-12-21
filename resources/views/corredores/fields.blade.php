@@ -18,8 +18,8 @@
 
 <!--- Identificacion Field --->
 <div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('identificacion', 'Identificacion:') !!}
-    {!! Form::text('identificacion', null, ['class' => 'form-control']) !!}
+    {!! Form::label('bib_number', 'BIB Number:') !!}
+    {!! Form::text('bib_number', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- Id Carrera Field --->

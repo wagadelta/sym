@@ -19,7 +19,7 @@ class CreateCorredoresTable extends Migration
 			$table->string('nombres');
 			$table->string('apellidos');
 			$table->string('slug');
-			$table->text('identificacion');
+			$table->text('bib_number');
 			$table->integer('id_carrera');
 			$table->string('etiquetado')->default('0'); // 0 es = sin imagenes etiquetadas y 1 es si hay imagenes por lo menos 1
 			$table->string('estado');

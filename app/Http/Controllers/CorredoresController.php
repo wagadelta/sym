@@ -5,6 +5,7 @@ use App\Http\Requests\CreateCorredoresRequest;
 use Illuminate\Http\Request;
 use App\Libraries\Repositories\CorredoresRepository;
 use App\Models\Corredores;
+use App\Models\Carreras;
 use Mitul\Controller\AppBaseController;
 use Response;
 use Flash;
@@ -29,9 +30,9 @@ class CorredoresController extends AppBaseController
 	 */
 	public function index(Request $request)
 	{
-	    $input = $request->all();
+			$input = $request->all();
 
-		$corredores = \DB::table('corredores')->orderBy('id', 'desc')->paginate(20);
+		$corredores = \DB::table('corredores')->orderBy('id_carrera', 'desc')->paginate(20);
 		$corredores->setPath($request->url());
 
 		return view('corredores.index')
@@ -153,14 +154,14 @@ class CorredoresController extends AppBaseController
 
 		return redirect(route('corredores.index'));
 	}
-	
-	
+
+
 	public function searchByName($qry = null, Request $request)
 	{
 		$corredores= Corredores::where('nombres', 'LIKE', "%$qry%")
 							->orWhere('apellidos', 'LIKE', "%$qry%")
 							->get();
-							
+
 							//dd($corredores);
 							//->paginate(10);
 		//$corredores->setPath($request->url());
@@ -168,9 +169,9 @@ class CorredoresController extends AppBaseController
 		 return view('resultados.results')
 		    ->with('corredores', $corredores)
 		    ->with('qry',$qry);
-		
-		
+
+
 	}
-	
-	
+
+
 }
