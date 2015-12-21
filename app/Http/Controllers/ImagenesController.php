@@ -223,7 +223,7 @@ class ImagenesController extends AppBaseController
 	      'id_ubicacion'      => $data['id_ubicacion'],
 	      'estado'            => $data['estado']
 	      ];
-	      DB::table('imagenes')->insert($imagen);
+	     DB::table('imagenes')->insert($imagen);
 	}
 	
 	public function getCarrera(Request $request)
@@ -286,13 +286,13 @@ class ImagenesController extends AppBaseController
 	public function updateEtiquetar($id, Request $request){
 		$input = $request->all();
 		// formatear comas -> pipe
-		$etiquetas = str_replace(' ','',$input['etiquetas']);
-		$etiquetas = '|'.str_replace(',','|',$etiquetas).'|';
-		$etiquetas = str_replace('',' ', $etiquetas);
-		//dd(array($id,$input,$etiquetas));
+		$etiquetas_coma = str_replace(' ','',$input['etiquetas']);
+		$etiquetas_pipe = '|'.str_replace(',','|',$etiquetas_coma).'|';
+		$etiquetas_pipe = str_replace('',' ', $etiquetas_pipe);
+		//dd(array($id,$input,$etiquetas_pipe, $etiquetas_coma));
 		$imagen = Imagenes::find($id); //select the image using primary id
 		$imagenOrigen = $imagen;
-		$imagen->etiquetas = $etiquetas;
+		$imagen->etiquetas = $etiquetas_pipe;
 		$imagen->id_etiquetador = $input['etiquetadorId'];
 		$imagen->is_blocked = '0';
 
@@ -300,8 +300,15 @@ class ImagenesController extends AppBaseController
 			 	if(!$saved){
     		App::abort(500, 'Error NO GRABO');
 		}else{
-			//dd(array($imagen,$imagen->id,'saved updated ok'));
-			//dd(array($id,$input,$etiquetas, $imagen, 'saved update ok'));
+			// change string to array
+			$explode = explode(',', $etiquetas_coma);
+			//dd($explode);
+			foreach ($explode as $key){
+				$corredor = Corredores::where('bib_number', '=', $key)->first();
+				$corredor->etiquetado = '1';
+				//dd($corredor);
+				$corredor->save();
+			}
 		}
 		
 		return redirect('/imagenes/etiquetar/carrera/'.$input['carreraId'].'?');
