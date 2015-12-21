@@ -4,27 +4,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ubicaciones extends Model
 {
-    
-	public $table = "ubicaciones";
 
-	public $primaryKey = "id";
-    
-	public $timestamps = true;
+  public $table = "ubicaciones";
 
-	public $fillable = [
-	    "id_carrera",
-		"nombre",
-		"slug",
-		"direccion",
-		"geolocalizacion",
-		"estado"
-	];
+  public $primaryKey = "id";
 
-	public static $rules = [
-	    "id_carrera" => "required",
-		"nombre" => "required",
-		"slug" => "required",
-		"direccion" => "required"
-	];
+  public $timestamps = true;
+
+  public $fillable = [
+    "id_carrera",
+    "nombre",
+    "slug",
+    "direccion",
+    "geolocalizacion",
+    "estado"
+  ];
+
+  public static $rules = [
+    "id_carrera" => "required",
+    "nombre" => "required",
+    "slug" => "required",
+    "direccion" => "required"
+  ];
 
 }

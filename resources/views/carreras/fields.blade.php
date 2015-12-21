@@ -1,7 +1,7 @@
 <!--- Nombre Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('nombre', 'Nombre:') !!}
-    {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+    {!! Form::text('nombre', null, ['class' => 'form-control', 'autofocus']) !!}
 </div>
 
 <!--- Slug Field --->
@@ -13,7 +13,7 @@
 <!--- Fecha Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('fecha', 'Fecha:') !!}
-    {!! Form::text('fecha', null, ['class' => 'form-control']) !!}
+    {!! Form::text('fecha', null, ['class' => 'form-control', 'data-provide' => 'datepicker', 'placeholder' => 'Click para ver calendario']) !!}
 </div>
 
 <!--- Descripcion Field --->
@@ -25,7 +25,7 @@
 <!--- Imagen Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('imagen', 'Imagen:') !!}
-    {!! Form::text('imagen', null, ['class' => 'form-control']) !!}
+    {!! Form::text('imagen', null, ['class' => 'form-control', 'placeholder' => 'URL de imagen para la carrera']) !!}
 </div>
 
 <!--- Estado Field --->

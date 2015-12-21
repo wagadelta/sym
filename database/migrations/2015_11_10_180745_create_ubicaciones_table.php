@@ -20,8 +20,8 @@ class CreateUbicacionesTable extends Migration
 			$table->string('nombre');
 			$table->string('slug');
 			$table->text('direccion');
-			$table->string('geolocalizacion');
-			$table->string('estado');
+			$table->string('geolocalizacion')->default('-90.014, 14.004');
+			$table->string('estado')->default('1');
 			$table->timestamps();
 		});
 	}

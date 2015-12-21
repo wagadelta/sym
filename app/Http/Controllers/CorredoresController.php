@@ -25,49 +25,49 @@ class CorredoresController extends AppBaseController
 	}
 
 	/**
-	 * Display a listing of the Corredores.
-	 *
-	 * @param Request $request
-	 *
-	 * @return Response
-	 */
+	* Display a listing of the Corredores.
+	*
+	* @param Request $request
+	*
+	* @return Response
+	*/
 	public function index(Request $request)
 	{
-			$input = $request->all();
+		$input = $request->all();
 
 		$corredores = \DB::table('corredores')->orderBy('id_carrera', 'desc')->paginate(20);
 		$corredores->setPath($request->url());
-		$carreras_options = $this->carrerasRepository->optionList();
+		//$carreras_options = $this->carrerasRepository->optionList();
 		//dd($carreras_options);
 
 		return view('corredores.index')
-		    ->with('corredores', $corredores)
-				->with('carreras_options', $carreras_options);
+		->with('corredores', $corredores);
+		//->with('carreras_options', $carreras_options);
 	}
 
 	/**
-	 * Show the form for creating a new Corredores.
-	 *
-	 * @return Response
-	 */
+	* Show the form for creating a new Corredores.
+	*
+	* @return Response
+	*/
 	public function create()
 	{
-			$carreras_options = $this->carrerasRepository->optionList();
-			//dd(	$carreras_options);
+		$carreras_options = $this->carrerasRepository->optionList();
+		//dd(	$carreras_options);
 		return view('corredores.create')
-						->with('carreras_options' , $carreras_options);
+		->with('carreras_options' , $carreras_options);
 	}
 
 	/**
-	 * Store a newly created Corredores in storage.
-	 *
-	 * @param CreateCorredoresRequest $request
-	 *
-	 * @return Response
-	 */
+	* Store a newly created Corredores in storage.
+	*
+	* @param CreateCorredoresRequest $request
+	*
+	* @return Response
+	*/
 	public function store(CreateCorredoresRequest $request)
 	{
-        $input = $request->all();
+		$input = $request->all();
 
 		$corredores = $this->corredoresRepository->store($input);
 
@@ -77,12 +77,12 @@ class CorredoresController extends AppBaseController
 	}
 
 	/**
-	 * Display the specified Corredores.
-	 *
-	 * @param  int $id
-	 *
-	 * @return Response
-	 */
+	* Display the specified Corredores.
+	*
+	* @param  int $id
+	*
+	* @return Response
+	*/
 	public function show($id)
 	{
 		$corredores = $this->corredoresRepository->findCorredoresById($id);
@@ -97,15 +97,15 @@ class CorredoresController extends AppBaseController
 	}
 
 	/**
-	 * Show the form for editing the specified Corredores.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	* Show the form for editing the specified Corredores.
+	*
+	* @param  int  $id
+	* @return Response
+	*/
 	public function edit($id)
 	{
 		$corredores = $this->corredoresRepository->findCorredoresById($id);
-$carreras_options = $this->carrerasRepository->optionList();
+		$carreras_options = $this->carrerasRepository->optionList();
 		if(empty($corredores))
 		{
 			Flash::error('Corredores not found');
@@ -114,17 +114,17 @@ $carreras_options = $this->carrerasRepository->optionList();
 
 		return view('corredores.edit')
 		->with('corredores', $corredores)
-		->with('carreras_optios', $carreras_options);
+		->with('carreras_options', $carreras_options);
 	}
 
 	/**
-	 * Update the specified Corredores in storage.
-	 *
-	 * @param  int    $id
-	 * @param CreateCorredoresRequest $request
-	 *
-	 * @return Response
-	 */
+	* Update the specified Corredores in storage.
+	*
+	* @param  int    $id
+	* @param CreateCorredoresRequest $request
+	*
+	* @return Response
+	*/
 	public function update($id, CreateCorredoresRequest $request)
 	{
 		$corredores = $this->corredoresRepository->findCorredoresById($id);
@@ -143,12 +143,12 @@ $carreras_options = $this->carrerasRepository->optionList();
 	}
 
 	/**
-	 * Remove the specified Corredores from storage.
-	 *
-	 * @param  int $id
-	 *
-	 * @return Response
-	 */
+	* Remove the specified Corredores from storage.
+	*
+	* @param  int $id
+	*
+	* @return Response
+	*/
 	public function destroy($id)
 	{
 		$corredores = $this->corredoresRepository->findCorredoresById($id);
@@ -170,16 +170,16 @@ $carreras_options = $this->carrerasRepository->optionList();
 	public function searchByName($qry = null, Request $request)
 	{
 		$corredores= Corredores::where('nombres', 'LIKE', "%$qry%")
-							->orWhere('apellidos', 'LIKE', "%$qry%")
-							->get();
+		->orWhere('apellidos', 'LIKE', "%$qry%")
+		->get();
 
-							//dd($corredores);
-							//->paginate(10);
+		//dd($corredores);
+		//->paginate(10);
 		//$corredores->setPath($request->url());
 		//$cobros->setPath($request->url());
-		 return view('resultados.results')
-		    ->with('corredores', $corredores)
-		    ->with('qry',$qry);
+		return view('resultados.results')
+		->with('corredores', $corredores)
+		->with('qry',$qry);
 
 
 	}
