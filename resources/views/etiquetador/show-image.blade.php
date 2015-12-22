@@ -22,12 +22,12 @@
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6>
+                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
                         <a class="magnifier-thumb-wrapper" href="#">
-                            <img id="thumb" src="/uploads/{!! $image->archivo !!}" width="452" height="340">
+                            <img id="thumb" src="{{asset('uploads')}}/{!! $image->archivo !!}" width="450" height="auto">
                         </a>
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                         <div class="magnifier-preview" id="preview" style="width: 400px; height: 233px; text-align:center;">
                             Use el scroll del mouse para <br>agrandar el area.
                         </div>
@@ -35,8 +35,8 @@
 
                     <!--<div>-->
                     <!--    <a class="magnifier-thumb-wrapper" href="#">-->
-                    <!--        <img id="thumb" src="/uploads/{!! $image->archivo !!}"-->
-                    <!--        data-large-img-url="/uploads/{!! $image->archivo !!}"-->
+                    <!--        <img id="thumb" src="/uploads/{--!! $image->archivo !!--}"-->
+                    <!--        data-large-img-url="/uploads/{--!! $image->archivo !!--}"-->
                     <!--        data-large-img-wrapper="preview">-->
                     <!--    </a>-->
                     <!--    <div class="magnifier-preview" id="preview" style="width: 200px; height: 133px">Use el mouse para <br>agrandar el area.</div>-->

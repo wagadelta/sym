@@ -169,8 +169,8 @@ class ImagenesController extends AppBaseController
 	public function upload(Request $request)
 	{
 		// PHP CON FIG
-		ini_set('post_max_size', '64M');
-		ini_set('upload_max_filesize', '64M');
+		ini_set('post_max_size', '128M');
+		ini_set('upload_max_filesize', '128M');
 		// GENERAL DATA
 		$fotografoId = $request->input('id_fotografo');
 		$ubicacionId = $request->input('ubicacion');
@@ -195,7 +195,7 @@ class ImagenesController extends AppBaseController
 		$img = Image::make($pathToSave);
 		$imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-'.$fileTempName.'-normal.jpg';
 		$pathToSave    = base_path() .$imagePath. $imageName;
-		$img->resize(452, 340)->save($pathToSave);
+		$img->resize(790, 593)->save($pathToSave);
 		$dataArray['archivo']=$imageName;
 		$this->addImageOnTable($dataArray, 'normal');
 
@@ -203,7 +203,7 @@ class ImagenesController extends AppBaseController
 		$img = Image::make($pathToSave);
 		$imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-'.$fileTempName.'-thumb.jpg';
 		$pathToSave    = base_path() .$imagePath. $imageName;
-		$img->resize(150, 100)->save($pathToSave);
+		$img->resize(150, 113)->save($pathToSave);
 		$dataArray['archivo']=$imageName;
 		$this->addImageOnTable($dataArray, 'thumb');
 

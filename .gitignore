@@ -3,4 +3,4 @@
 .env
 /storage/images
 public/uploads
-
+.ftpconfig

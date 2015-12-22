@@ -12,7 +12,7 @@ public function run()
  {
     $faker = Faker::create('es_ES');
     $imagePath = '/public/uploads/';
-    
+
     foreach(range(1,10) as $index)
      {
         $name = 'Carrera '.$faker->sentence($nbWords = 3);
@@ -25,8 +25,8 @@ public function run()
 
      $fotografoId = $faker->randomElement($array = array (3,5,6));
      $ubicacionId = $faker->numberBetween($min = 1, $max = 10);
-     
-     
+
+
     // FULL image
       $watermark = Image::make(base_path().'/public/images/sym-watermark.png');
       $imageFake     = file_get_contents($faker->imageUrl('1024', '768'));
@@ -35,7 +35,7 @@ public function run()
       file_put_contents($pathToSave, $imageFake);
       $img = Image::make($pathToSave);
       $img->insert($watermark, 'bottom-right')->save($pathToSave);
-    
+
       $imagen =
       [
       'id_fotografo'      => $fotografoId,
@@ -51,12 +51,12 @@ public function run()
       'estado'            => '1'
       ];
       DB::table('imagenes')->insert($imagen);
-      
+
     // NORMAL  image
       $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-normal.jpg';
       $pathToSave    = base_path() .$imagePath. $imageName;
-      $img->resize(452, 340)->save($pathToSave);
-    
+      $img->resize(790, 593)->save($pathToSave);
+
       $imagen =
       [
       'id_fotografo'      => $fotografoId,
@@ -76,8 +76,8 @@ public function run()
 // THUMB  image
       $imageName     = 'f-'.$fotografoId.'_u-'.$ubicacionId.'-thumb.jpg';
       $pathToSave    = base_path() .$imagePath. $imageName;
-      $img->resize(150, 100)->save($pathToSave);
-    
+      $img->resize(150, 113)->save($pathToSave);
+
       $imagen =
       [
       'id_fotografo'      => $fotografoId,
@@ -92,9 +92,8 @@ public function run()
       'is_blocked'        => '0',
       'estado'            => '1'
       ];
-      DB::table('imagenes')->insert($imagen);      
+      DB::table('imagenes')->insert($imagen);
 
     } //foreach
  }//function
 }//class
-

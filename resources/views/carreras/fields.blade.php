@@ -13,7 +13,7 @@
 <!--- Fecha Field --->
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('fecha', 'Fecha:') !!}
-    {!! Form::text('fecha', null, ['class' => 'form-control', 'data-provide' => 'datepicker', 'placeholder' => 'Click para ver calendario']) !!}
+    {!! Form::text('fecha', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- Descripcion Field --->
@@ -29,10 +29,10 @@
 </div>
 
 <!--- Estado Field --->
-<div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('estado', 'Estado:') !!}
-    {!! Form::text('estado', null, ['class' => 'form-control']) !!}
-</div>
+<!--<div class="form-group col-sm-6 col-lg-4">
+    {--!! Form::label('estado', 'Estado:') !!--}
+    {--!! Form::text('estado', null, ['class' => 'form-control']) !!--}
+</div>-->
 
 
 <!--- Submit Field --->

@@ -21,7 +21,7 @@ class CreateCarrerasTable extends Migration
 			$table->datetime('fecha');
 			$table->text('descripcion');
 			$table->string('imagen');
-			$table->string('estado');
+			$table->string('estado')->default('1');
 			$table->timestamps();
 		});
 	}
