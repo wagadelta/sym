@@ -32,13 +32,16 @@
         @include('flash::message')
 
         <div class="row col-lg-12 col-md-12 col-xs-12">
-          <h1 class="pull-left"> <i class="fa fa-child"></i> Resultado de búsqueda {{ $qry }}</h1>
+          <h1 class="pull-left"> <i class="fa fa-child"></i> Resultado de búsqueda: {{ $qry }}</h1>
           <!--<a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('corredores.create') !!}">Add New</a>-->
         </div>
 
         <div class="row col-lg-12 col-md-12 col-xs-12 centerT">
           @if($allImgsRun->isEmpty())
-          <div class="well text-center color-text-b"> <h5> No hay corredores para esta busqueda. </h5></div>
+          <div class="well text-center color-text-b"> <h5> No hay resultados para ésta búsqueda. </h5>
+             <a href="{{asset('/')}}" class="btn btn-success"><i class="fa fa-arrow-left"></i>Regresar al inicio</a>
+          </div>
+
           @else
 
           <table class="well table table-striped tablb-condensed color-text-b ">
@@ -72,7 +75,7 @@
           </div>
 
           <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 text-center">
-            <?php echo $allImgsRun->render(); ?>
+            {!! $allImgsRun->render()!!}
           </div>
 
           <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">

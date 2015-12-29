@@ -13,7 +13,13 @@
     </div>
     <div class="row">
       <div class="row">
-        <!--<div class="col-lg-12 col-md-12 col-xs-12 banner">-->
+          <!--<div class="col-lg-12 col-md-12 col-xs-12 banner">-->
+          @if($images->isEmpty())
+          <div class="well text-center color-text-b"> <h5> No hay Reultados para ésta búsqueda. </h5>
+            <a href="{{asset('/')}}" class="btn btn-success"><i class="fa fa-arrow-left"></i>
+              Regresar al inicio</a>
+            </div>
+            @else
 
       </div>
 
@@ -34,6 +40,21 @@
         </div>
         @endforeach
       </div>
+
+      <div class="row center">
+        <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
+
+        </div>
+
+        <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 text-center">
+          {!! $images->render() !!}
+        </div>
+
+        <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
+
+        </div>
+      </div>
+      @endif
     </div>
   </div>
   <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">

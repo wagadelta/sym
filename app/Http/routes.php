@@ -37,7 +37,7 @@ route::get('/phpinfo', function(){
         else {
             echo 'GD is not available.';
         }
-        
+
         if(extension_loaded('imagick')) {
             $imagick = new Imagick();
             echo '<pre>';
@@ -57,31 +57,31 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::group(['middleware' => 'auth'], function() { 
+Route::group(['middleware' => 'auth'], function() {
 
-    
+
     Route::resource('roles', 'RolesController');
-    
+
     Route::get('roles/{id}/delete', [
         'as' => 'roles.delete',
         'uses' => 'RolesController@destroy',
     ]);
-    
-    
+
+
     Route::resource('users', 'UsersController');
-    
+
     Route::get('users/{id}/delete', [
         'as' => 'users.delete',
         'uses' => 'UsersController@destroy',
     ]);
-    
+
     Route::resource('bitacoras', 'BitacoraController');
-    
+
     Route::get('bitacoras/{id}/delete', [
         'as' => 'bitacoras.delete',
         'uses' => 'BitacoraController@destroy',
     ]);
-}); //middleware auth    
+}); //middleware auth
 
 
 
@@ -101,7 +101,7 @@ Route::resource('corredores', 'CorredoresController');
 // Route Searchs by runners in races
 Route::get('corredores/id/{qry?}', 'CorredoresController@searchByName');
 Route::get('corredores-imagenes/{id?}/{qry?}', 'InicioController@searchByTag');
-Route::get('corredores/{id?}/images', 'ImagenesController@searchById');
+Route::get('corredores/{id?}/{id_run?}/images', 'ImagenesController@searchById');
 
 
 Route::resource('api/corredores', 'API\CorredoresAPIController');

@@ -45,8 +45,15 @@
     </div>
   </div>
   <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <h1>Carrera: {{ $name }}</h1>
+    @if($allImgsRun->isEmpty())
+    <div class="well text-center color-text-b"> <h5> No hay resultados para ésta búsqueda. </h5>
+      <a href="{{asset('/')}}" class="btn btn-success"><i class="fa fa-arrow-left"></i>Regresar al inicio</a>
+    </div>
 
+    @else
+    <div class="container">
+      <h2>{{ $name }}</h2>
+    </div>
     <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
       @foreach($allImgsRun as $image)
       <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
@@ -66,14 +73,16 @@
         @endforeach
 
       </div>
+      @endif
     </div>
+
     <div class="row center">
       <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
 
       </div>
 
       <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 text-center">
-        <?php echo $allImgsRun->render(); ?>
+        {!! $allImgsRun->render() !!}
       </div>
 
       <div class="hidden-xs col-xs-1 hidden-sm col-sm-2 col-md-2 col-lg-2">
@@ -100,7 +109,7 @@ jQuery(document).ready(function($) {
 
   $('#qry').on('keypress', function(e){
     if(e.keyCode == 13){
-      var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores/id/"+$('#qry').val();
+      var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores-imagenes/{{ $id }}/"+$('#qry').val();
       //alert(searchUrl);
       window.location.href = searchUrl;
     }
@@ -108,7 +117,7 @@ jQuery(document).ready(function($) {
 
   $('#goSearch').on('click', function(e){
 
-    var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores/id/"+$('#qry').val();
+    var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores-imagenes/{{ $id }}/"+$('#qry').val();
     //alert(searchUrl);
     window.location.href = searchUrl;
 

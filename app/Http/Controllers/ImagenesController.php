@@ -326,19 +326,20 @@ class ImagenesController extends AppBaseController
 
 	}
 
-	public function searchById($id = null, Request $request1)
+	public function searchById($id = null, $id_run, Request $request1)
 	{
 		//DB::connection()->enableQueryLog();
 		$imagenes= Imagenes::where('etiquetas', 'LIKE', "%|$id|%")
 		->where('tipo_imagen', 'normal')
 		->where('etiquetas', '<>', '')
 		->where('etiquetas', '<>', '||')
-		->get();
-		//dd(DB::getQueryLog());
+		->paginate(12);
+		//		dd(DB::getQueryLog($imagenes));
 
-		$corredor= Corredores::where('id', $id)
+		$corredor= Corredores::where('bib_number', '=' ,$id)
+		->where('id_carrera', '=', $id_run)
 		->first();
-		////($c$corredor
+	//dd($corredor);
 		//$NombreCorredor = $imagenes->corredor()->name; // TODO: DEBE DE SETEAR LOS RELATIONSHIPS.
 		return view('resultados.byname')
 		->with('images', $imagenes)

@@ -173,8 +173,8 @@ class CorredoresController extends AppBaseController
 
 		$corredores= Corredores::where('nombres', 'LIKE', "%$qry%")
 		->orWhere('apellidos', 'LIKE', "%$qry%")
-		->paginate(1);
-		
+		->paginate(25);
+
 		return view('resultados.results')
 		->with('corredores', $corredores)
 		->with('qry',$qry);

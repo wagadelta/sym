@@ -29,7 +29,7 @@ class Corredores extends Model
 
 	public function carrera()
 	{
-		return $this->belongsTo('App\Models\Carreras');
+		return $this->belongsTo('App\Models\Carreras', 'id_carrera');
 	}
 
 }
