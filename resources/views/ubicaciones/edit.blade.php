@@ -11,14 +11,14 @@
 
     {!! Form::close() !!}
 </div>
-
+<!--
 <form action="{{ asset('image-upload') }}" class="dropzone" method="post">
   <div class="fallback" id="myId">
     <input name="file" type="file" multiple />
   </div>
 </form>
 
-
+-->
 @endsection
 
 @section('script')

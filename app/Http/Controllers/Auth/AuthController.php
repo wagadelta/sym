@@ -34,7 +34,7 @@ class AuthController extends Controller {
 		$this->registrar = $registrar;
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
-	
+
 	public function postLogin(Request $request)
 {
     $this->validate($request, [
@@ -55,5 +55,6 @@ class AuthController extends Controller {
                     'usuario' => 'These credentials do not match our records.',
                 ]);
 }
+
 
 }

@@ -12,20 +12,24 @@ class Corredores extends Model
 	public $timestamps = true;
 
 	public $fillable = [
-	    "nombres",
+		"nombres",
 		"apellidos",
 		"slug",
 		"bib_number",
-		"etiquetado",
 		"id_carrera",
 		"estado"
 	];
 
 	public static $rules = [
-	    "nombres" => "required",
-		"apellidos" => "required",
-		"slug" => "required",
-		"id_carrera" => "required"
+		"nombres" 		=> "required",
+		"apellidos" 	=> "required",
+		"slug" 				=> "required",
+		"id_carrera" 	=> "required"
 	];
+
+	public function carrera()
+	{
+		return $this->belongsTo('App\Models\Carreras');
+	}
 
 }

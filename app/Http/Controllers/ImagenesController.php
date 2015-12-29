@@ -285,7 +285,7 @@ class ImagenesController extends AppBaseController
 
 	public function updateEtiquetar($id, Request $request){
 		$input = $request->all();
-		// formatear comas -> pipe
+			// formatear comas -> pipe
 		$etiquetas_coma = str_replace(' ','',$input['etiquetas']);
 		$etiquetas_pipe = '|'.str_replace(',','|',$etiquetas_coma).'|';
 		$etiquetas_pipe = str_replace('',' ', $etiquetas_pipe);
@@ -304,8 +304,10 @@ class ImagenesController extends AppBaseController
 			$explode = explode(',', $etiquetas_coma);
 			//dd($explode);
 			foreach ($explode as $key){
-				$corredor = Corredores::where('bib_number', '=', $key)->first();
-				$corredor->etiquetado = '1';
+				$corredor = Corredores::where('bib_number', '=', $key)
+										->where('id_carrera','=', $input['carreraId'])
+										->first();
+				$corredor->etiqueta_count = $corredor->etiqueta_count+1;
 				//dd($corredor);
 				$corredor->save();
 			}

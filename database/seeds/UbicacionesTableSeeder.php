@@ -15,10 +15,10 @@ public function run()
      {
         $name = 'Ubicacion '.$faker->sentence($nbWords = 1);
         $slug = Str::slug($name);
-        
+
       $ubicacion =
       [
-      'id_carrera'      => $faker->numberBetween($min = 1, $max = 5),
+      'id_carrera'      => $faker->numberBetween($min = 1, $max = 4),
       'nombre'          => $name,
       'slug'            => $slug,
       'direccion'       => $faker->address,

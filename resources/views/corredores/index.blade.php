@@ -26,7 +26,7 @@
             			<th>Estado</th>
                         <th width="50px">Action</th>
                         <th>Etiquetado</th>
-                    
+
                     </thead>
                     <tbody>
                     @foreach($corredores as $corredor)
@@ -42,8 +42,8 @@
                             <a href="{!! route('corredores.delete', [$corredor->id]) !!}" onclick="return confirm('Are you sure wants to delete this Corredores?')"><i class="glyphicon glyphicon-remove"></i></a>
                         </td>
                         <td>
-                            <?php echo ($corredor->etiquetado==1)? '<i class="fa fa-thumbs-o-up" style="color:green"></i>' : '<i class="fa fa-thumbs-o-down" style="color:red"></i>'; ?>
-                        </td>                        
+                            <?php echo ($corredor->etiqueta_count > 1)? '<i class="fa fa-thumbs-o-up" style="color:green"></i>' : '<i class="fa fa-thumbs-o-down" style="color:red"></i>'; ?>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>

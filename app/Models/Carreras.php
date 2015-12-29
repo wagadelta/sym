@@ -4,15 +4,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carreras extends Model
 {
-    
+
 	public $table = "carreras";
 
 	public $primaryKey = "id";
-    
+
 	public $timestamps = true;
 
 	public $fillable = [
-	    "nombre",
+		"nombre",
 		"slug",
 		"fecha",
 		"descripcion",
@@ -21,10 +21,15 @@ class Carreras extends Model
 	];
 
 	public static $rules = [
-	    "nombre" => "required",
-		"slug" => "required",
-		"fecha" => "required",
+		"nombre" 			=> "required",
+		"slug" 				=> "required",
+		"fecha" 			=> "required",
 		"descripcion" => "required"
 	];
+
+	public function corredor()
+	{
+		return $this->hasOne('App\Models\Corredores');
+	}
 
 }
