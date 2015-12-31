@@ -10,7 +10,7 @@ class ImagenesTableSeeder extends Seeder {
 
 public function run()
  {
-    $faker = Faker::create('es_ES');
+  /*  $faker = Faker::create('es_ES');
     $imagePath = '/public/uploads/';
 
     foreach(range(1,10) as $index)
@@ -94,6 +94,6 @@ public function run()
       ];
       DB::table('imagenes')->insert($imagen);
 
-    } //foreach
+    } //foreach*/
  }//function
 }//class

@@ -9,7 +9,7 @@ class CorredoresTableSeeder extends Seeder {
 
   public function run()
   {
-    $faker = Faker::create('es_ES');
+    /*$faker = Faker::create('es_ES');
 
     foreach(range(1,50) as $index)
     {
@@ -28,6 +28,6 @@ class CorredoresTableSeeder extends Seeder {
         'estado'          => '1'
       ];
       DB::table('corredores')->insert($corredor);
-    } //foreach
+    } //foreach*/
   }//function
 }//class

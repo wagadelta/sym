@@ -1,5 +1,5 @@
 <?php
- 
+
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,7 +20,7 @@ public function run()
     		'password' => Hash::make('super15'),
     		'id_rol' => 1,  //administrador
 	    ],
-	    
+
 	    [
       'id_supervisor' => 0,
       'identificacion' => '2546091390230',
@@ -34,7 +34,7 @@ public function run()
     		'password' => Hash::make('super15'),
     		'id_rol' => 1,  //administrador
 	    ],
-	    
+
 	    [   ///usuario Pablo
       'id_supervisor' => 0,
       'identificacion' => '2548698793254',
@@ -48,8 +48,8 @@ public function run()
     		'password' => Hash::make('adminPass'),
     		'id_rol' => 1,  //administrador
 	    ],
-	    
-	    
+
+
 	    [
       'id_supervisor' => 0,
       'identificacion' => '2600',
@@ -63,7 +63,7 @@ public function run()
     		'password' => Hash::make('adminPass'),
     		'id_rol' => 1,  //administrador
 	    ],
-	    
+
 	    [
       'id_supervisor' => 0,
       'identificacion' => '2601',
@@ -77,22 +77,7 @@ public function run()
     		'password' => Hash::make('adminPass'),
     		'id_rol' => 1,  //administrador
 	    ],
-	    
-	    [
-      'id_supervisor' => 0,
-      'identificacion' => '2602',
-    		'otra_identificacion' => '',
-    		'email' => 'axelsarceno@gmail.com',
-    		'nombres' => 'axel',
-    		'apellidos' => 'sarceno',
-    		'telefonos' => '',
-    		'foto' => '',
-    		'usuario' => 'superA-ADMIN',
-    		'password' => Hash::make('adminPass'),
-    		'id_rol' => 1,  //administrador
-	    ],
-	    	
-	    	
+
 	    [
       'id_supervisor' => 0,
       'identificacion' => '2603',
@@ -106,8 +91,7 @@ public function run()
     		'password' => Hash::make('adminPass'),
     		'id_rol' => 1,  //administrador
 	    ],
-	    
-	    
+
 	    [
       'id_supervisor' => 0,
       'identificacion' => '2757704190101',
@@ -121,38 +105,54 @@ public function run()
     		'password' => Hash::make('waga15'),
     		'id_rol' => 2,  //etiquetador
 	    ],
-	    
-	    [
-      'id_supervisor' => 4,
-      'identificacion' => '4654656',
+
+      [
+      'id_supervisor' => 0,
+      'identificacion' => '23232424',
     		'otra_identificacion' => '',
-    		'email' => 'diego@gmail.com',
-    		'nombres' => 'diego',
-    		'apellidos' => 'gonzalez fuentes',
-    		'telefonos' => '32155985',
+    		'email' => 'itsupport@sportsandmarketing.net',
+    		'nombres' => 'Jonathan',
+    		'apellidos' => ' Trujillo',
+    		'telefonos' => '',
     		'foto' => '',
-    		'usuario' => 'diego',
-    		'password' => Hash::make('diegopass'),
-    		'id_rol' => 3,  //fotografo
+    		'usuario' => 'superJT-admin',
+    		'password' => Hash::make('adminPass'),
+    		'id_rol' => 2,  //etiquetador
 	    ],
-	    
-	    [
-      'id_supervisor' => 4,
-      'identificacion' => '4654656',
-    		'otra_identificacion' => '',
-    		'email' => 'diego2@gmail.com',
-    		'nombres' => 'diego2',
-    		'apellidos' => 'gonzalez fuentes',
-    		'telefonos' => '32155985',
-    		'foto' => '',
-    		'usuario' => 'diego2',
-    		'password' => Hash::make('diegopass'),
-    		'id_rol' => 3,  //fotografo
-	    ],
+
+      [
+      'id_supervisor' => 0,
+      'identificacion' => '23232424254',
+        'otra_identificacion' => '',
+        'email' => 'ithd@sportsandmarketing.net',
+        'nombres' => 'Alejandro',
+        'apellidos' => 'De León',
+        'telefonos' => '',
+        'foto' => '',
+        'usuario' => 'superAL-admin',
+        'password' => Hash::make('adminPass'),
+        'id_rol' => 2,  //etiquetador
+      ],
+
+      [
+      'id_supervisor' => 0,
+      'identificacion' => '232324242547586',
+        'otra_identificacion' => '',
+        'email' => 'it@sportsandmarketing.net',
+        'nombres' => 'Daniel',
+        'apellidos' => 'Mansilla',
+        'telefonos' => '',
+        'foto' => '',
+        'usuario' => 'superDM-admin',
+        'password' => Hash::make('adminPass'),
+        'id_rol' => 2,  //etiquetador
+      ],
+
+
 	    /*
 	    *  Users Photograph
 	    */
-	    
+
 	   [
     'id_supervisor' => 2,
     'identificacion' => '2500',
@@ -194,7 +194,7 @@ public function run()
       'password' => Hash::make('fotos15'),
       'id_rol' => 3,  //fotografo
     ],
-    
+
     [
         'id_supervisor' => 2,
         'identificacion' => '2503',
@@ -295,10 +295,10 @@ public function run()
     /*
 	    * End Photograph Users
 	    */
-	   
+
 	   /*
-	   * Users Taggin 
-	   */ 
+	   * Users Taggin
+	   */
 	   [
     'id_supervisor' => 2,
     'identificacion' => '2400',
@@ -340,7 +340,7 @@ public function run()
       'password' => Hash::make('fotos15'),
       'id_rol' => 2,  //etiquetador
     ],
-    
+
      [
         'id_supervisor' => 2,
         'identificacion' => '2403',
@@ -424,7 +424,7 @@ public function run()
           'password' => Hash::make('fotos15'),
           'id_rol' => 2,  //etiquetador
         ],
-        
+
         [
         'id_supervisor' => 2,
         'identificacion' => '2409',
@@ -438,10 +438,10 @@ public function run()
           'password' => Hash::make('fotos15'),
           'id_rol' => 2,  //etiquetador
         ]
-	    
+
 	 ];
- 
+
     DB::table('users')->insert($user);
  }
- 
+
 }

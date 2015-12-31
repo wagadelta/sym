@@ -9,7 +9,7 @@ class CarrerasTableSeeder extends Seeder {
 
 public function run()
  {
-    $faker = Faker::create('es_ES');
+  /*  $faker = Faker::create('es_ES');
 
     foreach(range(1,4) as $index)
      {
@@ -26,6 +26,6 @@ public function run()
       'estado'      => '1'
       ];
       DB::table('carreras')->insert($carrera);
-    } //foreach
+    } //foreach*/
  }//function
 }//class
