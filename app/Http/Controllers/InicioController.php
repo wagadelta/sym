@@ -78,7 +78,7 @@ public static function searchByTag($idRace, $qry, Request $request)
 		//	dd($runParam_2);
 
 		$allImgsRun = Imagenes::searchTagCorrByName($idRace, $qry, $request);
-		//dd($result);
+		//dd($allImgsRun);
 		$nameRace = Imagenes::nameRunner($idRace);
 		$id = Imagenes::idRunner($idRace);
 		//dd($id);

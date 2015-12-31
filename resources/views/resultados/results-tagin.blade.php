@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-  <img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
+  <!--<img src="{--{ asset('images') }--}/ad2.jpg" class="img-responsive  ads-cls"/> </img>-->
 </div>
 <div class="col-lg-8 col-md-8 col-xs-12 div-center">
   <div class="row">
@@ -14,11 +14,11 @@
     </div>
     <div id="logo" class="col-lg-2 col-md-2 col-xs-6">
       <a href="#" >
-        Registro
+        <!--Registro-->
       </a>
-      |
+      <!--|-->
       <a href="#" >
-        Ingresar
+        <!--Ingresar-->
       </a>
 
     </div>
@@ -48,6 +48,7 @@
             <thead>
               <th>Nombres</th>
               <th>Apellidos</th>
+              <th>Carrera</th>
               <th>Imagenes</th>
             </thead>
             <tbody>
@@ -56,8 +57,10 @@
               <tr>
                 <td>{!! $corredor->nombres !!}</td>
                 <td>{!! $corredor->apellidos !!}</td>
+                <td>{!! $name !!}</td>
                 <td>
-                  <a href ="{{ asset('corredores') }}/{!! $corredor->id !!}/images" title="Ver imágenes relacionadas">
+                  ({!! $corredor->etiqueta_count!!})
+                  <a href ="{{ asset('corredores') }}/{!! $corredor->bib_number !!}/{!! $corredor->id_carrera !!}/images" title="Ver imágenes relacionadas">
                     <i class="fa fa-camera fa-2x"></i>
                   </a>
                 </td>
@@ -87,22 +90,8 @@
   </div>
 </div>
 <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-  <img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
+  <!--<img src="{--{ asset('images') }--}/ad2.jpg" class="img-responsive  ads-cls"/> </img>-->
 </div>
 
 
-@endsection
-
-@section('script')
-<script>
-jQuery(document).ready(function($) {
-
-
-  $('#goSearch').on('click', function(e){
-    var searchUrl = 'http://' + document.location.hostname + "/corredores/id/"+$('#qry').val();
-    //alert(searchUrl);
-    window.location.href = searchUrl;
-  });// onchange
-});// jQuery
-</script>
 @endsection

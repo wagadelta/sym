@@ -62,24 +62,3 @@
   </div>
 
   @endsection
-
-  @section('script')
-  <script>
-  jQuery(document).ready(function($) {
-
-
-    $('#goSearch').on('click', function(e){
-      var searchUrl = 'http://' + document.location.hostname + "/corredores/id/"+$('#qry').val();
-      //alert(searchUrl);
-      window.location.href = searchUrl;
-    });// onchange
-  });// jQuery
-  </script>
-
-  <script type="text/javascript">
-  $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-  });
-  </script>
-  @endsection

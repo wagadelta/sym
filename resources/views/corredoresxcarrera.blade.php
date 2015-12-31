@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-  <img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
+  <!--<img src="{--{ asset('images') }--}/ad2.jpg" class="img-responsive  ads-cls"/> </img>-->
 </div>
 <div class="col-md-8 div-center">
   <div class="row">
@@ -14,11 +14,11 @@
     </div>
     <div id="logo" class="col-lg-2 col-md-2 col-xs-6">
       <a href="#" >
-        Registro
+        <!--Registro-->
       </a>
-      |
+      <!--|-->
       <a href="#" >
-        Ingresar
+        <!--Ingresar-->
       </a>
 
     </div>
@@ -93,7 +93,7 @@
   </div>
 </div>
 <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-  <img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
+  <!--<img src="{--{ asset('images') }--}/ad2.jpg" class="img-responsive  ads-cls"/> </img>-->
 </div>
 
 
@@ -109,17 +109,32 @@ jQuery(document).ready(function($) {
 
   $('#qry').on('keypress', function(e){
     if(e.keyCode == 13){
-      var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores-imagenes/{{ $id }}/"+$('#qry').val();
-      //alert(searchUrl);
-      window.location.href = searchUrl;
+      if($('#qry').val().length >= 1){
+        var searchUrl = 'http://' + document.location.hostname +':8000/corredores-imagenes/{{ $id }}/'+$('#qry').val();
+        //alert(searchUrl);
+        window.location.href = searchUrl;
+        return true;
+      }else{
+        var searchUrl = 'http://' + document.location.hostname +':8000/carrera/{{$id}}/';
+
+        alert('No se puede procesar la solicitud el campo no puede estar vacío');
+        return false;
+      }
     }
   });// onchange
 
   $('#goSearch').on('click', function(e){
+    if($('#qry').val().length >= 1){
+      var searchUrl = 'http://' + document.location.hostname +':8000/corredores-imagenes/{{ $id }}/'+$('#qry').val();
+      //alert(searchUrl);
+      window.location.href = searchUrl;
+      return true;
+    }else{
+      var searchUrl = 'http://' + document.location.hostname +':8000/carrera/{{$id}}/';
 
-    var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores-imagenes/{{ $id }}/"+$('#qry').val();
-    //alert(searchUrl);
-    window.location.href = searchUrl;
+      alert('No se puede procesar la solicitud el campo no puede estar vacío');
+      return false;
+    }
 
   });// onchange
 

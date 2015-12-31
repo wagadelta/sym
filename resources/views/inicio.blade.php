@@ -3,7 +3,7 @@
 @section('content')
 
 <div  class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2  ">
-  <img src="{{asset('images')}}/ad2.jpg" class="img-responsive ads-cls"/> </img>
+  <!--<img src="{--{asset('images')}--}/ad2.jpg" class="img-responsive ads-cls"/> </img>-->
 </div>
 <div class="col-md-8 div-center">
   <div class="row">
@@ -14,11 +14,11 @@
     </div>
     <div id="logo" class="col-md-2">
       <a href="#" >
-        Registro
+        <!--Registro-->
       </a>
-      |
+      <!--|-->
       <a href="#" >
-        Ingresar
+        <!--Ingresar-->
       </a>
 
     </div>
@@ -26,21 +26,7 @@
     <div class="row">
       <div class="col-md-12 banner">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
-          <!-- Indicators -->
-          <!-- Indicators
-          <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="7"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="8"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="9"></li>
-
-        </ol>-->
+      
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
@@ -111,7 +97,7 @@
 </div>
 </div>
 <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-  <img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
+  <!--<img src="{--{ asset('images') }--}/ad2.jpg" class="img-responsive  ads-cls"/> </img>-->
 </div>
 
 
@@ -123,19 +109,33 @@
 jQuery(document).ready(function($) {
 
   $('#qry').on('keypress', function(e){
-    if(e.keyCode == 13){
-      var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores/id/"+$('#qry').val();
-      //alert(searchUrl);
-      window.location.href = searchUrl;
+    if((e.keyCode == 13)){
+      if($('#qry').val().length >= 1){
+        var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores/id/"+$('#qry').val();
+        //alert(searchUrl);
+        window.location.href = searchUrl;
+        return true;
+      }else {
+        var searchUrl = 'http://' + document.location.hostname +':8000';
+
+        alert('No se puede procesar la solicitud el campo no puede estar vacío');
+        return false;
+      }
     }
   });// onchange
 
   $('#goSearch').on('click', function(e){
-
-    var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores/id/"+$('#qry').val();
-    //alert(searchUrl);
-    window.location.href = searchUrl;
-
+    if($('#qry').val().length >= 1){
+      var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores/id/"+$('#qry').val();
+      //alert(searchUrl);
+      window.location.href = searchUrl;
+        return true;
+    }else {
+      var searchUrl = 'http://' + document.location.hostname +':8000';
+      alert('No se puede procesar la solicitud el campo no puede estar vacío');
+      //alert('No puede ser vació');
+      return false;
+    }
   });// onchange
 
 });// jQuery

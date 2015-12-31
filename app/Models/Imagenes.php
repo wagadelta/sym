@@ -141,12 +141,12 @@ class Imagenes extends Model
 	{
 		//$nombre = $qry;
 
-		DB::connection()->enableQueryLog(); // Inicia data base log
+		//DB::connection()->enableQueryLog(); // Inicia data base log
 
 		//	dd($idCorre);  //imprime el script SQL de la consulta
 
 		$corredores = DB::table('corredores as c')
-		->select('c.id', 'c.nombres', 'c.apellidos')
+		->select('c.id', 'c.nombres', 'c.apellidos', 'c.id_carrera', 'c.etiqueta_count', 'bib_number')
 		->where('c.etiqueta_count', '>', 0)
 		->where('c.id_carrera', '=', $idRace)
 		->where('c.nombres', 'LIKE', '%'.$qry.'%')
