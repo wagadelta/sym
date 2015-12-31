@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-  <img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
+  <!--<img src="{--{ asset('images') }--}/ad2.jpg" class="img-responsive  ads-cls"/> </img>-->
 </div>
 <div class="col-md-8 div-center">
   <div class="row">
@@ -58,7 +58,7 @@
     </div>
   </div>
   <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-    <img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
+    <!--<img src="{--{ asset('images') }--}/ad2.jpg" class="img-responsive  ads-cls"/> </img>-->
   </div>
 
   @endsection

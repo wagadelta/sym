@@ -176,10 +176,10 @@ class ImagenesController extends AppBaseController
 		$ubicacionId = $request->input('ubicacion');
 		$now = Carbon::now()->toDateTimeString();
 		$fileTempName   = str_slug($now, '_');
-		$imagePath = '/public/uploads/';
+		$imagePath = '/fotos/uploads/';
 		$outputDir = base_path().$imagePath.'temp/';
 		$img =  Image::make($_FILES['file']['tmp_name'][0]);
-		$watermark = Image::make(base_path().'/public/images/sym-watermark.png');
+		$watermark = Image::make(base_path().'/fotos/images/sym-watermark.png');
 		$dataArray=array('id_fotografo' => $fotografoId, 'path' => $imagePath, 'slug' => '',
 		'archivo' => '', 'id_ubicacion' => $ubicacionId, 'estado' => '1');
 

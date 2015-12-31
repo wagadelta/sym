@@ -26,7 +26,7 @@
     <div class="row">
       <div class="col-md-12 banner">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
-      
+
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
@@ -111,12 +111,12 @@ jQuery(document).ready(function($) {
   $('#qry').on('keypress', function(e){
     if((e.keyCode == 13)){
       if($('#qry').val().length >= 1){
-        var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores/id/"+$('#qry').val();
+        var searchUrl = 'http://' + document.location.hostname +'/fotos/corredores/id/'+$('#qry').val();
         //alert(searchUrl);
         window.location.href = searchUrl;
         return true;
       }else {
-        var searchUrl = 'http://' + document.location.hostname +':8000';
+        var searchUrl = 'http://' + document.location.hostname +'/fotos';
 
         alert('No se puede procesar la solicitud el campo no puede estar vacío');
         return false;
@@ -126,12 +126,12 @@ jQuery(document).ready(function($) {
 
   $('#goSearch').on('click', function(e){
     if($('#qry').val().length >= 1){
-      var searchUrl = 'http://' + document.location.hostname +':8000'+ "/corredores/id/"+$('#qry').val();
+      var searchUrl = 'http://' + document.location.hostname +'/fotos/corredores/id/'+$('#qry').val();
       //alert(searchUrl);
       window.location.href = searchUrl;
         return true;
     }else {
-      var searchUrl = 'http://' + document.location.hostname +':8000';
+      var searchUrl = 'http://' + document.location.hostname +'/fotos';
       alert('No se puede procesar la solicitud el campo no puede estar vacío');
       //alert('No puede ser vació');
       return false;

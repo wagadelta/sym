@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-  <img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
+  <!--<img src="{--{ asset('images') }--}/ad2.jpg" class="img-responsive  ads-cls"/> </img>-->
 </div>
 <div class="col-sm-8  div-center">
   <div class="row">
@@ -15,11 +15,11 @@
 
     <div id="logo" class="col-lg-2 col-md-2 col-xs-6">
       <a href="#" >
-        Registro
+        <!--Registro-->
       </a>
-      |
+      <!--|-->
       <a href="#" >
-        Ingresar
+        <!--Ingresar-->
       </a>
 
     </div>
@@ -91,7 +91,7 @@
     </div>
   </div>
   <div class="hidden-xs col-xs-2 hidden-sm col-sm-2  col-md-2 col-lg-2 ">
-    <img src="{{ asset('images') }}/ad2.jpg" class="img-responsive  ads-cls"/> </img>
+    <!--<img src="{--{ asset('images') }--}/ad2.jpg" class="img-responsive  ads-cls"/> </img>-->
   </div>
 
 
