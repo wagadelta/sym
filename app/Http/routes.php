@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Ubicaciones;
+use App\Models\Corredores;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -17,6 +18,25 @@ use App\Models\Ubicaciones;
 Route::get('/', 'InicioController@index');
 Route::get('carrera/{id}','InicioController@locationRunner');
 Route::get('/carrera/location/{id}', 'InicioController@runnerImgs');
+
+Route::get('csv',function(){
+  if(($handle = fopen(public_path().'/uploads/runnersv2015.csv','r')) !== FALSE)
+  {
+    while(($data = fgetcsv($handle, 1000, ';')) !== FALSE)
+    {
+      $corredores = new Corredores();
+      $corredores->nombres = $data[0];
+      $corredores->apellidos = $data[1];
+      $corredores->slug = $data[2];
+  		$corredores->bib_number = $data[3];
+  		$corredores->id_carrera = $data[4];
+      $corredores->estado = $data[5];
+      $corredores->save();
+    }
+    fclose($handle);
+  }
+  return Corredores::all();
+});
 
 
 // usage inside a laravel route
