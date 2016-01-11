@@ -83,6 +83,7 @@ class Imagenes extends Model
 		->join('imagenes as i', 'i.id_ubicacion', '=', 'u.id')
 		->select('i.id',  'i.archivo', 'i.id_ubicacion',"i.etiquetas as tags", 'u.id_carrera as carrera')
 		->where('i.tipo_imagen', '=', 'normal')
+		->where('etiquetas', '<>', '')
 		->where('u.id_carrera', '=', $id)
 		->paginate(24); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
 		$imagenes->setPath($requests->url());
@@ -92,12 +93,15 @@ class Imagenes extends Model
 	}
 	public static function nameRunner($id)
 	{
-
 		$nameR = DB::table('carreras')->where('id', $id)->pluck('nombre');
 
 		return $nameR;
-
-
+	}
+	public static function descriptRunner($id)
+	{
+				// Devuelve descripcion de la carrera
+				$descR = DB::table('carreras')->where('id', $id)->pluck('descripcion');
+				return $descR;
 	}
 
 	public static function idRunner($id)
@@ -122,14 +126,14 @@ class Imagenes extends Model
 		"i.etiquetas as tags", 'u.id_carrera as carrera')
 		->where('i.etiquetas', 'LIKE', '%|'. $qry.'|%')
 		->where('i.etiquetas', '<>', '')
-		->where('i.etiquetas', '<>', '%||%')
+		->where('i.etiquetas', '<>', '||')
 		//->orWhere('i.etiquetas', 'LIKE', '%'.$runParam_2.'|%')
 		->where('i.tipo_imagen', '=', 'normal')
 		->where('u.id_carrera', '=', $idRace)
 		->paginate(24); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
 		//dd($allImgsRun);
 		//->get();
-		//$allImgsRun->setPath($request->url());
+		$allImgsRun->setPath($request->url());
 		return $allImgsRun;
 
 
@@ -147,17 +151,18 @@ class Imagenes extends Model
 
 		$corredores = DB::table('corredores as c')
 		->select('c.id', 'c.nombres', 'c.apellidos', 'c.id_carrera', 'c.etiqueta_count', 'bib_number')
-		->where('c.etiqueta_count', '>', 0)
+		->where('c.etiqueta_count', '>=', 1)
 		->where('c.id_carrera', '=', $idRace)
-		->where('c.nombres', 'LIKE', '%'.$qry.'%')
-		->orWhere('c.apellidos', 'LIKE', '%'.$qry.'%')
+		//->where('c.nombres', 'LIKE', '%'.$qry.'%')
+		//->orWhere('c.apellidos', 'LIKE', '%'.$qry.'%')
+		->whereRaw("(c.mombres like ? OR c.apellidos like ?)", array('%'.$qry.'%', '%'.$qry.'%'))
 		//->get(); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
 		//dd(DB::getQueryLog());
 		->paginate(24); // cambiar parametro de pagineo al publicarlo de 15 imagenes por página
 
 
 		//dd($corredores);
-		//$corredores->setPath($request->url());
+		$corredores->setPath($request->url());
 
 		return $corredores;
 

@@ -39,7 +39,7 @@ class BitacoraController extends AppBaseController
 
 		return view('bitacoras.index')
 		    ->with('bitacoras', $bitacoras)
-		    ->with('attributes', $attributes);;
+		    ->with('attributes', $attributes);
 	}
 
 	/**

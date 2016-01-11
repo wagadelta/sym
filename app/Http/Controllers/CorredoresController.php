@@ -10,6 +10,7 @@ use App\Models\Carreras;
 use Mitul\Controller\AppBaseController;
 use Response;
 use Flash;
+use DB;
 
 class CorredoresController extends AppBaseController
 {
@@ -170,20 +171,17 @@ class CorredoresController extends AppBaseController
 	public function searchByName($qry = null, Request $request)
 	{
 
-
-		$corredores= Corredores::where('nombres', 'LIKE', "%$qry%")
-		->orWhere('apellidos', 'LIKE', "%$qry%")
+		// DB::conection()->enableQueryLog();  To debug
+		$corredores= Corredores::whereRaw("(nombres like ? OR apellidos like ? )", array('%'.$qry.'%', '%'.$qry.'%'))
+		->where('etiqueta_count', '>=', 1)
+		// ->get();    in this case to debug
 		->paginate(25);
-
+		// dd($corredores);  to debug
+		// dd(DB::getQueryLog($corredores)); to debug
+		$corredores->setPath($request->url());
 		return view('resultados.results')
 		->with('corredores', $corredores)
 		->with('qry',$qry);
-
-		//dd($carrera);
-
-		//$corredores->setPath($request->url());
-		//$cobros->setPath($request->url());
 	}
-
 
 }

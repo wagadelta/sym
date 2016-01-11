@@ -19,26 +19,6 @@ Route::get('/', 'InicioController@index');
 Route::get('carrera/{id}','InicioController@locationRunner');
 Route::get('/carrera/location/{id}', 'InicioController@runnerImgs');
 
-Route::get('csv',function(){
-  if(($handle = fopen(public_path().'/uploads/runnersv2015.csv','r')) !== FALSE)
-  {
-    while(($data = fgetcsv($handle, 1000, ';')) !== FALSE)
-    {
-      $corredores = new Corredores();
-      $corredores->nombres = $data[0];
-      $corredores->apellidos = $data[1];
-      $corredores->slug = $data[2];
-  		$corredores->bib_number = $data[3];
-  		$corredores->id_carrera = $data[4];
-      $corredores->estado = $data[5];
-      $corredores->save();
-    }
-    fclose($handle);
-  }
-  return Corredores::all();
-});
-
-
 // usage inside a laravel route
 // Route::get('/intervention', function()
 // {
@@ -47,8 +27,8 @@ Route::get('csv',function(){
 //     return $img->response('jpg');
 // });
 
-
-route::get('/phpinfo', function(){
+// Rout se comenta por seguridad activar si es necesario
+/*route::get('/phpinfo', function(){
         if(extension_loaded('gd')) {
             echo '<pre>';
             print_r(gd_info());
@@ -68,7 +48,7 @@ route::get('/phpinfo', function(){
             echo 'ImageMagick is not available.';
         }
     echo phpinfo();
-});
+});*/
 
 Route::get('home', 'HomeController@index');
 
@@ -162,3 +142,24 @@ Route::get('imagenes/{id}/delete', [
 Route::post('/image-upload', 'ImagenesController@upload');
 Route::get('login', 'WelcomeController@index');
 Route::get('getUbicaciones/{id}','UbicacionesController@byCarrera');
+
+// upload csv in table Corredores
+/*
+Route::get('csv',function(){
+  if(($handle = fopen(public_path().'/uploads/runnersv2015.csv','r')) !== FALSE)
+  {
+    while(($data = fgetcsv($handle, 1000, ';')) !== FALSE)
+    {
+      $corredores = new Corredores();
+      $corredores->nombres = $data[0];
+      $corredores->apellidos = $data[1];
+      $corredores->slug = $data[2];
+  		$corredores->bib_number = $data[3];
+  		$corredores->id_carrera = $data[4];
+      $corredores->estado = $data[5];
+      $corredores->save();
+    }
+    fclose($handle);
+  }
+  return Corredores::all();
+});*/

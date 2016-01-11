@@ -72,7 +72,7 @@ class ImagenesController extends AppBaseController
 
 		$imagenes = $this->imagenesRepository->store($input);
 
-		Flash::message('Imagenes saved successfully.');
+		Flash::message('Imágenes guardadas satisfactoriamente.');
 
 		return redirect(route('imagenes.index'));
 	}
@@ -90,7 +90,7 @@ class ImagenesController extends AppBaseController
 
 		if(empty($imagenes))
 		{
-			Flash::error('Imagenes not found');
+			Flash::error('No se encontraron imágenes');
 			return redirect(route('imagenes.index'));
 		}
 
@@ -109,7 +109,7 @@ class ImagenesController extends AppBaseController
 
 		if(empty($imagenes))
 		{
-			Flash::error('Imagenes not found');
+			Flash::error('No se encontraron imágenes');
 			return redirect(route('imagenes.index'));
 		}
 
@@ -130,13 +130,13 @@ class ImagenesController extends AppBaseController
 
 		if(empty($imagenes))
 		{
-			Flash::error('Imagenes not found');
+			Flash::error('No se encontraron imágenes');
 			return redirect(route('imagenes.index'));
 		}
 
 		$imagenes = $this->imagenesRepository->update($imagenes, $request->all());
 
-		Flash::message('Imagenes updated successfully.');
+		Flash::message('Imagenes actualizadas satisfactoriamente.');
 
 		return redirect(route('imagenes.index'));
 	}
@@ -154,13 +154,13 @@ class ImagenesController extends AppBaseController
 
 		if(empty($imagenes))
 		{
-			Flash::error('Imagenes not found');
+			Flash::error('No se encontraron imágenes');
 			return redirect(route('imagenes.index'));
 		}
 
 		$imagenes->delete();
 
-		Flash::message('Imagenes deleted successfully.');
+		Flash::message('Imagenes eliminadas con éxito.');
 
 		return redirect(route('imagenes.index'));
 	}
@@ -169,8 +169,8 @@ class ImagenesController extends AppBaseController
 	public function upload(Request $request)
 	{
 		// PHP CON FIG
-		ini_set('post_max_size', '128M');
-		ini_set('upload_max_filesize', '128M');
+		ini_set('post_max_size', '1024M');
+		ini_set('upload_max_filesize', '1024M');
 		// GENERAL DATA
 		$fotografoId = $request->input('id_fotografo');
 		$ubicacionId = $request->input('ubicacion');

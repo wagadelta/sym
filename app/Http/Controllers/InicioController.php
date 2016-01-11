@@ -37,13 +37,14 @@ public function locationRunner($id, Request $requests)
 	//dd($requests);
 	$allImgsRun = Imagenes::ImgsRunners($id, $requests);
 	$Namerunner = Imagenes:: nameRunner($id);
+	$descRunner = Imagenes:: descriptRunner($id);
 	$idRunner = Imagenes:: idRunner($id);
 	//dd($allImgsRun);
 	return view('corredoresxcarrera')
 	->with('allImgsRun', $allImgsRun)
 	->with('name', $Namerunner)
+	->with('descript', $descRunner)
 	->with('id', $idRunner);
-
 
 }
 
@@ -69,7 +70,7 @@ public static function searchByTag($idRace, $qry, Request $request)
 		$id = Imagenes::idRunner($idRace);
 		//dd($id);
 
-		return  view('corredoresxcarrera')
+		return  view('imgs_x_corr_carr')
 		->with('allImgsRun',$allImgsRun)
 		->with('id', $id)
 		->with('name', $name);
@@ -91,11 +92,6 @@ public static function searchByTag($idRace, $qry, Request $request)
 		->with('name', $nameRace);
 	}
 
-
 }
-
-
-
-
 
 }
