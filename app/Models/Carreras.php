@@ -32,4 +32,10 @@ class Carreras extends Model
 		return $this->hasOne('App\Models\Corredores');
 	}
 
+	public function ubicaciones()
+	{
+		return $this->hasMany('App\Models\Ubicaciones');
+
+	}
+
 }

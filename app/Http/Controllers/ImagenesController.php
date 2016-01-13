@@ -16,6 +16,7 @@ use Input;
 use Carbon\Carbon;
 use Session;
 use Cache;
+use App\Modules\Ubicaciones;
 
 class ImagenesController extends AppBaseController
 {
@@ -253,7 +254,7 @@ class ImagenesController extends AppBaseController
 		->where ('carreras.id', '=', $carreraId)
 		->where ('imagenes.tipo_imagen', '=', 'normal')
 		->where ('imagenes.is_blocked', '=', '0')
-		->where('id_etiquetador', '=', 0)
+		->where('imagenes.id_etiquetador', '=', 0)
 		->first();
 		//dd(array($imagen, DB::getQueryLog() ));
 		if(!$imagen) {
@@ -293,6 +294,7 @@ class ImagenesController extends AppBaseController
 		$imagen = Imagenes::find($id); //select the image using primary id
 		$imagenOrigen = $imagen;
 		$imagen->etiquetas = $etiquetas_pipe;
+		$imagen->fecha_etiqueta = Carbon::now(); // time added to control tagging
 		$imagen->id_etiquetador = $input['etiquetadorId'];
 		$imagen->is_blocked = '0';
 

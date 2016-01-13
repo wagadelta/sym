@@ -27,4 +27,9 @@ class Ubicaciones extends Model
     "direccion" => "required"
   ];
 
+  public function carrera()
+  {
+    return $this->belongsTo('App\Models\Carreras', 'id_carrera');
+  }
+
 }

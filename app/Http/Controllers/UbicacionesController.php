@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Libraries\Repositories\UbicacionesRepository;
 use App\Libraries\Repositories\CarrerasRepository;
 use Mitul\Controller\AppBaseController;
+use App\Models\Carreras;
+use App\Models\Ubicaciones;
 use Response;
 use Flash;
 
@@ -34,9 +36,9 @@ class UbicacionesController extends AppBaseController
 	{
 		$input = $request->all();
 
-		$ubicaciones = \DB::table('ubicaciones')->orderBy('id_carrera', 'desc')->paginate(15);
+		$ubicaciones = Ubicaciones::orderBy('id_carrera', 'desc')->paginate(15);
 		$ubicaciones->setPath($request->url());
-
+		//dd($ubicaciones->carrera->name);
 		return view('ubicaciones.index')
 		->with('ubicaciones', $ubicaciones);
 	}
