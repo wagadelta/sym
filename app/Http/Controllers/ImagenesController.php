@@ -330,18 +330,32 @@ class ImagenesController extends AppBaseController
 
 	public function searchById($id = null, $id_run, Request $request1)
 	{
-		//DB::connection()->enableQueryLog();
-		$imagenes= Imagenes::where('etiquetas', 'LIKE', "%|$id|%")
-		->where('tipo_imagen', 'normal')
-		->where('etiquetas', '<>', '')
-		->where('etiquetas', '<>', '||')
-		->paginate(12);
-		//		dd(DB::getQueryLog($imagenes));
 
 		$corredor= Corredores::where('bib_number', '=' ,$id)
 		->where('id_carrera', '=', $id_run)
 		->first();
-	//dd($corredor);
+
+
+		//DB::connection()->enableQueryLog();
+		/*$imagenes= Imagenes::where('etiquetas', 'LIKE', "%|$id|%")
+		->where('tipo_imagen', 'normal')
+		->where('etiquetas', '<>', '')
+		->where('etiquetas', '<>', '||')
+		->paginate(12);*/
+
+		$imagenes = Imagenes::join('ubicaciones',  'id_ubicacion', '=', 'ubicaciones.id')
+				->where('ubicaciones.id_carrera', '=', $id_run)
+				->where('tipo_imagen', 'normal')
+				->where('etiquetas', '<>', '')
+				->where('etiquetas', '<>', '||')
+				->where('etiquetas', 'LIKE', "%|$id|%")
+				->paginate(12);
+
+
+//dd(DB::getQueryLog($imagenes));
+
+
+		//dd($corredor);
 		//$NombreCorredor = $imagenes->corredor()->name; // TODO: DEBE DE SETEAR LOS RELATIONSHIPS.
 		return view('resultados.byname')
 		->with('images', $imagenes)

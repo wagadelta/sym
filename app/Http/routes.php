@@ -2,6 +2,8 @@
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Ubicaciones;
 use App\Models\Corredores;
+use App\Models\Imagenes;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -144,11 +146,10 @@ Route::get('login', 'WelcomeController@index');
 Route::get('getUbicaciones/{id}','UbicacionesController@byCarrera');
 
 // upload csv in table Corredores
-/*
-Route::get('csv',function(){
-  if(($handle = fopen(public_path().'/uploads/runnersv2015.csv','r')) !== FALSE)
+/*Route::get('csv',function(){
+  if(($handle = fopen(public_path().'/images/files-up/corredores-actual.csv','r')) !== FALSE)
   {
-    while(($data = fgetcsv($handle, 1000, ';')) !== FALSE)
+    while(($data = fgetcsv($handle, 1000, ',')) !== FALSE)
     {
       $corredores = new Corredores();
       $corredores->nombres = $data[0];
@@ -156,10 +157,61 @@ Route::get('csv',function(){
       $corredores->slug = $data[2];
   		$corredores->bib_number = $data[3];
   		$corredores->id_carrera = $data[4];
-      $corredores->estado = $data[5];
+			$corredores->etiqueta_count = $data[5];
+      $corredores->created_at = $data[6];
+			$corredores->updated_at = $data[7];
       $corredores->save();
     }
     fclose($handle);
   }
   return Corredores::all();
+});*/
+
+/* Upload images old - races
+Route::get('csv-imgs',function(){
+  if(($handle = fopen(public_path().'/images/files-up/tbl_imagenes.csv','r')) !== FALSE)
+  {
+    while(($data = fgetcsv($handle, 1000, ',')) !== FALSE)
+    {
+			$imagenes = new Imagenes();
+			$imagenes->id_fotografo = $data[0];
+			$imagenes->id_etiquetador = $data[1];
+			$imagenes->path = $data[2];
+			$imagenes->archivo = $data[3];
+			$imagenes->slug = $data[4];
+			$imagenes->tipo_imagen = $data[5];
+			$imagenes->etiquetas = $data[6];
+			$imagenes->fecha_etiqueta = $data[7];
+			$imagenes->id_ubicacion = $data[8];
+			$imagenes->estado = $data[9];
+			$imagenes->is_blocked = $data[10];
+			$imagenes->created_at = $data[11];
+			$imagenes->created_at = $data[12];
+			$imagenes->save();
+    }
+    fclose($handle);
+  }
+  return Imagenes::all();
+});
+
+// Upload Locate no register
+Route::get('csv-ubicate',function(){
+
+	if(($handle = fopen(public_path().'/images/files-up/ubicaciones.csv','r')) !== FALSE)
+	{
+		while(($data = fgetcsv($handle, 1000, ',')) !== FALSE)
+		{
+			$locate = new Ubicaciones();
+			$locate->id_carrera = $data[0];
+			$locate->nombre = $data[1];
+			$locate->slug = $data[2];
+			$locate->direccion = $data[3];
+			$locate->created_at = $data[4];
+			$locate->updated_at = $data[5];
+			$locate->save();
+		}
+		fclose($handle);
+	}
+	return Ubicaciones::all();
+
 });*/

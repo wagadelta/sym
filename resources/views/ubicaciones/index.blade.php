@@ -33,9 +33,9 @@
                             <td><i class="fa fa-child"></i> {!! $ubicacion->carrera->nombre !!}</td>
                   					<td>{!! $ubicacion->nombre !!}</td>
                   					<td>{!! $ubicacion->slug !!}</td>
-                  					<!--td>{!! $ubicacion->direccion !!}</td-->
-                  					<td>{!! $ubicacion->geolocalizacion !!}</td>
-                  					<!--td>{!! $ubicacion->estado !!}</td-->
+                  					<td>{!! $ubicacion->direccion !!}</td>
+                  					<!--td>{--!! $ubicacion->geolocalizacion !!--}</td-->
+                  					<!--td>{--!! $ubicacion->estado !!--}</td-->
                         <td>
                                 <a href="{!! route('ubicaciones.edit', [$ubicacion->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
                                 <a href="{!! route('ubicaciones.delete', [$ubicacion->id]) !!}" onclick="return confirm('Are you sure wants to delete this Ubicaciones?')"><i class="glyphicon glyphicon-remove"></i></a>
